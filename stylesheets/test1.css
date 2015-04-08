@@ -1,11 +1,11 @@
 /*
-Error: Invalid CSS after "please work!": expected "{", was ""
-        on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss
+Error: Invalid CSS after "...hbjskbjhsdhkbjc": expected "{", was ""
+        on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss
 
-1: please work!
+1: This is Stupid this is from Ming agina for as=danalbcabdlshjhkcakshbjskbjhsdhkbjc
 
 Backtrace:
-/Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss:1
+/Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss:1
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1165:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1101:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1096:in `tok!'
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"please work!\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss\A \A 1: please work!"; }
+  content: "Error: Invalid CSS after \"...hbjskbjhsdhkbjc\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss\A \A 1: This is Stupid this is from Ming agina for as=danalbcabdlshjhkcakshbjskbjhsdhkbjc"; }
