@@ -1,8 +1,8 @@
 /*
-Error: Invalid CSS after "...gigigigigigiigi": expected "{", was ""
+Error: Invalid CSS after "This is Stupid": expected "{", was ""
         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss
 
-1: change is made by Ming by Ming again igigigigigigigigiigi
+1: This is Stupid
 
 Backtrace:
 /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss:1
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...gigigigigigiigi\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss\A \A 1: change is made by Ming by Ming again igigigigigigigigiigi"; }
+  content: "Error: Invalid CSS after \"This is Stupid\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss\A \A 1: This is Stupid"; }
