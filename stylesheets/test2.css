@@ -1,8 +1,8 @@
 /*
-Error: Invalid CSS after "...ala last change": expected "{", was ""
+Error: Invalid CSS after "please work!": expected "{", was ""
         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test2.scss
 
-1: lalalalala last change
+1: please work!
 
 Backtrace:
 /Applications/MAMP/htdocs/Triplr/sass/test2.scss:1
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...ala last change\": expected \"{\", was \"\"\A         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test2.scss\A \A 1: lalalalala last change"; }
+  content: "Error: Invalid CSS after \"please work!\": expected \"{\", was \"\"\A         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test2.scss\A \A 1: please work!"; }
