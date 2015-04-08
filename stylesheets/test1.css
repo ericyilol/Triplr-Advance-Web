@@ -1,8 +1,8 @@
 /*
-Error: Invalid CSS after "change change": expected "{", was ""
+Error: Invalid CSS after "change": expected "{", was ""
         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test1.scss
 
-1: change change
+1: change
 
 Backtrace:
 /Applications/MAMP/htdocs/Triplr/sass/test1.scss:1
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"change change\": expected \"{\", was \"\"\A         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test1.scss\A \A 1: change change"; }
+  content: "Error: Invalid CSS after \"change\": expected \"{\", was \"\"\A         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test1.scss\A \A 1: change"; }
