@@ -1,8 +1,8 @@
 /*
-Error: Invalid CSS after "...g by Ming again": expected "{", was ""
+Error: Invalid CSS after "...gigigigigigiigi": expected "{", was ""
         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss
 
-1: change is made by Ming by Ming again
+1: change is made by Ming by Ming again igigigigigigigigiigi
 
 Backtrace:
 /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss:1
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...g by Ming again\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss\A \A 1: change is made by Ming by Ming again"; }
+  content: "Error: Invalid CSS after \"...gigigigigigiigi\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test1.scss\A \A 1: change is made by Ming by Ming again igigigigigigigigiigi"; }
