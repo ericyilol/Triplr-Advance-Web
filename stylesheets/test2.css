@@ -1,8 +1,8 @@
 /*
-Error: Invalid CSS after "...2 test 2 test 2": expected "{", was ""
+Error: Invalid CSS after "test 3 test 3": expected "{", was ""
         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss
 
-1: test 2 test 2 test 2
+1: test 3 test 3
 
 Backtrace:
 /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss:1
@@ -37,4 +37,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...2 test 2 test 2\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss\A \A 1: test 2 test 2 test 2"; }
+  content: "Error: Invalid CSS after \"test 3 test 3\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss\A \A 1: test 3 test 3"; }
