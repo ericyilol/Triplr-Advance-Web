@@ -1,0 +1,50 @@
+/* line 24, ../sass/menu-bar.scss */
+.menu-bar {
+  height: 75px;
+  width: 100%;
+  background-color: #6dd0f7;
+}
+/* line 28, ../sass/menu-bar.scss */
+.menu-bar .logo {
+  padding: 0 0 0 30px;
+  height: 50px;
+  float: left;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 33, ../sass/menu-bar.scss */
+.menu-bar .logo img {
+  height: 100%;
+  width: auto;
+}
+/* line 38, ../sass/menu-bar.scss */
+.menu-bar .welcome-back-text {
+  padding: 10px 10px 0 0;
+  float: right;
+  font-size: 1.2em;
+  color: #4e4b4f;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 45, ../sass/menu-bar.scss */
+.menu-bar .account {
+  padding: 0 30px 0 0;
+  float: right;
+  height: 50px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 50, ../sass/menu-bar.scss */
+.menu-bar .account img {
+  height: 100%;
+  width: auto;
+}

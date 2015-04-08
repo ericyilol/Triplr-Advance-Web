@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Triplr</title>
+	<link rel="stylesheet" href="stylesheets/screen.css">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="modal fade" id="Log-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Log In</h4>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						username:<input type="text" name="firstname"> <br>
+						password:<input type="password" name="firstname">
+						
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="location.href='dashboard.html'">Log In</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="Sign-up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						email:<input type="text" name="firstname"> <br>
+						password:<input type="password" name="firstname"> <br>
+						confirm password:<input type="password" name="firstname">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="home-page-header">
+		<div class="home-page-header-text">
+			<button type="button" class="btn" data-toggle="modal" data-target="#Log-in">
+			Log In
+			</button>
+		</div>
+		<div class="home-page-header-text">
+			<button type="button" class="btn" data-toggle="modal" data-target="#Sign-up">
+			Sign Up
+			</button>
+		</div>
+		<div class="clear"></div>
+		<div class="home-page-header-title">
+			<h2>Triplr - When planning is 3 times easier</h2>
+			<button class="btn btn-primary create-schedule-button btn-lg" type="button">CRAETE NEW TRIP</button>
+		</div>
+	</header>
+	<section class="home-page-events">
+		<div class="row">
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+			<div class="col-md-3 events"></div>
+		</div>
+	</section>
+</body>
+<script src="./js/init.js" type="text/javascript"></script>
+</html>
