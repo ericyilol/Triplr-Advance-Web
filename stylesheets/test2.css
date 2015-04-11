@@ -1,6 +1,10 @@
 /*
 Error: Invalid CSS after "this should work!": expected "{", was ""
+<<<<<<< HEAD
         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss
+=======
+        on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test2.scss
+>>>>>>> bb39e78e8deccfe3f75ca494a32a1bb4f2baeaa3
 
 1: this should work!
 
@@ -37,4 +41,8 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
+<<<<<<< HEAD
   content: "Error: Invalid CSS after \"this should work!\": expected \"{\", was \"\"\A         on line 1 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/test2.scss\A \A 1: this should work!"; }
+=======
+  content: "Error: Invalid CSS after \"this should work!\": expected \"{\", was \"\"\A         on line 1 of /Applications/MAMP/htdocs/Triplr/sass/test2.scss\A \A 1: this should work!"; }
+>>>>>>> bb39e78e8deccfe3f75ca494a32a1bb4f2baeaa3
