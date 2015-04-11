@@ -33,7 +33,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 	background-size: cover;
 	background-position: center center;
 	width: 100%;
-	height: 700px;
+	height: 500px;
 	padding: 10px 0 0 0;
 	.home-page-header-text{
 		color: #fff;
@@ -48,6 +48,15 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		button:hover {
 			color: $secondary-color;
 		}
+	}
+	.home-page-header-bird{
+		width:150px;
+		height: 150px;
+		content: url(../img/triplr-logo.png);
+		margin-right: auto;
+		margin-left: auto;
+		z-index: 99;
+		display: block;
 	}
 	.home-page-header-title{
 		color: #fff;

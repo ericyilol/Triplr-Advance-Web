@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 700px;
+  height: 500px;
   padding: 10px 0 0 0;
 }
 /* line 38, ../sass/home-page.scss */
@@ -29,6 +29,16 @@
   color: #ff715b;
 }
 /* line 52, ../sass/home-page.scss */
+.home-page-header .home-page-header-bird {
+  width: 150px;
+  height: 150px;
+  content: url(../img/triplr-logo.png);
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 99;
+  display: block;
+}
+/* line 61, ../sass/home-page.scss */
 .home-page-header .home-page-header-title {
   color: #fff;
   text-align: center;
@@ -38,18 +48,18 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 57, ../sass/home-page.scss */
+/* line 66, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
   margin: 20px 0;
   background-color: #ff715b;
   border: none;
 }
-/* line 63, ../sass/home-page.scss */
+/* line 72, ../sass/home-page.scss */
 .home-page-header .create-schedule-button:hover {
   background-color: #f69687;
 }
 
-/* line 69, ../sass/home-page.scss */
+/* line 78, ../sass/home-page.scss */
 .home-page-events .events {
   height: 20vw;
   padding: 0px;
@@ -59,7 +69,7 @@
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 74, ../sass/home-page.scss */
+/* line 83, ../sass/home-page.scss */
 .home-page-events .events:hover {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
