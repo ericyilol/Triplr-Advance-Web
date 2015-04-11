@@ -22,7 +22,8 @@
 }
 
 .home-page-header{
-	background: url(../img/homepage_b.jpg);
+	// background: url(../img/homepage_b.jpg);
+	background-color: #6dd0f7;
 	background-size: cover;
 	background-position: center center;
 	width: 100%;
@@ -39,7 +40,7 @@
 			@include transition(all, 0.2s, ease-in-out);
 		}
 		button:hover {
-			color: #aaa
+			color: #aaa;
 		}
 	}
 	.home-page-header-title{
