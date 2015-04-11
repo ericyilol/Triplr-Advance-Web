@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Triplr</title>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="modal fade" id="Log-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,13 +53,12 @@
 	</div>
 	<header class="home-page-header">
 		<div class="home-page-header-logo">
-			Triplr
+			triplr
 		</div>
 		<div class="home-page-header-text">
-				<form class="navbar-form navbar-left" role="search">
-		          <input type="text" class="form-control" placeholder="Search">
-		          <button type="submit" class="btn"><span class="glyphicon glyphicon-search form-control-feedback"></span></button>
-		      	</form>
+			<button type="button" class="btn btn-primary" id="explore-button">
+			Explore New Locations
+			</button>
       	</div>
 		<div class="home-page-header-text">
 			<button type="button" class="btn" data-toggle="modal" data-target="#Log-in">
@@ -74,11 +73,13 @@
 		
 		<div class="clear"></div>
 
-		<div class="home-page-header-title">
 			<div class="home-page-header-bird"></div>
-			<h2>Triplr - Adventure with friends</h2>
-			<button class="btn btn-primary create-schedule-button btn-lg" type="button">CREATE NEW TRIP</button>
-		</div>
+		<div id ="home-page-header-title">Adventure with friends</div>
+			<!-- <h2>Adventure with friends</h2> -->
+		<div id="home-page-header-subtitle"> Plan, Explore, and Inspire your Story </div>	
+			<!-- <h4>Plan, Explore, and Inspire with Others </h4> -->
+			<button class="btn btn-primary create-schedule-button btn-lg" type="button">Plan your trip</button>
+		
 	</header>
 	<section class="home-page-events">
 		<div class="row">
