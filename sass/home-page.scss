@@ -21,9 +21,15 @@
     transform: $transform-property;
 }
 
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #f69687; //faded orange, hover-state
+
+
+
 .home-page-header{
 	// background: url(../img/homepage_b.jpg);
-	background-color: #6dd0f7;
+	background-color: $primary-color;
 	background-size: cover;
 	background-position: center center;
 	width: 100%;
@@ -40,7 +46,7 @@
 			@include transition(all, 0.2s, ease-in-out);
 		}
 		button:hover {
-			color: #aaa;
+			color: $secondary-color;
 		}
 	}
 	.home-page-header-title{
@@ -50,7 +56,13 @@
 	}
 	.create-schedule-button{
 		margin: 20px 0;
+		background-color: $secondary-color;
+		border: none;
+
 	}
+	.create-schedule-button:hover{
+		background-color: $secondary-color-fade; 
+		}
 }
 
 .home-page-events {
