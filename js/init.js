@@ -16,7 +16,7 @@
 })();
 
 $(document).ready(function() {
-	$('.events').each(function() {
+	$('.event').each(function() {
 		var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 		$(this).css('background-color', randomColorChange);
 	});
@@ -32,12 +32,17 @@ $(document).ready(function() {
     $('.my-events').css({'height':cw+'px'});
 
 
-	$('#event1').css("background-image", "url(./photo/photo-egypt.jpg)"); 
-	$('#event2').css("background-image", "url(./photo/photo-egypt.jpg)"); 
+	$('#event1').css("background-image", "url(./photo/egypt.jpg)"); 
+	$('#event2').css("background-image", "url(./photo/paris.jpg)"); 
+	$('#event3').css("background-image", "url(./photo/agra.jpg)"); 
+	$('#event4').css("background-image", "url(./photo/seoul.jpg)"); 
+	$('#event5').css("background-image", "url(./photo/prague.jpg)"); 
+	$('#event6').css("background-image", "url(./photo/taipei.jpg)"); 
+	$('#event7').css("background-image", "url(./photo/sudan.jpg)"); 
+	$('#event8').css("background-image", "url(./photo/madrid.jpg)"); 
 
 
 	$('#icon1').css("background-image", "url(./icon/icon-bus.png)");
 	$('#icon2').css("background-image", "url(./icon/icon-dine.png)");
-
 
 });

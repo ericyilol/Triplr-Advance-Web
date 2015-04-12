@@ -148,7 +148,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 	// 	@include transform(scale(1.1));
 	// 	z-index: 999;
 	// }
-}
+
 
 .event {
 
@@ -156,12 +156,17 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 			padding: 0px;
 			@include transition(all, 0.3s, ease-in-out);
 			font-family: primary-font;
-			font-size: 20px;
+			font-size: 25px;
+			font-weight: bold;
 
-			background-image: url(../photo/photo-egypt.jpg);
+			// background-image: url(../photo/photo-egypt.jpg);
 			background-size: cover; 
 			display: block;
 
+			 -webkit-filter: grayscale(1) brightness(0.8);
+ 			 filter: grayscale(1);
+
+ 			 
 			.icon {
 			height:100%; 
 			background-image: url(../icon/icon-car.png);
@@ -171,7 +176,6 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 			margin-left: auto;
 			margin-right: auto;
 			background-position: 50% 35%;
-
 			color:#fff;
 			text-align: center;
 			vertical-align: middle;
@@ -180,10 +184,13 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		}
 .event:hover{
 	// transform: scale(1.1);
-		@include transform(scale(1.1));
+		// @include transform(scale(1.1));
 		z-index: 999;
 }
 
+
+
+}
 
 
 
