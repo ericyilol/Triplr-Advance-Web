@@ -5,13 +5,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-@mixin transition($transition-property, $transition-time, $method) {
-    -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
-}
+
 @mixin transform($transform-property) {
     -webkit-transform: $transform-property;
     -moz-transform: $transform-property;
@@ -19,53 +13,74 @@
     -o-transform: $transform-property;
     transform: $transform-property;
 }
-.dashboard-body {
-    background-color: #363636;
-    padding: 20px 0 50px 0;
+
+@mixin center-align {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
 }
-.create-event {
-    padding: 30px 0;
-    div {
-        background-color: #fff;
-        height: 50px;
-        width: 30%;
-        position:relative;
-        left: 35%;
-        @include transition(all, 0.5s, ease-in-out);
-        p {
-            @include vertical-align;
-            text-align:center;
-            font-size: 1.6em;
-            color: #a1001e;
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #f69687; //faded orange, hover-state
+$primary-dark-gray-color: #373737; //dark gray, for backgroud
+$text-dark-gray-color: #4e4e4e;// for menu text;
+
+.dashboard-body {
+    background-color: #373737;
+    padding: 0px 0px 0px 0px;
+}
+
+.my-events {
+    padding: 0px !important;
+    .city-image {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 100%;
+            width: auto;
+            @include transform(translate(-50%,-50%));
         }
     }
-    div:hover {
-        background-color: #a1001e;
+    .travel-info {
+        @include center-align;
         p {
+            text-align: center;
             color: #fff;
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+            white-space: nowrap;
+            font-size: 1em;
+        }
+        h4 {
+            text-align: center;
+            color: #fff;
+            font-family: "primary-font", sans-serif;
+            font-size: 3em;
+            white-space: nowrap;
         }
     }
 }
 
-.my-events {
-    > div {
-        margin: 10px;
-    }
-    .my-event-picture {
-        height: 17vw;
-        background-color: black;
-        @include transition(all, 0.3s, ease-in-out);
-    }
-    .my-event-text {
-        height: 3vw;
-        background-color: #000;
-        p {
-            color: #fff;
-            font-size: 1.1em;
-            text-align: center;
-            @include vertical-align;
-        }
-    }
+.black-white {
+    opacity: 0.7;
+}
+.black-white:hover {
+    
 }
 .my-event-picture:hover{
     @include transform(scale(1.1));

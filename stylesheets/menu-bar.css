@@ -1,13 +1,13 @@
-/* line 24, ../sass/menu-bar.scss */
+/* line 31, ../sass/menu-bar.scss */
 .menu-bar {
-  height: 75px;
   width: 100%;
+  height: 75px;
   background-color: #6dd0f7;
 }
-/* line 28, ../sass/menu-bar.scss */
-.menu-bar .logo {
+/* line 35, ../sass/menu-bar.scss */
+.menu-bar .menu-logo {
   padding: 0 0 0 30px;
-  height: 50px;
+  height: 60px;
   float: left;
   position: relative;
   top: 50%;
@@ -15,36 +15,73 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 33, ../sass/menu-bar.scss */
-.menu-bar .logo img {
+/* line 40, ../sass/menu-bar.scss */
+.menu-bar .menu-logo img {
   height: 100%;
   width: auto;
-}
-/* line 38, ../sass/menu-bar.scss */
-.menu-bar .welcome-back-text {
-  padding: 10px 10px 0 0;
-  float: right;
-  font-size: 1.2em;
-  color: #4e4b4f;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 /* line 45, ../sass/menu-bar.scss */
-.menu-bar .account {
-  padding: 0 30px 0 0;
+.menu-bar .menu-welcome-back-text {
+  padding: 15px 30px 0 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
   float: right;
-  height: 50px;
+  font-size: 1.1em;
+  color: #4e4e4e;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 50, ../sass/menu-bar.scss */
-.menu-bar .account img {
+/* line 54, ../sass/menu-bar.scss */
+.menu-bar .menu-account {
+  padding: 0 30px 0 0;
+  float: right;
+  height: 25px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 59, ../sass/menu-bar.scss */
+.menu-bar .menu-account img {
   height: 100%;
   width: auto;
+}
+/* line 64, ../sass/menu-bar.scss */
+.menu-bar .menu-explore {
+  padding: 0 30px 0 0;
+  float: right;
+  height: 25px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 70, ../sass/menu-bar.scss */
+.menu-bar .menu-explore-button {
+  background-color: #ff715b;
+  border: none;
+  color: #fff;
+  border-radius: 0px;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 80, ../sass/menu-bar.scss */
+.menu-bar .menu-explore-button:hover {
+  color: #fff;
+  background-color: #f69687;
 }

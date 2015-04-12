@@ -7,6 +7,7 @@
 @import url(menu-bar.css);
 @import url(schedule-page.css);
 @import url(lib/jquery.ui.min.css);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 /* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -72,12 +73,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 18, ../sass/screen.scss */
+@font-face {
+  font-family: primary-font;
+  src: url(../font/journal.ttf);
+}
+/* line 25, ../sass/screen.scss */
 .clear {
   clear: both;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 .row {
   margin: 0px !important;
 }

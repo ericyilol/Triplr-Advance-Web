@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function () {
     var version = '1.0';
     var scripts = [
@@ -14,7 +13,7 @@
     }
     document.write(temp.join(''));
 })();
-=======
+
 $(document).ready(function() {
 	$('.events').each(function() {
 		var randomColorChange = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
@@ -26,5 +25,7 @@ $(document).ready(function() {
 	});
 
 	$('#event2').css("background-image", "url(./photo/photo-egypt.jpg)");  
+
+    var cw = $('.my-events').width();
+    $('.my-events').css({'height':cw+'px'});
 });
->>>>>>> d61f34b74b49a4a817fc1d5275d38fe91c4615ad

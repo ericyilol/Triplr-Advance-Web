@@ -21,35 +21,64 @@
     transform: $transform-property;
 }
 
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #f69687; //faded orange, hover-state
+$primary-dark-gray-color: #373737; //dark gray, for backgroud
+$text-dark-gray-color: #4e4e4e;// for menu text;
+
+
 .menu-bar {
-	height: 75px;
 	width: 100%;
-	background-color: #6dd0f7;
-	.logo {
+	height: 75px;
+	background-color: $primary-color;
+	.menu-logo {
 		padding: 0 0 0 30px;
-		height: 50px;
+		height: 60px;
     	float: left;
-		@include vertical-align;
-		img {
-			height: 100%;
-			width: auto;	
-		}
-	}
-	.welcome-back-text {
-		padding: 10px 10px 0 0;
-		float: right;
-		font-size: 1.2em;
-		color: #4e4b4f;
-		@include vertical-align;
-	}
-	.account {
-		padding: 0 30px 0 0;
-		float: right;
-		height: 50px;
 		@include vertical-align;
 		img {
 			height: 100%;
 			width: auto;
 		}
+	}
+	.menu-welcome-back-text {
+		padding: 15px 30px 0 0px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
+		float: right;
+		font-size: 1.1em;
+		color: $text-dark-gray-color;
+		@include vertical-align;
+	}
+	.menu-account {
+		padding: 0 30px 0 0;
+		float: right;
+		height: 25px;
+		@include vertical-align;
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	.menu-explore {
+		padding: 0 30px 0 0;
+		float: right;
+		height: 25px;
+		@include vertical-align;
+	}
+	.menu-explore-button{
+		background-color: $secondary-color;
+		border: none;
+		color: #fff;
+		border-radius: 0px;
+		font-size: 13px;
+		font-weight: 500;
+		@include vertical-align;
+		@include transition(all, 0.2s, ease-in-out);
+		}
+	.menu-explore-button:hover{
+		color: #fff;
+		background-color: $secondary-color-fade;
 	}
 }
