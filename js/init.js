@@ -25,6 +25,15 @@ $(document).ready(function() {
 		$(this).css('background-color', randomColorChange);
 	});
 
-	$('#event2').css("background-image", "url(./photo/photo-egypt.jpg)");  
-});
->>>>>>> d61f34b74b49a4a817fc1d5275d38fe91c4615ad
+
+	$('#event1').css("background-image", "url(./photo/photo-egypt.jpg)"); 
+	$('#event2').css("background-image", "url(./photo/photo-egypt.jpg)"); 
+
+
+	$('#icon1').css("background-image", "url(./icon/icon-bus.png)");
+	 
+	$('#icon2').css("background-image", "url(./icon/icon-dine.png)");
+
+
+
+});>>>>>>> d61f34b74b49a4a817fc1d5275d38fe91c4615ad

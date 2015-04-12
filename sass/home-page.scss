@@ -158,12 +158,12 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 	}
 }
 
-#event1 {
+.event {
 			background-image: url(../photo/photo-egypt.jpg);
 			background-size: cover; 
 			display: block;
 
-			#icon1 {
+			.icon {
 			height:100%; 
 			background-image: url(../icon/icon-car.png);
 			background-size: 30%;
@@ -177,8 +177,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 			text-align: center;
 			vertical-align: middle;
 			padding-top: 50%;
-		}
-
+			}
 		}
 
 
