@@ -85,7 +85,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		width: 150px;
 		height: 150px;
 		content: url(../img/triplr-logo.png);
-		background-image: url(../img/triplr-logo.png);
+		background-image: url('../img/triplr-logo.png');
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: 50px;
@@ -147,7 +147,9 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		height: 20vw;
 		padding: 0px;
 		@include transition(all, 0.3s, ease-in-out);
-		font-family: 'Raleway', sans-serif;
+		font-family: primary-font;
+		font-size: 20px;
+		
 	}
 	.events:hover{
 		// transform: scale(1.1);
@@ -155,3 +157,19 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		z-index: 999;
 	}
 }
+
+#icon1 {
+			background-color: black;
+			background-image: url(../icon/icon-car.png);
+			background-size: 30%;
+			background-repeat:no-repeat;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			background-position: center;
+
+			color:#fff;
+			text-align: center;
+
+
+		}
