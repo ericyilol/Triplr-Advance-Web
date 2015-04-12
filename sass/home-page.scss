@@ -58,10 +58,11 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		color: #fff;
 		float: right;
 		padding: 0 30px 0 0;
+
 		button {
 			background-color: transparent;
-			font-size: 18px;
-			font-weight: 600;
+			font-size: 16px;
+			font-weight: 300;
 			@include transition(all, 0.2s, ease-in-out);
 		}
 		button:hover {
@@ -72,6 +73,8 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 	#explore-button{
 		background-color: $secondary-color;
 		border: none;
+		font-size: 13px;
+		font-weight: 500;
 			
 		}
 	#explore-button:hover{
@@ -85,7 +88,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		background-image: url(../img/triplr-logo.png);
 		margin-right: auto;
 		margin-left: auto;
-		margin-top: 8%;
+		margin-top: 50px;
 		z-index: 99;
 		display: block;
 	}
@@ -104,7 +107,7 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		color: #fff;
 		text-align: center;
 		// @include vertical-align;
-		margin-top: 5%;
+		margin-top: 40px;
 		font-family: 'Raleway', sans-serif;
 		font-weight: 700;
 		font-size: 40px;
@@ -126,8 +129,12 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 		border: none;
 		font-family: 'Raleway', sans-serif;
 		text-align: center;
+		margin-top: 40px;
 		margin-left: auto;
 		margin-right: auto;
+		padding-left: 50px;
+		padding-right: 50px;
+		display:block;
 
 	}
 	.create-schedule-button:hover{
