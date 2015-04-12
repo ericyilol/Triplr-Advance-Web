@@ -127,15 +127,23 @@
 }
 
 /* line 161, ../sass/home-page.scss */
-#icon1 {
-  background-color: black;
+#event1 {
+  background-image: url(../photo/photo-egypt.jpg);
+  background-size: cover;
+  display: block;
+}
+/* line 166, ../sass/home-page.scss */
+#event1 #icon1 {
+  height: 100%;
   background-image: url(../icon/icon-car.png);
   background-size: 30%;
   background-repeat: no-repeat;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-position: center;
+  background-position: 50% 35%;
   color: #fff;
   text-align: center;
+  vertical-align: middle;
+  padding-top: 50%;
 }
