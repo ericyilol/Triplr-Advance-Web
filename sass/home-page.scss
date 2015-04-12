@@ -143,22 +143,29 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 }
 
 .home-page-events {
-	.events {
-		height: 20vw;
-		padding: 0px;
-		@include transition(all, 0.3s, ease-in-out);
-		font-family: primary-font;
-		font-size: 20px;
+	// .events {
+	// 	height: 20vw;
+	// 	padding: 0px;
+	// 	@include transition(all, 0.3s, ease-in-out);
+	// 	font-family: primary-font;
+	// 	font-size: 20px;
 		
-	}
-	.events:hover{
-		// transform: scale(1.1);
-		@include transform(scale(1.1));
-		z-index: 999;
-	}
+	// }
+	// .events:hover{
+	// 	// transform: scale(1.1);
+	// 	@include transform(scale(1.1));
+	// 	z-index: 999;
+	// }
 }
 
 .event {
+
+			height: 20vw;
+			padding: 0px;
+			@include transition(all, 0.3s, ease-in-out);
+			font-family: primary-font;
+			font-size: 20px;
+
 			background-image: url(../photo/photo-egypt.jpg);
 			background-size: cover; 
 			display: block;
@@ -179,6 +186,11 @@ $secondary-color-fade: #f69687; //faded orange, hover-state
 			padding-top: 50%;
 			}
 		}
+.event:hover{
+	// transform: scale(1.1);
+		@include transform(scale(1.1));
+		z-index: 999;
+}
 
 
 
