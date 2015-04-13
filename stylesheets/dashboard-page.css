@@ -95,14 +95,14 @@
   text-align: center;
   color: #fff;
   font-family: "primary-font", sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   white-space: nowrap;
 }
 
 /* line 116, ../sass/dashboard-page.scss */
 .black-white img {
-  -webkit-filter: grayscale(1) brightness(0.7);
-  filter: grayscale(1) brightness(0.7);
+  -webkit-filter: grayscale(1) brightness(0.6);
+  filter: grayscale(1) brightness(0.6);
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;

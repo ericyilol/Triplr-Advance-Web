@@ -106,7 +106,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
             text-align: center;
             color: #fff;
             font-family: "primary-font", sans-serif;
-            font-size: 3em;
+            font-size: 2em;
             white-space: nowrap;
         }
     }
@@ -114,8 +114,8 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 
 .black-white {
     img {
-        -webkit-filter: grayscale(1) brightness(0.7);
-        filter: grayscale(1) brightness(0.7);
+        -webkit-filter: grayscale(1) brightness(0.6);
+        filter: grayscale(1) brightness(0.6);
         @include transition(all, 0.4s, ease-in-out);
     }
     // opacity: 0.7;
