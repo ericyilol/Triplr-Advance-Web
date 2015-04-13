@@ -1,117 +1,62 @@
-/* line 38, ../sass/dashboard-page.scss */
-.dashboard-body {
-  background-color: #373737;
-  margin: 60px 0px 0px 0px;
-}
+/*
+Error: Invalid CSS after "... font-size: 2em": expected "{", was ";"
+        on line 111 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/dashboard-page.scss
 
-/* line 43, ../sass/dashboard-page.scss */
-.trips-planning {
-  position: absolute;
-  top: 0;
-  z-index: 99;
-}
-/* line 47, ../sass/dashboard-page.scss */
-.trips-planning p {
-  color: #6dd0f7;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 1.2em;
-  padding: 0 0 15px 0;
-}
-/* line 54, ../sass/dashboard-page.scss */
-.trips-planning .trips-planning-timeline {
-  background-color: #6dd0f7;
-  width: 1px;
-  height: 1px;
-}
+106:             text-align: center;
+107:             padding-top: 8px;
+108:             color: #fff;
+109:             font-family: "primary-font", sans-serif;
+110: <<<<<<< Updated upstream
+111:             font-size: 2em;
+112: =======
+113:             font-size: 2.0em;
+114: >>>>>>> Stashed changes
+115:             white-space: nowrap;
+116:         }
 
-/* line 61, ../sass/dashboard-page.scss */
-.trips-gone {
-  position: absolute;
-  top: 0;
-  z-index: 99;
-}
-/* line 65, ../sass/dashboard-page.scss */
-.trips-gone p {
-  color: #6dd0f7;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 1.2em;
-  padding: 0 0 15px 0;
-}
-/* line 72, ../sass/dashboard-page.scss */
-.trips-gone .trips-gone-timeline {
-  background-color: #6dd0f7;
-  width: 1px;
-  height: 1px;
-}
-
-/* line 79, ../sass/dashboard-page.scss */
-.my-events {
-  padding: 0px !important;
-}
-/* line 81, ../sass/dashboard-page.scss */
-.my-events .city-image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-/* line 86, ../sass/dashboard-page.scss */
-.my-events .city-image img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-/* line 95, ../sass/dashboard-page.scss */
-.my-events .travel-info {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-/* line 97, ../sass/dashboard-page.scss */
-.my-events .travel-info p {
-  text-align: center;
-  color: #fff;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  white-space: nowrap;
-  font-size: 1em;
-}
-/* line 105, ../sass/dashboard-page.scss */
-.my-events .travel-info h4 {
-  text-align: center;
-  color: #fff;
-  font-family: "primary-font", sans-serif;
-  font-size: 2em;
-  white-space: nowrap;
-}
-
-/* line 116, ../sass/dashboard-page.scss */
-.black-white img {
-  -webkit-filter: grayscale(1) brightness(0.6);
-  filter: grayscale(1) brightness(0.6);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-/* line 124, ../sass/dashboard-page.scss */
-.black-white:hover img {
-  -webkit-filter: grayscale(0) brightness(0.9);
-  filter: grayscale(0) brightness(0.9);
-}
+Backtrace:
+/Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/dashboard-page.scss:111
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1165:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1101:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1096:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:641:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:661:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:642:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:661:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:642:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:711:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:661:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:642:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:635:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:660:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:653:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:42:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/engine.rb:393:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/engine.rb:268:in `render'
+/Library/Ruby/Gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/Library/Ruby/Gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/Library/Ruby/Gems/2.0.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.11/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"... font-size: 2em\": expected \"{\", was \";\"\A         on line 111 of /Users/Ming/Sites/Triplr/Triplr-Advance-Web/sass/dashboard-page.scss\A \A 106:             text-align: center;\A 107:             padding-top: 8px;\A 108:             color: #fff;\A 109:             font-family: \"primary-font\", sans-serif;\A 110: <<<<<<< Updated upstream\A 111:             font-size: 2em;\A 112: =======\A 113:             font-size: 2.0em;\A 114: >>>>>>> Stashed changes\A 115:             white-space: nowrap;\A 116:         }"; }
