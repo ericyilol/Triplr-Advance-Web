@@ -30,7 +30,7 @@
 
 $primary-color: #6dd0f7; //blue, background
 $secondary-color: #ff715b; //orange, pop-up
-$secondary-color-fade: #f69687; //faded orange, hover-state
+$secondary-color-fade: #e74c39; //faded orange, hover-state
 $primary-dark-gray-color: #373737; //dark gray, for backgroud
 $text-dark-gray-color: #4e4e4e;// for menu text;
 
@@ -113,6 +113,20 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 		float: right;
 		height: 25px;
 		@include vertical-align;
+		color: #fff;
+		float: right;
+		padding: 0 30px 0 0;
+		font-family: 'Raleway', sans-serif;
+
+		button {
+			background-color: transparent;
+			font-size: 16px;
+			font-weight: 300;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+		button:hover {
+			color: $secondary-color;
+		}
 	}
 
 #new-trip{

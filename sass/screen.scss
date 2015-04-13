@@ -5,14 +5,15 @@
 @import "lib/jquery.ui.min.css";
 @import "lib/hover-min.css";
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+
 @import "compass/reset";
 @import "home-page.css";
 @import "dashboard-page.css";
 @import "navigation.css";
 @import "schedule-page.css";
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 
 @font-face {
     font-family: primary-font; //used in logo
