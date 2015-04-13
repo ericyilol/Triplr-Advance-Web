@@ -118,7 +118,6 @@
 
 /* line 111, ../sass/navigation.scss */
 .menu-login {
-  padding: 0 30px 0 0;
   float: right;
   height: 25px;
   position: relative;
@@ -128,10 +127,10 @@
   transform: translateY(-50%);
   color: #fff;
   float: right;
-  padding: 0 30px 0 0;
+  padding: 0 20px 0 0;
   font-family: 'Raleway', sans-serif;
 }
-/* line 121, ../sass/navigation.scss */
+/* line 120, ../sass/navigation.scss */
 .menu-login button {
   background-color: transparent;
   font-size: 16px;
@@ -142,12 +141,12 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 127, ../sass/navigation.scss */
+/* line 126, ../sass/navigation.scss */
 .menu-login button:hover {
   color: #ff715b;
 }
 
-/* line 132, ../sass/navigation.scss */
+/* line 131, ../sass/navigation.scss */
 #new-trip {
   height: 80px;
   width: 80px;
@@ -161,7 +160,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 140, ../sass/navigation.scss */
+/* line 139, ../sass/navigation.scss */
 #new-trip .new-trip-icon {
   color: #fff;
   font-weight: 100;
@@ -176,12 +175,12 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 147, ../sass/navigation.scss */
+/* line 146, ../sass/navigation.scss */
 #new-trip:hover {
   background-color: #e74c39;
 }
 
-/* line 151, ../sass/navigation.scss */
+/* line 150, ../sass/navigation.scss */
 .hvr-icon-forward:before {
   content: "\f067";
   position: absolute;

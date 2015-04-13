@@ -109,13 +109,12 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	}
 
 	.menu-login{
-		padding: 0 30px 0 0;
 		float: right;
 		height: 25px;
 		@include vertical-align;
 		color: #fff;
 		float: right;
-		padding: 0 30px 0 0;
+		padding: 0 20px 0 0;
 		font-family: 'Raleway', sans-serif;
 
 		button {
