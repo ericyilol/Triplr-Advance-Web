@@ -116,7 +116,19 @@
   background-color: #f69687;
 }
 
-/* line 115, ../sass/navigation.scss */
+/* line 111, ../sass/navigation.scss */
+.menu-login {
+  padding: 0 30px 0 0;
+  float: right;
+  height: 25px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 118, ../sass/navigation.scss */
 #new-trip {
   height: 80px;
   width: 80px;
@@ -130,7 +142,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 123, ../sass/navigation.scss */
+/* line 126, ../sass/navigation.scss */
 #new-trip .new-trip-icon {
   color: #fff;
   font-weight: 100;
@@ -145,12 +157,12 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 130, ../sass/navigation.scss */
+/* line 133, ../sass/navigation.scss */
 #new-trip:hover {
   background-color: #f69687;
 }
 
-/* line 134, ../sass/navigation.scss */
+/* line 137, ../sass/navigation.scss */
 .hvr-icon-forward:before {
   content: "\f067";
   position: absolute;
