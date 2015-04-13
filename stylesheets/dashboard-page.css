@@ -12,50 +12,52 @@
 }
 /* line 47, ../sass/dashboard-page.scss */
 .trips-planning p {
-  color: #ff715b;
+  color: #6dd0f7;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  padding: 0 0 15px 0;
 }
-/* line 53, ../sass/dashboard-page.scss */
+/* line 54, ../sass/dashboard-page.scss */
 .trips-planning .trips-planning-timeline {
-  background-color: #ff715b;
+  background-color: #6dd0f7;
   width: 1px;
   height: 1px;
 }
 
-/* line 60, ../sass/dashboard-page.scss */
+/* line 61, ../sass/dashboard-page.scss */
 .trips-gone {
   position: absolute;
   top: 0;
   z-index: 99;
 }
-/* line 64, ../sass/dashboard-page.scss */
+/* line 65, ../sass/dashboard-page.scss */
 .trips-gone p {
   color: #6dd0f7;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  padding: 0 0 15px 0;
 }
-/* line 70, ../sass/dashboard-page.scss */
+/* line 72, ../sass/dashboard-page.scss */
 .trips-gone .trips-gone-timeline {
   background-color: #6dd0f7;
   width: 1px;
   height: 1px;
 }
 
-/* line 77, ../sass/dashboard-page.scss */
+/* line 79, ../sass/dashboard-page.scss */
 .my-events {
   padding: 0px !important;
 }
-/* line 79, ../sass/dashboard-page.scss */
+/* line 81, ../sass/dashboard-page.scss */
 .my-events .city-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-/* line 84, ../sass/dashboard-page.scss */
+/* line 86, ../sass/dashboard-page.scss */
 .my-events .city-image img {
   position: absolute;
   left: 50%;
@@ -68,7 +70,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 93, ../sass/dashboard-page.scss */
+/* line 95, ../sass/dashboard-page.scss */
 .my-events .travel-info {
   position: absolute;
   left: 50%;
@@ -79,7 +81,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 95, ../sass/dashboard-page.scss */
+/* line 97, ../sass/dashboard-page.scss */
 .my-events .travel-info p {
   text-align: center;
   color: #fff;
@@ -88,7 +90,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 103, ../sass/dashboard-page.scss */
+/* line 105, ../sass/dashboard-page.scss */
 .my-events .travel-info h4 {
   text-align: center;
   color: #fff;
@@ -97,7 +99,7 @@
   white-space: nowrap;
 }
 
-/* line 114, ../sass/dashboard-page.scss */
+/* line 116, ../sass/dashboard-page.scss */
 .black-white img {
   -webkit-filter: grayscale(1) brightness(0.7);
   filter: grayscale(1) brightness(0.7);
@@ -108,7 +110,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 122, ../sass/dashboard-page.scss */
+/* line 124, ../sass/dashboard-page.scss */
 .black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);

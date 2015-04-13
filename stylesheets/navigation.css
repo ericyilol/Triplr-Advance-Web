@@ -11,7 +11,7 @@
 /* line 46, ../sass/navigation.scss */
 .nav-bar .menu-logo {
   padding: 0 0 0 30px;
-  height: 60px;
+  height: 50px;
   float: left;
   position: relative;
   top: 50%;
@@ -44,11 +44,11 @@
 }
 /* line 69, ../sass/navigation.scss */
 .nav-bar .menu-welcome-back-text {
-  padding: 15px 10px 0 0px;
+  padding: 5px 10px 0 0px;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   float: right;
-  font-size: 1.1em;
+  font-size: 0.9em;
   color: #4e4e4e;
   position: relative;
   top: 50%;
@@ -91,6 +91,7 @@
   border-radius: 0px;
   font-size: 13px;
   font-weight: 500;
+  font-family: 'Raleway', sans-serif;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -102,13 +103,13 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 104, ../sass/navigation.scss */
+/* line 105, ../sass/navigation.scss */
 .nav-bar .menu-explore-button:hover {
   color: #fff;
   background-color: #f69687;
 }
 
-/* line 110, ../sass/navigation.scss */
+/* line 111, ../sass/navigation.scss */
 #new-trip {
   height: 80px;
   width: 80px;
@@ -116,16 +117,45 @@
   border-radius: 50%;
   z-index: 9999;
   background-color: #ff715b;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 119, ../sass/navigation.scss */
+#new-trip .new-trip-icon {
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-/* line 119, ../sass/navigation.scss */
+/* line 126, ../sass/navigation.scss */
+#new-trip:hover {
+  background-color: #f69687;
+}
+
+/* line 130, ../sass/navigation.scss */
 .hvr-icon-forward:before {
   content: "\f067";
   position: absolute;
-  right: 1em;
-  padding: 0 1px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-family: FontAwesome;
-  transform: scale(5);
+  transform: scale(3);
   transition-duration: 0.1s;
   transition-property: transform;
   transition-timing-function: ease-out;

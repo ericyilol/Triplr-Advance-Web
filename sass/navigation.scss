@@ -45,7 +45,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	background-color: $primary-color;
 	.menu-logo {
 		padding: 0 0 0 30px;
-		height: 60px;
+		height: 50px;
     	float: left;
 		@include vertical-align;
 		img {
@@ -67,11 +67,11 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 		@include vertical-align;
 	}
 	.menu-welcome-back-text {
-		padding: 15px 10px 0 0px;
+		padding: 5px 10px 0 0px;
 		font-family: 'Raleway', sans-serif;
 		font-weight: 500;
 		float: right;
-		font-size: 1.1em;
+		font-size: 0.9em;
 		color: $text-dark-gray-color;
 		@include vertical-align;
 	}
@@ -98,6 +98,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 		border-radius: 0px;
 		font-size: 13px;
 		font-weight: 500;
+		font-family: 'Raleway', sans-serif;
 		@include vertical-align;
 		@include transition(all, 0.2s, ease-in-out);
 		}
@@ -114,15 +115,23 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	border-radius: 50%;
 	z-index: 9999;
 	background-color: $secondary-color;
+	@include transition(all, 0.2s, ease-in-out);
+	.new-trip-icon {
+		color: #fff;
+		font-weight: 100;
+		font-size: 20px;
+		@include center-align;
+	}
+}
+#new-trip:hover{
+	background-color: $secondary-color-fade;
 }
 
 .hvr-icon-forward:before {
     content: "\f067";
-    position: absolute;
-    right: 1em;
-    padding: 0 1px;
+    @include center-align;
     font-family: FontAwesome;
-    transform: scale(5);
+    transform: scale(3);
     transition-duration: 0.1s;
     transition-property: transform;
     transition-timing-function: ease-out;
