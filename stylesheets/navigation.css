@@ -113,7 +113,7 @@
 /* line 106, ../sass/navigation.scss */
 .menu-explore-button:hover {
   color: #fff;
-  background-color: #f69687;
+  background-color: #e74c39;
 }
 
 /* line 111, ../sass/navigation.scss */
@@ -126,9 +126,28 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  color: #fff;
+  float: right;
+  padding: 0 30px 0 0;
+  font-family: 'Raleway', sans-serif;
+}
+/* line 121, ../sass/navigation.scss */
+.menu-login button {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 127, ../sass/navigation.scss */
+.menu-login button:hover {
+  color: #ff715b;
 }
 
-/* line 118, ../sass/navigation.scss */
+/* line 132, ../sass/navigation.scss */
 #new-trip {
   height: 80px;
   width: 80px;
@@ -142,7 +161,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 126, ../sass/navigation.scss */
+/* line 140, ../sass/navigation.scss */
 #new-trip .new-trip-icon {
   color: #fff;
   font-weight: 100;
@@ -157,12 +176,12 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 133, ../sass/navigation.scss */
+/* line 147, ../sass/navigation.scss */
 #new-trip:hover {
-  background-color: #f69687;
+  background-color: #e74c39;
 }
 
-/* line 137, ../sass/navigation.scss */
+/* line 151, ../sass/navigation.scss */
 .hvr-icon-forward:before {
   content: "\f067";
   position: absolute;
