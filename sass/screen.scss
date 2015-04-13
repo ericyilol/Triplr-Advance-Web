@@ -2,20 +2,17 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "lib/jquery.ui.min.css";
+@import "lib/hover-min.css";
 
 @import "compass/reset";
-
 @import "home-page.css";
-
 @import "dashboard-page.css";
-
-@import "menu-bar.css";
-
+@import "navigation.css";
 @import "schedule-page.css";
 
-@import "lib/jquery.ui.min.css";
-
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 
 @font-face {
     font-family: primary-font; //used in logo
@@ -37,5 +34,5 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url('img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+	background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }

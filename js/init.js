@@ -1,3 +1,6 @@
+var WINDOW_HEIGTH = $(window).height();
+var WINDOW_WIDTH  = $(window).width();
+
 
 (function () {
     var version = '1.0';
@@ -61,4 +64,14 @@ function dashboard_init() {
     var oldestYear = $('.trips-gone-timeline').last().height();
     oldestYear = oldestYear - 50;
     $('.trips-gone-timeline').last().css({'height':oldestYear+'px'});
+
 }
+
+function navigation_init() {
+    var newTripButtonLeft = WINDOW_WIDTH - 120;
+    var newTripButtonTop = WINDOW_HEIGTH - 120;
+    $('#new-trip').css({'top':newTripButtonTop +'px'});
+    $('#new-trip').css({'left':newTripButtonLeft +'px'});
+}
+
+

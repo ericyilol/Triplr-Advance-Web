@@ -2,12 +2,14 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url(lib/jquery.ui.min.css);
+@import url(lib/hover-min.css);
 @import url(home-page.css);
 @import url(dashboard-page.css);
-@import url(menu-bar.css);
+@import url(navigation.css);
 @import url(schedule-page.css);
-@import url(lib/jquery.ui.min.css);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 /* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -77,17 +79,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: primary-font;
   src: url(../font/journal.ttf);
 }
-/* line 25, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 .clear {
   clear: both;
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 .row {
   margin: 0px !important;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 .loader {
   position: fixed;
   left: 0px;
@@ -95,5 +97,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url("img/page-loader.gif") 50% 50% no-repeat #f9f9f9;
+  background: url("../img/page-loader.gif") 50% 50% no-repeat #f9f9f9;
 }

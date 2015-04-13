@@ -35,9 +35,13 @@ $primary-dark-gray-color: #373737; //dark gray, for backgroud
 $text-dark-gray-color: #4e4e4e;// for menu text;
 
 
-.menu-bar {
+.nav-bar {
+	position: fixed;
+  	top: 0;
+  	left: 0;
 	width: 100%;
-	height: 75px;
+	z-index: 9999;
+	height: 60px;
 	background-color: $primary-color;
 	.menu-logo {
 		padding: 0 0 0 30px;
@@ -102,3 +106,25 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 		background-color: $secondary-color-fade;
 	}
 }
+
+#new-trip{
+	height: 80px; 
+	width: 80px; 
+	position: fixed; 
+	border-radius: 50%;
+	z-index: 9999;
+	background-color: $secondary-color;
+}
+
+.hvr-icon-forward:before {
+    content: "\f067";
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    transform: scale(5);
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
