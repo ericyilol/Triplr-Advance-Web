@@ -1,10 +1,10 @@
-/* line 31, ../sass/menu-bar.scss */
+/* line 38, ../sass/menu-bar.scss */
 .menu-bar {
   width: 100%;
   height: 75px;
   background-color: #6dd0f7;
 }
-/* line 35, ../sass/menu-bar.scss */
+/* line 42, ../sass/menu-bar.scss */
 .menu-bar .menu-logo {
   padding: 0 0 0 30px;
   height: 60px;
@@ -15,14 +15,32 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 40, ../sass/menu-bar.scss */
+/* line 47, ../sass/menu-bar.scss */
 .menu-bar .menu-logo img {
   height: 100%;
   width: auto;
 }
-/* line 45, ../sass/menu-bar.scss */
-.menu-bar .menu-welcome-back-text {
+/* line 52, ../sass/menu-bar.scss */
+.menu-bar .menu-center-text {
   padding: 15px 30px 0 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  float: left;
+  left: 30%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20%;
+  font-size: 1.5em;
+  color: #4e4e4e;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 65, ../sass/menu-bar.scss */
+.menu-bar .menu-welcome-back-text {
+  padding: 15px 10px 0 0px;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   float: right;
@@ -34,7 +52,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 54, ../sass/menu-bar.scss */
+/* line 74, ../sass/menu-bar.scss */
 .menu-bar .menu-account {
   padding: 0 30px 0 0;
   float: right;
@@ -45,12 +63,12 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 59, ../sass/menu-bar.scss */
+/* line 79, ../sass/menu-bar.scss */
 .menu-bar .menu-account img {
   height: 100%;
   width: auto;
 }
-/* line 64, ../sass/menu-bar.scss */
+/* line 84, ../sass/menu-bar.scss */
 .menu-bar .menu-explore {
   padding: 0 30px 0 0;
   float: right;
@@ -61,7 +79,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 70, ../sass/menu-bar.scss */
+/* line 90, ../sass/menu-bar.scss */
 .menu-bar .menu-explore-button {
   background-color: #ff715b;
   border: none;
@@ -80,7 +98,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 80, ../sass/menu-bar.scss */
+/* line 100, ../sass/menu-bar.scss */
 .menu-bar .menu-explore-button:hover {
   color: #fff;
   background-color: #f69687;

@@ -36,8 +36,42 @@ $primary-dark-gray-color: #373737; //dark gray, for backgroud
 $text-dark-gray-color: #4e4e4e;// for menu text;
 
 .dashboard-body {
-    background-color: #373737;
+    background-color: $primary-dark-gray-color;
     padding: 0px 0px 0px 0px;
+}
+
+.trips-planning {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    p {
+        color: $secondary-color;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+    .trips-planning-timeline {
+        background-color: $secondary-color;
+        width: 1px;
+        height: 1px;
+    }
+}
+
+.trips-gone {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    p {
+        color: $primary-color;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 1.2em;
+    }
+    .trips-gone-timeline {
+        background-color: $primary-color;
+        width: 1px;
+        height: 1px;
+    }
 }
 
 .my-events {

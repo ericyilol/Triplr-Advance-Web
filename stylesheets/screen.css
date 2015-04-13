@@ -86,3 +86,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .row {
   margin: 0px !important;
 }
+
+/* line 33, ../sass/screen.scss */
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("img/page-loader.gif") 50% 50% no-repeat #f9f9f9;
+}
