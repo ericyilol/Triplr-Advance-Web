@@ -77,24 +77,18 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 	.home-page-header-bird{
 		width: 150px;
 		height: 150px;
-		content: url(../img/triplr-logo.png);
+		// content: url(../img/triplr-logo.png);
 		// background-image: url('../img/triplr-logo.png');
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: 50px;
 		z-index: 99;
 		display: block;
+		background-image: url("../img/triplr-logo.png");
+		background-size: 160px;
+		background-repeat: no-repeat;
 	}
 
-	// .home-page-header-bird:after {
-	// 	width: 150px;
-	// 	height: 150px;
-	// 	content: url(../img/triplr-logo.png);
-	// 	margin-right: auto;
-	// 	margin-left: auto;
-	// 	z-index: 99;
-	// 	display: block;
-	// }
 
 	#home-page-header-title{
 		color: #fff;

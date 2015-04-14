@@ -25,7 +25,7 @@ Trip = function()
 }
 
 
-function dashboard_init() {
+function home_page_init() {
     eventHeight_init();
     timeLine_init();
     // parseInput();
