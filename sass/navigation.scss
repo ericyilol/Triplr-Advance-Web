@@ -129,13 +129,21 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	}
 
 #new-trip{
-	height: 80px; 
-	width: 80px; 
+	height: 90px; 
+	width: 90px; 
 	position: fixed; 
 	border-radius: 50%;
 	z-index: 9999;
 	background-color: $secondary-color;
 	@include transition(all, 0.2s, ease-in-out);
+	
+	img{
+		@include center-align;
+                max-width: 50%;
+                max-height: 50%;
+	}
+
+
 	.new-trip-icon {
 		color: #fff;
 		font-weight: 100;
@@ -145,6 +153,10 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 }
 #new-trip:hover{
 	background-color: $secondary-color-fade;
+	img{
+               //add animation to the add icon?
+
+	}
 }
 
 .hvr-icon-forward:before {

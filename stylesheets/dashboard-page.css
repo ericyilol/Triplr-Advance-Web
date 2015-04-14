@@ -101,7 +101,6 @@
 }
 /* line 114, ../sass/dashboard-page.scss */
 .my-events .home-icon {
-  height: 100%;
   color: #fff;
   text-align: center;
   vertical-align: middle;
@@ -111,9 +110,8 @@
   position: absolute;
   left: 50%;
   top: 45%;
-  height: 100%;
-  max-width: 35%;
-  max-height: 35%;
+  max-width: 28%;
+  max-height: 28%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -131,7 +129,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 137, ../sass/dashboard-page.scss */
+/* line 135, ../sass/dashboard-page.scss */
 .my-events .home-info p {
   text-align: center;
   color: #fff;
@@ -140,7 +138,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 145, ../sass/dashboard-page.scss */
+/* line 143, ../sass/dashboard-page.scss */
 .my-events .home-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -150,7 +148,7 @@
   white-space: nowrap;
 }
 
-/* line 157, ../sass/dashboard-page.scss */
+/* line 155, ../sass/dashboard-page.scss */
 .black-white img {
   -webkit-filter: grayscale(1) brightness(0.6);
   filter: grayscale(1) brightness(0.6);
@@ -161,7 +159,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 165, ../sass/dashboard-page.scss */
+/* line 163, ../sass/dashboard-page.scss */
 .black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
