@@ -63,6 +63,7 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 			color: $secondary-color;
 		}
 
+
 	}
 	// #explore-button{
 	// 	background-color: $secondary-color;
@@ -110,6 +111,7 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 	}
 
 
+
 	.create-schedule-button{
 		// margin: 20px 0;
 		background-color: $secondary-color;
@@ -128,6 +130,34 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		background-color: $secondary-color-fade; 
 		}
 }
+
+
+	#search-location{
+		width:40%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 60px;
+		input{
+			border-radius: 2px;
+		}
+
+		select{
+			border-radius: 2px;
+			
+		}
+
+		button{
+			background-color: $secondary-color;
+			color: #fff;
+			border: none;
+			border-radius: 2px;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+		button:hover{
+			background-color: $secondary-color-fade; 
+		}
+		
+	}
 
 .home-page-events {
 	// .events {

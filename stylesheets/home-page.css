@@ -39,7 +39,7 @@
 .home-page-header .home-page-header-text button:hover {
   color: #ff715b;
 }
-/* line 77, ../sass/home-page.scss */
+/* line 78, ../sass/home-page.scss */
 .home-page-header .home-page-header-bird {
   width: 150px;
   height: 150px;
@@ -52,7 +52,7 @@
   background-size: 160px;
   background-repeat: no-repeat;
 }
-/* line 93, ../sass/home-page.scss */
+/* line 94, ../sass/home-page.scss */
 .home-page-header #home-page-header-title {
   color: #fff;
   text-align: center;
@@ -61,7 +61,7 @@
   font-weight: 700;
   font-size: 40px;
 }
-/* line 102, ../sass/home-page.scss */
+/* line 103, ../sass/home-page.scss */
 .home-page-header #home-page-header-subtitle {
   color: #fff;
   text-align: center;
@@ -70,7 +70,7 @@
   font-weight: 300;
   font-size: 20px;
 }
-/* line 113, ../sass/home-page.scss */
+/* line 115, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
   background-color: #ff715b;
   border: none;
@@ -83,12 +83,44 @@
   padding-right: 50px;
   display: block;
 }
-/* line 127, ../sass/home-page.scss */
+/* line 129, ../sass/home-page.scss */
 .home-page-header .create-schedule-button:hover {
   background-color: #e74c39;
 }
 
-/* line 148, ../sass/home-page.scss */
+/* line 135, ../sass/home-page.scss */
+#search-location {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+/* line 140, ../sass/home-page.scss */
+#search-location input {
+  border-radius: 2px;
+}
+/* line 144, ../sass/home-page.scss */
+#search-location select {
+  border-radius: 2px;
+}
+/* line 149, ../sass/home-page.scss */
+#search-location button {
+  background-color: #ff715b;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 156, ../sass/home-page.scss */
+#search-location button:hover {
+  background-color: #e74c39;
+}
+
+/* line 178, ../sass/home-page.scss */
 .home-page-events .event {
   height: 20vw;
   padding: 0px;
@@ -105,7 +137,7 @@
   -webkit-filter: grayscale(1) brightness(0.8);
   filter: grayscale(1);
 }
-/* line 165, ../sass/home-page.scss */
+/* line 195, ../sass/home-page.scss */
 .home-page-events .event .icon {
   height: 100%;
   background-image: url(../icon/icon-car.png);
@@ -120,7 +152,7 @@
   vertical-align: middle;
   padding-top: 50%;
 }
-/* line 180, ../sass/home-page.scss */
+/* line 210, ../sass/home-page.scss */
 .home-page-events .event:hover {
   z-index: 999;
 }
