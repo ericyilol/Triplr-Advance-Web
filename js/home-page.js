@@ -74,16 +74,17 @@ var timeLine_init = function()
 
 var explore_init = function() //when user click on explore
 {
-    var event_height= $('.my-events').height();
-    var viewport_height = $(window).height();
-    var menu_height = viewport_height- (2 * event_height);
-    // console.log($('my-events').css('height'));
+    // var event_height= $('.my-events').height();
+    // var viewport_height = $(window).height();
+    // var menu_height = viewport_height- (2 * event_height);
+
+
 
         $("#explore-button").click(function() {
-        // $(".home-page-header").animate({height:'60px'});
-        $(".home-page-header").animate({height:menu_height});
+        $(".home-page-header").animate({height:'170px'});
+        // $(".home-page-header").animate({height:menu_height});
         $("#homepage-upper-content").css({'display':'none'});
-        
+        $(".row").css({'display':'block'});
             });
        
 
