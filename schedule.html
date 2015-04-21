@@ -8,46 +8,124 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-    <body class="well">
-        <div id="container">
-
-            <div id="header"> To Do List </div>
-
-            <div class="task-list task-container" id="pending">
-                <h3>Pending</h3>
-                <!--<div class="todo-task">
-                    <div class="task-header">Sample Header</div>
-                    <div class="task-date">25/06/1992</div>
-                    <div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
-                </div>-->
+    <body>
+        <!-- <div class="loader"></div>   -->
+        <nav class="nav-bar">
+            <div class="menu-logo">
+                <a href="index.html"> <img src="img/logo_white.png" alt=""></a>
             </div>
-
-            <div class="task-list task-container" id="inProgress">
-                <h3>In Progress</h3>
+            <div class="menu-explore">
+                <button type="button" class="btn menu-explore-button">
+                    Explore New Locations
+                </button>
+            </div>  
+            <div class="menu-account">
+                <img src="img/account.png" alt="">
             </div>
-
-            <div class="task-list task-container" id="completed">
-                <h3>Completed</h3>
+            <div class="menu-welcome-back-text">
+                <p>Eric</p>
             </div>
-
-            <div class="task-list">
-                <h3>Add a task</h3>
-                <form id="todo-form">
-                    <input type="text" placeholder="Title" />
-                    <textarea placeholder="Description"></textarea>
-                    <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
-                    <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
-                </form>
-
-                <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
-
-                <div id="delete-div">
-                    Drag Here to Delete
+        </nav>
+        <div class="schedule-body">
+            <section class="trip-days-container">
+                <div class="trip-days-body">
                 </div>
-            </div>
-
-            <div style="clear:both;"></div>
-
+            </section>
+            <aside class="trip-events-container">
+                <div class="trip-events-section">
+                    <div class="trip-events-category">
+                        <h2>transportation</h2>
+                        <div class="row">
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-plane.png" alt="">
+                                <p>airplane</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-bus.png" alt="">
+                                <p>bus</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-car.png" alt="">
+                                <p>car</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add">
+                        
+                    </div>
+                    <div class="trip-events-category">
+                        <div class="row">
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-boat.png" alt="">
+                                <p>boat</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-train.png" alt="">
+                                <p>train</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <h2>ACCOMMODATION</h2>
+                        <div class="row">
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-hotel.png" alt="">
+                                <p>hotel</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-hotel2.png" alt="">
+                                <p>apartment</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-hotel3.png" alt="">
+                                <p>airbnb</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <h2>events</h2>
+                        <div class="row">
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-sightsee.png" alt="">
+                                <p>sightsee</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-shopping.png" alt="">
+                                <p>shopping</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-dine.png" alt="">
+                                <p>dine</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-drink.png" alt="">
+                                <p>drink</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-opera.png" alt="">
+                                <p>opera</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-music.png" alt="">
+                                <p>music</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-hike.png" alt="">
+                                <p>hike</p>
+                            </div>
+                            <div class="col-md-4 trip-events-detail">
+                                <img src="icon/icon-gallery.png" alt="">
+                                <p>gallery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="trip-events-footer">
+                
+                </footer>
+            </aside>
+            <div class="clear"></div>
+            
         </div>
     </body>
 <script src="./js/init.js" type="text/javascript"></script>

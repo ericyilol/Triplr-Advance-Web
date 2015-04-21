@@ -41,22 +41,6 @@ data = data || {};
             generateElement(params);
         });
 
-        /*generateElement({
-            id: "123",
-            code: "1",
-            title: "asd",
-            date: "22/12/2013",
-            description: "Blah Blah"
-        });*/
-
-        /*removeElement({
-            id: "123",
-            code: "1",
-            title: "asd",
-            date: "22/12/2013",
-            description: "Blah Blah"
-        });*/
-
         // Adding drop function to each category of task
         $.each(codes, function (index, value) {
             $(value).droppable({
@@ -84,8 +68,6 @@ data = data || {};
                     }
             });
         });
-
-        // Adding drop function to delete div
         $("#" + options.deleteDiv).droppable({
             drop: function(event, ui) {
                 var element = ui.helper,
@@ -159,6 +141,7 @@ data = data || {};
         var inputs = $("#" + defaults.formId + " :input"),
             errorMessage = "Title can not be empty",
             id, title, description, date, tempData;
+        console.log(inputs);
 
         if (inputs.length !== 4) {
             return;

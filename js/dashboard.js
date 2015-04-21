@@ -1,20 +1,7 @@
 var WINDOW_HEIGTH = $(window).height();
 var WINDOW_WIDTH  = $(window).width();
 
-// var tripInput = "
-//  | 2015/12/12 ; 2015/12/18 ; New York ; photo/nyc2.jpg 
-//  | 2015/12/12 ; 2015/12/18 ; London ; photo/london.jpg
-//  | 2015/12/12 ; 2015/12/18 ; Beijing, Shanghai ; photo/beijing2.jpg
-//  | 2015/12/12 ; 2015/12/18 ; Lisbon ; photo/lisbon.jpg
-//  | 2015/12/12 ; 2015/12/18 ; Venice ; photo/venice.jpg
-//  | 2014/12/12 ; 2015/12/18 ; Taipei, Kaohsiung ; photo/taipei.jpg
-//  | 2014/12/12 ; 2015/12/18 ; Tokyo, Yokohama, Osaka ; photo/java.jpg
-//  | 2014/12/12 ; 2015/12/18 ; Seoul ; photo/seoul.jpg
-//  | 2014/12/12 ; 2015/12/18 ; Egypt ; photo/egypt.jpg
-//  | 2014/12/12 ; 2015/12/18 ; Monterosso ; photo/greece.jpg
-//  | 2013/12/12 ; 2015/12/18 ; San Francisco ; photo/sanfran.jpg
-//  | 2013/12/12 ; 2015/12/18 ; Agra ; photo/agra.jpg
-//  | 2013/12/12 ; 2015/12/18 ; Los Angeles ; photo/la.jpg"
+var tripInput = " 2015/12/12 ; 2015/12/18 ; New York ; photo/nyc2.jpg  | 2015/12/12 ; 2015/12/18 ; London ; photo/london.jpg | 2015/12/12 ; 2015/12/18 ; Beijing, Shanghai ; photo/beijing2.jpg | 2015/12/12 ; 2015/12/18 ; Lisbon ; photo/lisbon.jpg | 2015/12/12 ; 2015/12/18 ; Venice ; photo/venice.jpg | 2014/12/12 ; 2015/12/18 ; Taipei, Kaohsiung ; photo/taipei.jpg | 2014/12/12 ; 2015/12/18 ; Tokyo, Yokohama, Osaka ; photo/java.jpg | 2014/12/12 ; 2015/12/18 ; Seoul ; photo/seoul.jpg | 2014/12/12 ; 2015/12/18 ; Egypt ; photo/egypt.jpg | 2014/12/12 ; 2015/12/18 ; Monterosso ; photo/greece.jpg | 2013/12/12 ; 2015/12/18 ; San Francisco ; photo/sanfran.jpg | 2013/12/12 ; 2015/12/18 ; Agra ; photo/agra.jpg | 2013/12/12 ; 2015/12/18 ; Los Angeles ; photo/la.jpg"
 
 Trip = function()
 {
@@ -28,13 +15,17 @@ Trip = function()
 function dashboard_init() {
     eventHeight_init();
     timeLine_init();
-    // parseInput();
+    parseInput();
 }
 
 var parseInput = function() {
-    var tripSplit = tripInput.split("\n");
+    var trips = tripInput.split("|");
+    console.log(trips.length);
 
 }
+
+
+
 
 var eventHeight_init = function() {
     var eventHeight = $('.my-events').width();

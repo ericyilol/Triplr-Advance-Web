@@ -1,0 +1,107 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin transform($transform-property) {
+    -webkit-transform: $transform-property;
+    -moz-transform: $transform-property;
+    -ms-transform: $transform-property;
+    -o-transform: $transform-property;
+    transform: $transform-property;
+}
+
+@mixin center-align {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #e74c39; //faded orange, hover-state
+$primary-dark-gray-color: #373737; //dark gray, for backgroud
+$text-dark-gray-color: #4e4e4e;// for menu text;
+$text-light-gray-color: #d7d7d7;
+
+body {
+    background-color: $primary-dark-gray-color !important;
+}
+
+.schedule-body {
+    background-color: $primary-dark-gray-color;
+    padding: 60px 0px 10px 0px;
+}
+
+.trip-days-container {
+    padding: 20px 0 0 20px;
+    width: 70%;
+    float: left;
+    .trip-days-body {
+        background-color: #fff;
+        height: 680px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 100%;
+    }
+}
+
+.trip-events-container {
+    width: 30%;
+    float: left;
+    .trip-events-section {
+        height: 630px;
+        width: 100%;
+        padding: 20px 0px 0px;
+        overflow: scroll;
+        .trip-events-category {
+            padding: 0 50px;
+            h2 {
+                padding: 5px 20px;
+                font-family: "Raleway", sans-serif;
+                font-size: 0.9em;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: underline;
+                color:$text-light-gray-color;
+            }
+            .trip-events-detail {
+                opacity: 0.5;
+                padding: 10px 20px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                p {
+                    font-family: "Raleway", sans-serif;
+                    font-size: 0.9em;
+                    font-weight: 300;
+                    color:#fff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .trip-events-footer {
+        border-top: 1px solid $text-light-gray-color;
+        margin: 0px 50px;
+        height: 50px;
+    }
+    .trip-events-add {
+        background-color: $text-light-gray-color;
+        height: 230px;
+        width: 100%;
+    }
+}

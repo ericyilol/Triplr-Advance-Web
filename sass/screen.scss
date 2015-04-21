@@ -9,11 +9,6 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 
 @import "compass/reset";
-@import "home-page.css";
-@import "dashboard-page.css";
-@import "navigation.css";
-@import "schedule-page.css";
-
 
 @font-face {
     font-family: primary-font; //used in logo
@@ -37,3 +32,8 @@
 	z-index: 9999;
 	background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
+
+@import "home-page.css";
+@import "dashboard-page.css";
+@import "navigation.css";
+@import "schedule-page.css";
