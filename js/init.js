@@ -9,7 +9,9 @@ var WINDOW_WIDTH  = $(window).width();
         'js/lib/jquery.ui.min.js',
         'js/lib/bootstrap.min.js',
         'js/dashboard.js',
-        'js/home-page.js'
+        'js/home-page.js',
+        'js/schedule-page.js',
+        'js/event-handler.js'
     ];
 
     var temp = [];
