@@ -12,7 +12,11 @@ var WINDOW_WIDTH  = $(window).width();
         'js/home-page.js',
         'js/schedule-page.js',
         'js/event-handler.js',
-        'slick-1.5.0/slick/slick.js'
+        'slick-1.5.0/slick/slick.js',
+        'js/lib/bootstrap-datepicker.js',
+        'js/lib/datepair.js',
+        'js/jquery.datepair.js'
+
     ];
 
     var temp = [];

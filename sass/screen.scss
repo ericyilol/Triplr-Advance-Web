@@ -4,11 +4,13 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "lib/jquery.ui.min.css";
 @import "lib/hover-min.css";
+@import "lib/bootstrap-datepicker.css";
 @import "../slick-1.5.0/slick/slick.css";
 @import "../slick-1.5.0/slick/slick-theme.css";
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js);
 
 @import "compass/reset";
 

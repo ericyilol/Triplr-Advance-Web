@@ -242,12 +242,20 @@ body {
         padding: 0 5px;
     }
 
-    button{
+    .quarterLine{
+        float: left;
+        width: 25%;
+        padding: 0 5px;
+    }
+
+
+    .div-button{
         margin-top: 15px;
         border: none;
         background-color: transparent;
         font-family: "Raleway", sans-serif;
         font-weight: 600;
+        cursor: pointer;
         @include center-align;
         @include transition(all, 0.2s, ease-in-out);
     }
@@ -298,9 +306,11 @@ body {
             color: $primary-dark-gray-color;
             font-size: 0.6em;
             font-family: "Raleway", sans-serif;
-            white-space: nowrap;
+            // white-space: nowrap;
+            margin-bottom: 10px;
             font-weight: 600;
-            line-height: 2;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
         }
     }
 }

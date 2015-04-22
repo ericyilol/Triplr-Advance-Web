@@ -4,10 +4,12 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(lib/jquery.ui.min.css);
 @import url(lib/hover-min.css);
+@import url(lib/bootstrap-datepicker.css);
 @import url(../slick-1.5.0/slick/slick.css);
 @import url(../slick-1.5.0/slick/slick-theme.css);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js);
 @import url(home-page.css);
 @import url(dashboard-page.css);
 @import url(navigation.css);
@@ -81,17 +83,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: primary-font;
   src: url(../font/journal.ttf);
 }
-/* line 20, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 .clear {
   clear: both;
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 .row {
   margin: 0px !important;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 .loader {
   position: fixed;
   left: 0px;

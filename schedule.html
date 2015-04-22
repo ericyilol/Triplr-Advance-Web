@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheets/screen.css">
+
+
+    <script src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css" />
+    <!-- <script src="dist/jquery.datepair.js"></script> -->
 </head>
     <body>
         <!-- <div class="loader"></div>   -->
@@ -64,54 +69,37 @@
                         </div>
                         <div id="day2" class="trip-days">
                             <h3>Aug. 11</h3>
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day2spot1" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day2spot2" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day2spot3" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day2spot4" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day2spot5" class="event-spot empty">
+                            </div>
                         </div>
                         <div id="day3" class="trip-days">
-                            <h3>Aug. 12</h3>
-                            <img src="icon/event-placeholder.png" alt="">
+                            <h3>Aug. 10</h3>
+                            <div id="day3spot1" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day3spot2" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day3spot3" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
+                            <div id="day3spot4" class="event-spot empty">
+                            </div>
                             <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-
-                        </div>
-                        <div id="day4" class="trip-days">
-                            <h3>Aug. 13</h3>
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-
-                        </div>
-                        <div id="day5" class="trip-days">
-                            <h3>Aug. 14</h3>
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-                            <img src="icon/event-line.png" alt="">
-                            <img src="icon/event-placeholder.png" alt="">
-
+                            <div id="day3spot5" class="event-spot empty">
+                            </div>
                         </div>
                         <div class="clear"></div>
                     </section>
@@ -143,30 +131,25 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" class="new-form">
+                        <form role="form" class="new-form" >
                             <div class="input-group new-event-form">
-                               <!--  <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Enter title">
-                                <!-- </div> -->
-                                <!-- <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Add location">
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="Start">
-                                    <!-- </div> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="End">
-                                        <div class="clear"></div>
+                                    <input type="text" class="form-control input halfLine" placeholder="Date">
+                                    <span class="timePicker">
+                                        <input type="text" class="time start quarterLine" placeholder="Start" />
+                                        <input type="text" class="time end quarterLine" placeholder="End" />
+                                    </span>
+                                    <div class="clear"></div>
                                     <!-- </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>
@@ -193,28 +176,21 @@
                         </div> -->
                         <form role="form" class="new-form" >
                             <div class="input-group new-event-form">
-                               <!--  <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Enter title">
-                                <!-- </div> -->
-                                <!-- <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Add location">
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="Start">
-                                    <!-- </div> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="End">
-                                        <div class="clear"></div>
+                                    <input type="text" class="form-control input halfLine" placeholder="Date">
+                                    <input type="text" class="form-control input quarterLine" placeholder="Start">
+                                    <input type="text" class="form-control input quarterLine" placeholder="End">
+                                    <div class="clear"></div>
                                     <!-- </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>
@@ -246,28 +222,23 @@
                         </div> -->
                         <form role="form" class="new-form" >
                             <div class="input-group new-event-form">
-                               <!--  <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Enter title">
-                                <!-- </div> -->
-                                <!-- <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Add location">
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="Start">
-                                    <!-- </div> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="End">
-                                        <div class="clear"></div>
+                                    <input type="text" class="form-control input halfLine" placeholder="Date">
+                                    <span class="timePicker">
+                                        <input type="text" class="form-control input quarterLine" placeholder="Start">
+                                        <input type="text" class="form-control input quarterLine" placeholder="End">
+                                    </span>
+                                    <div class="clear"></div>
                                     <!-- </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>
@@ -299,28 +270,21 @@
                         </div> -->
                         <form role="form" class="new-form" >
                             <div class="input-group new-event-form">
-                               <!--  <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Enter title">
-                                <!-- </div> -->
-                                <!-- <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Add location">
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="Start">
-                                    <!-- </div> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="End">
-                                        <div class="clear"></div>
+                                    <input type="text" class="form-control input halfLine" placeholder="Date">
+                                    <input type="text" class="form-control input quarterLine" placeholder="Start">
+                                    <input type="text" class="form-control input quarterLine" placeholder="End">
+                                    <div class="clear"></div>
                                     <!-- </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>
@@ -351,28 +315,21 @@
                         </div> -->
                         <form role="form" class="new-form" >
                             <div class="input-group new-event-form">
-                               <!--  <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Enter title">
-                                <!-- </div> -->
-                                <!-- <div class="wholeLine"> -->
                                     <input type="text" class="form-control input wholeLine" placeholder="Add location">
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="Start">
-                                    <!-- </div> -->
-                                    <!-- <div class="col-md-6"> -->
-                                        <input type="text" class="form-control input halfLine" placeholder="End">
-                                        <div class="clear"></div>
+                                    <input type="text" class="form-control input halfLine" placeholder="Date">
+                                    <input type="text" class="form-control input quarterLine" placeholder="Start">
+                                    <input type="text" class="form-control input quarterLine" placeholder="End">
+                                    <div class="clear"></div>
                                     <!-- </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>
@@ -408,10 +365,10 @@
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save">Save</button>
+                                        <div class="div-button new-event-save">Save</div>
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-cancel">Cancel</button>
+                                        <div class="div-button new-event-cancel">Cancel</div>
                                     </div>
                                 </div>
                             </div>

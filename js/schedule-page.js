@@ -3,6 +3,7 @@
 		// trianlesInit();
 		trianglesUpdate();
 		expandFunc();
+		timePickerInit();
 	}
 
 	var trianglesUpdate = function(){
@@ -45,8 +46,24 @@
 				});
 			}
 		});
+		$('.div-button').click(function() {
+			openBox = false;
+			$('.trip-events-detail').each(function() {
+				$(this).removeClass('changeOpacity');
+			});
+			$('.trip-events-add').each(function() {
+				$(this).removeClass('expandHeight');
+			});
+		});
 	}
 
+	var timePickerInit = function() {
+		$('.timePicker .time').timepicker({
+			'showDuration': true,
+			'timeFormat': 'g:ia'
+		});
 
-	//Save the data!
-// });
+    	// initialize datepair
+    	$('.timePicker').datepair();
+	}
+

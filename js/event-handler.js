@@ -20,11 +20,12 @@
 			var parentForm = $(this).closest('.new-form');
 			var parentFormInput = parentForm.find(':input');
 			var errorMessage = "Title can not be empty",
-            id, imageSrc, title, time, location, tempData;
+            id, code, imageSrc, title, time, location, tempData;
 
             title = parentFormInput[0].value;
             location = parentFormInput[1].value;
-            time = parentFormInput[2].value + "-" + parentFormInput[3].value;
+            code = parentFormInput[2].value;
+            time = parentFormInput[3].value + "-" + parentFormInput[4].value;
             imageSrc = "icon/icon-plane-e.png";
             id = new Date().getTime();
 
@@ -35,7 +36,7 @@
 
         	tempData = {
         		id : id,
-        		// code: "1",
+        		code: "1",
         		title: title,
         		location: location,
         		time: time,
@@ -51,6 +52,7 @@
         	parentFormInput[1].value = "";
         	parentFormInput[2].value = "";
         	parentFormInput[3].value = "";
+        	parentFormInput[4].value = "";
 		});
 	}
 
