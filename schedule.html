@@ -39,58 +39,27 @@
                         <div class="trip-days-header-buttons">
                             <button class="trip-days-save">Save</button>
                         </div>
+                        <div class="trip-days-header-buttons">
+                            <button class="trip-days-save" onclick="eventsClear()">Delete</button>
+                        </div>
                         <div class="clear"></div>
                     </header>
                     <section class="trip-days-content">
                         <div id="day1" class="trip-days">
                             <h3>Aug. 10</h3>
-                            <div id="day1spot1" class="event-spot">
-                                <section class = "event-style">
-                                    <div class="event-style-image">
-                                        <img src="icon/icon-plane-e.png" alt="">
-                                    </div>
-                                    <div class="event-style-text">
-                                        <p>Arrive at Amsterdam</p>
-                                        <p>Amsterdam Airport</p>
-                                        <p>8:00am - 9:00am</p>
-                                    </div>
-                                    <div class="clear"></div>
-                                </section>
+                            <div id="day1spot1" class="event-spot empty">
                             </div>
                             <img src="icon/event-line.png" alt="">
-                            <div id="day1spot2" class="event-spot">
-                                <!-- <img src="icon/event-placeholder.png" alt=""> -->
-                                <section class = "event-style">
-                                    <div class="event-style-image">
-                                        <img src="icon/icon-plane-e.png" alt="">
-                                    </div>
-                                    <div class="event-style-text">
-                                        <p>Arrive at Amsterdam</p>
-                                        <p>Amsterdam Airport</p>
-                                        <p>8:00am - 9:00am</p>
-                                    </div>
-                                    <div class="clear"></div>
-                                </section>
+                            <div id="day1spot2" class="event-spot empty">
                             </div>
                             <img src="icon/event-line.png" alt="">
-                            <div id="day1spot3" class="event-spot">
-                                <section class = "event-style">
-                                    <div class="event-style-image">
-                                        <img src="icon/icon-plane-e.png" alt="">
-                                    </div>
-                                    <div class="event-style-text">
-                                        <p>Arrive at Amsterdam</p>
-                                        <p>Amsterdam Airport</p>
-                                        <p>8:00am - 9:00am</p>
-                                    </div>
-                                    <div class="clear"></div>
-                                </section>
+                            <div id="day1spot3" class="event-spot empty">
                             </div>
                             <img src="icon/event-line.png" alt="">
-                            <div id="day1spot4" class="event-spot">
+                            <div id="day1spot4" class="event-spot empty">
                             </div>
                             <img src="icon/event-line.png" alt="">
-                            <div id="day1spot5" class="event-spot">
+                            <div id="day1spot5" class="event-spot empty">
                             </div>
                         </div>
                         <div id="day2" class="trip-days">
@@ -107,6 +76,32 @@
                         </div>
                         <div id="day3" class="trip-days">
                             <h3>Aug. 12</h3>
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+
+                        </div>
+                        <div id="day4" class="trip-days">
+                            <h3>Aug. 13</h3>
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+                            <img src="icon/event-line.png" alt="">
+                            <img src="icon/event-placeholder.png" alt="">
+
+                        </div>
+                        <div id="day5" class="trip-days">
+                            <h3>Aug. 14</h3>
                             <img src="icon/event-placeholder.png" alt="">
                             <img src="icon/event-line.png" alt="">
                             <img src="icon/event-placeholder.png" alt="">
@@ -148,26 +143,27 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form">
+                            <div class="input-group new-event-form">
+                               <!--  <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <!-- </div> -->
+                                <!-- <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="Start">
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="End">
+                                        <div class="clear"></div>
+                                    <!-- </div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -195,26 +191,27 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form" >
+                            <div class="input-group new-event-form">
+                               <!--  <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <!-- </div> -->
+                                <!-- <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="Start">
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="End">
+                                        <div class="clear"></div>
+                                    <!-- </div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -247,26 +244,27 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form" >
+                            <div class="input-group new-event-form">
+                               <!--  <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <!-- </div> -->
+                                <!-- <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="Start">
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="End">
+                                        <div class="clear"></div>
+                                    <!-- </div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -299,26 +297,27 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form" >
+                            <div class="input-group new-event-form">
+                               <!--  <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <!-- </div> -->
+                                <!-- <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="Start">
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="End">
+                                        <div class="clear"></div>
+                                    <!-- </div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -350,26 +349,27 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form" >
+                            <div class="input-group new-event-form">
+                               <!--  <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <!-- </div> -->
+                                <!-- <div class="wholeLine"> -->
+                                    <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="Start">
+                                    <!-- </div> -->
+                                    <!-- <div class="col-md-6"> -->
+                                        <input type="text" class="form-control input halfLine" placeholder="End">
+                                        <div class="clear"></div>
+                                    <!-- </div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -397,26 +397,18 @@
                         <div class="triangle_2">
                             <img src="icon/triangle_dark.png" alt="">
                         </div> -->
-                        <form role="form" id="new-form">
-                            <div class="input-group" id="new-event-form">
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Enter title">
-                                </div>
-                                <div class="wholeLine">
-                                    <input type="text" class="form-control input" placeholder="Add location">
-                                </div>
+                        <form role="form" class="new-form" id="test">
+                            <div class="input-group new-event-form">
+                                <input type="text" class="form-control input wholeLine" placeholder="Enter title">
+                                <input type="text" class="form-control input wholeLine" placeholder="Add location">
+                                <input type="text" class="form-control input halfLine" placeholder="Start">
+                                <input type="text" class="form-control input halfLine" placeholder="End">
+                                <div class="clear"></div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="Start">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control input" placeholder="End">
-                                    </div>
-                                </div><div class="row">
                                     <div class="col-md-6">
                                     </div>
                                     <div class="col-md-3">
-                                        <button class="new-event-save" onclick="eventsAdd();">Save</button>
+                                        <button class="new-event-save">Save</button>
                                     </div>
                                     <div class="col-md-3">
                                         <button class="new-event-cancel">Cancel</button>
@@ -437,6 +429,7 @@
 <script src="./js/init.js" type="text/javascript"></script>
 <script>
     schedule_init();
+    eventInit();
 </script>
 <!-- <script type="text/javascript">
 	$( "#datepicker" ).datepicker();

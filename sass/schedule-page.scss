@@ -98,6 +98,7 @@ body {
     padding: 20px 0px 0px 0px;
     overflow: scroll;
     height: 580px;
+    width: auto;
     .trip-days {
         padding: 0px 40px 0px 30px;
         width: 33.33%;
@@ -202,18 +203,18 @@ body {
     }
 }
 
-#new-event-form{
+.new-event-form{
     margin: 0px auto 0px;
     padding: 30px 50px 0px 50px;
     // @include center-align;
     input{
         border-radius: 0px;
         border: 0 none;
-        margin: 0px 0px 10px;
+        margin: 0px 0px 10px !important;
         height: 40px;
         font-family: "Raleway", sans-serif;
-        font-weight: 600;
-        font-size: 1em;
+        font-weight: 500;
+        font-size: 0.9em;
         // appearance: none;
     }
     input::-webkit-input-placeholder { /* WebKit browsers */
@@ -235,7 +236,9 @@ body {
         padding: 0 5px;
     }
 
-    .row > div{
+    .halfLine{
+        float: left;
+        width: 50%;
         padding: 0 5px;
     }
 
@@ -311,6 +314,6 @@ body {
 }
 
 .noBackground {
-    background: none;
+    background: none !important;
 }
 

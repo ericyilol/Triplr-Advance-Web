@@ -11,7 +11,8 @@ var WINDOW_WIDTH  = $(window).width();
         'js/dashboard.js',
         'js/home-page.js',
         'js/schedule-page.js',
-        'js/event-handler.js'
+        'js/event-handler.js',
+        'slick-1.5.0/slick/slick.js'
     ];
 
     var temp = [];

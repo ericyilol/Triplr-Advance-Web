@@ -74,8 +74,9 @@ body {
   padding: 20px 0px 0px 0px;
   overflow: scroll;
   height: 580px;
+  width: auto;
 }
-/* line 101, ../sass/schedule-page.scss */
+/* line 102, ../sass/schedule-page.scss */
 .trip-days-content .trip-days {
   padding: 0px 40px 0px 30px;
   width: 33.33%;
@@ -83,40 +84,40 @@ body {
   float: left;
   border-left: 1px solid #959595;
 }
-/* line 107, ../sass/schedule-page.scss */
+/* line 108, ../sass/schedule-page.scss */
 .trip-days-content .trip-days h3 {
   padding-bottom: 15px;
   font-family: "primary-font";
   font-size: 2em;
 }
-/* line 112, ../sass/schedule-page.scss */
+/* line 113, ../sass/schedule-page.scss */
 .trip-days-content .trip-days img {
   width: 100%;
   height: auto;
   z-index: 99999;
 }
-/* line 119, ../sass/schedule-page.scss */
+/* line 120, ../sass/schedule-page.scss */
 .trip-days-content .trip-days:first-child {
   border-left: 0;
 }
 
-/* line 133, ../sass/schedule-page.scss */
+/* line 134, ../sass/schedule-page.scss */
 .trip-events-container {
   width: 30%;
   float: left;
 }
-/* line 136, ../sass/schedule-page.scss */
+/* line 137, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section {
   height: 630px;
   width: 100%;
   padding: 20px 0px 0px;
   overflow: scroll;
 }
-/* line 141, ../sass/schedule-page.scss */
+/* line 142, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category {
   padding: 0 50px;
 }
-/* line 143, ../sass/schedule-page.scss */
+/* line 144, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category h2 {
   padding: 5px 20px;
   font-family: "Raleway", sans-serif;
@@ -126,17 +127,17 @@ body {
   text-decoration: underline;
   color: #d7d7d7;
 }
-/* line 152, ../sass/schedule-page.scss */
+/* line 153, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail {
   opacity: 0.4;
   padding: 10px 20px;
 }
-/* line 155, ../sass/schedule-page.scss */
+/* line 156, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail img {
   width: 100%;
   height: auto;
 }
-/* line 159, ../sass/schedule-page.scss */
+/* line 160, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail p {
   font-family: "Raleway", sans-serif;
   font-size: 0.9em;
@@ -144,14 +145,14 @@ body {
   color: #fff;
   text-align: center;
 }
-/* line 169, ../sass/schedule-page.scss */
+/* line 170, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer {
   border-top: 1px solid #d7d7d7;
   margin: 0px 50px;
   height: 50px;
 }
 
-/* line 176, ../sass/schedule-page.scss */
+/* line 177, ../sass/schedule-page.scss */
 .trip-events-add {
   margin: 10px 0;
   background-color: #d7d7d7;
@@ -164,78 +165,80 @@ body {
   overflow: hidden;
   width: 100%;
 }
-/* line 183, ../sass/schedule-page.scss */
+/* line 184, ../sass/schedule-page.scss */
 .trip-events-add #triangle_1 {
   z-index: 98;
   position: absolute;
   height: 20px;
   width: 30px;
 }
-/* line 188, ../sass/schedule-page.scss */
+/* line 189, ../sass/schedule-page.scss */
 .trip-events-add #triangle_1 img {
   width: 100%;
   height: auto;
 }
-/* line 193, ../sass/schedule-page.scss */
+/* line 194, ../sass/schedule-page.scss */
 .trip-events-add #triangle_2 {
   z-index: 99;
   position: absolute;
   height: 20px;
   width: 30px;
 }
-/* line 198, ../sass/schedule-page.scss */
+/* line 199, ../sass/schedule-page.scss */
 .trip-events-add #triangle_2 img {
   width: 100%;
   height: auto;
 }
 
-/* line 205, ../sass/schedule-page.scss */
-#new-event-form {
+/* line 206, ../sass/schedule-page.scss */
+.new-event-form {
   margin: 0px auto 0px;
   padding: 30px 50px 0px 50px;
 }
-/* line 209, ../sass/schedule-page.scss */
-#new-event-form input {
+/* line 210, ../sass/schedule-page.scss */
+.new-event-form input {
   border-radius: 0px;
   border: 0 none;
-  margin: 0px 0px 10px;
+  margin: 0px 0px 10px !important;
   height: 40px;
   font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 1em;
+  font-weight: 500;
+  font-size: 0.9em;
 }
-/* line 219, ../sass/schedule-page.scss */
-#new-event-form input::-webkit-input-placeholder {
+/* line 220, ../sass/schedule-page.scss */
+.new-event-form input::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #d7d7d7;
 }
-/* line 222, ../sass/schedule-page.scss */
-#new-event-form input:-moz-placeholder {
+/* line 223, ../sass/schedule-page.scss */
+.new-event-form input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #d7d7d7;
   opacity: 1;
 }
-/* line 226, ../sass/schedule-page.scss */
-#new-event-form input::-moz-placeholder {
+/* line 227, ../sass/schedule-page.scss */
+.new-event-form input::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #d7d7d7;
   opacity: 1;
 }
-/* line 230, ../sass/schedule-page.scss */
-#new-event-form input:-ms-input-placeholder {
+/* line 231, ../sass/schedule-page.scss */
+.new-event-form input:-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #d7d7d7;
 }
-/* line 234, ../sass/schedule-page.scss */
-#new-event-form .wholeLine {
+/* line 235, ../sass/schedule-page.scss */
+.new-event-form .wholeLine {
   padding: 0 5px;
 }
-/* line 238, ../sass/schedule-page.scss */
-#new-event-form .row > div {
+/* line 239, ../sass/schedule-page.scss */
+.new-event-form .halfLine {
+  float: left;
+  width: 50%;
   padding: 0 5px;
 }
-/* line 242, ../sass/schedule-page.scss */
-#new-event-form button {
+/* line 245, ../sass/schedule-page.scss */
+.new-event-form button {
   margin-top: 15px;
   border: none;
   background-color: transparent;
@@ -255,26 +258,26 @@ body {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 251, ../sass/schedule-page.scss */
-#new-event-form .new-event-save {
+/* line 254, ../sass/schedule-page.scss */
+.new-event-form .new-event-save {
   color: #ff715b;
   font-size: 1.1em;
 }
-/* line 255, ../sass/schedule-page.scss */
-#new-event-form .new-event-save:hover {
+/* line 258, ../sass/schedule-page.scss */
+.new-event-form .new-event-save:hover {
   color: #e74c39;
 }
-/* line 258, ../sass/schedule-page.scss */
-#new-event-form .new-event-cancel {
+/* line 261, ../sass/schedule-page.scss */
+.new-event-form .new-event-cancel {
   color: #363636;
   font-size: 0.9em;
 }
-/* line 262, ../sass/schedule-page.scss */
-#new-event-form .new-event-cancel:hover {
+/* line 265, ../sass/schedule-page.scss */
+.new-event-form .new-event-cancel:hover {
   color: #898989;
 }
 
-/* line 267, ../sass/schedule-page.scss */
+/* line 270, ../sass/schedule-page.scss */
 .event-spot {
   background: url("../icon/event-placeholder.png") no-repeat center center;
   -webkit-background-size: cover;
@@ -285,22 +288,22 @@ body {
   height: 127px;
 }
 
-/* line 277, ../sass/schedule-page.scss */
+/* line 280, ../sass/schedule-page.scss */
 .event-style {
   width: 100%;
   height: 100%;
 }
-/* line 280, ../sass/schedule-page.scss */
+/* line 283, ../sass/schedule-page.scss */
 .event-style .event-style-image {
   width: 54%;
   float: left;
 }
-/* line 283, ../sass/schedule-page.scss */
+/* line 286, ../sass/schedule-page.scss */
 .event-style .event-style-image img {
   width: 100%;
   height: auto;
 }
-/* line 288, ../sass/schedule-page.scss */
+/* line 291, ../sass/schedule-page.scss */
 .event-style .event-style-text {
   width: 46%;
   padding-left: 15px;
@@ -311,7 +314,7 @@ body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 293, ../sass/schedule-page.scss */
+/* line 296, ../sass/schedule-page.scss */
 .event-style .event-style-text p {
   text-align: left;
   color: #373737;
@@ -322,17 +325,17 @@ body {
   line-height: 2;
 }
 
-/* line 305, ../sass/schedule-page.scss */
+/* line 308, ../sass/schedule-page.scss */
 .expandHeight {
   height: 230px !important;
 }
 
-/* line 309, ../sass/schedule-page.scss */
+/* line 312, ../sass/schedule-page.scss */
 .changeOpacity {
   opacity: 1 !important;
 }
 
-/* line 313, ../sass/schedule-page.scss */
+/* line 316, ../sass/schedule-page.scss */
 .noBackground {
-  background: none;
+  background: none !important;
 }

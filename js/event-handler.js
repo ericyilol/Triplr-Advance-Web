@@ -6,77 +6,118 @@
 	var defaults = {
 		eventsStyle: "event-style",
 		eventId: "event-",
-		eventsImageHolder: "event-style-image"
+		eventsImageHolder: "event-style-image",
+		eventsTextHolder: "event-style-text",
+		eventSpot: "event-spot"
 	}, codes = {
-		"1" : "#pending",
-		"2" : "#inProgress",
-		"3" : "#completed"
+		"1" : "#day1",
+		"2" : "#day2",
+		"3" : "#day3"
 	};
 
-	var eventsAdd = function() {
-		alert("share we?");
+	var eventsAddListener = function() {
+		$('.new-event-save').click(function() {
+			var parentForm = $(this).closest('.new-form');
+			var parentFormInput = parentForm.find(':input');
+			var errorMessage = "Title can not be empty",
+            id, imageSrc, title, time, location, tempData;
+
+            title = parentFormInput[0].value;
+            location = parentFormInput[1].value;
+            time = parentFormInput[2].value + "-" + parentFormInput[3].value;
+            imageSrc = "icon/icon-plane-e.png";
+            id = new Date().getTime();
+
+            if (!title) {
+            	alert(errorMessage);
+            	return;
+        	}
+
+        	tempData = {
+        		id : id,
+        		// code: "1",
+        		title: title,
+        		location: location,
+        		time: time,
+        		imageSrc: imageSrc
+        	};
+
+        	data[id] = tempData;
+        	localStorage.setItem("todoData", JSON.stringify(data));
+        	
+        	generateElement(tempData);
+
+        	parentFormInput[0].value = "";
+        	parentFormInput[1].value = "";
+        	parentFormInput[2].value = "";
+        	parentFormInput[3].value = "";
+		});
+	}
+
+	var eventInit = function(options) {
+		options = options || {};
+        options = $.extend({}, defaults, options);
+
+        $.each(data, function (index, params) {
+            generateElement(params);
+        });
+
+        eventsAddListener();
 	}
 
 
 	var eventsClear = function () {
         data = {};
         localStorage.setItem("eventsData", JSON.stringify(data));
-        $("." + defaults.todoTask).remove();
+        $("." + defaults.eventsStyle).remove();
+        $("." + defaults.eventSpot).addClass('empty');
+        $("." + defaults.eventSpot).removeClass('noBackground');
     };
 
     var generateElement = function(params){
-    	var parent = $(codes[params.code]),
+    	var parent = $(codes[1]),
     	sectionWrapper,
     	imageWrapper,
     	textWrapper;
 
-    	if (!parent) {
+    	var nextEmpty = parent.find('.empty' + ':first');
+    	if (!nextEmpty) {
     		return;
     	}
-
-    	wrapper = $("<div />", {
-    		"class" : defaults.todoTask,
-    		"id" : defaults.taskId + params.id,
-    		"data" : params.id
-    	}).appendTo(parent);
-
-    	$("<div />", {
-    		"class" : defaults.todoHeader,
-    		"text": params.title
-    	}).appendTo(wrapper);
-
-    	$("<div />", {
-    		"class" : defaults.todoDate,
-    		"text": params.date
-    	}).appendTo(wrapper);
-
-    	$("<div />", {
-    		"class" : defaults.todoDescription,
-    		"text": params.description
-    	}).appendTo(wrapper);
-
-
+    	nextEmpty.removeClass('empty');
+    	nextEmpty.addClass('noBackground');
     	//Mine
     	sectionWrapper = $("<section />", {
     		"class" : defaults.eventsStyle,
     		"id" : defaults.eventId + params.id
-    	}).appendTo(parent);
+    	}).appendTo(nextEmpty);
 
     	imageWrapper = $("<div />", {
     		"class" : defaults.eventsImageHolder
     	}).appendTo(sectionWrapper);
 
+    	$("<img />", {
+    		"src" : params.imageSrc
+    	}).appendTo(imageWrapper);
 
-    	<section class = "event-style">
-                                    <div class="event-style-image">
-                                        <img src="icon/icon-plane-e.png" alt="">
-                                    </div>
-                                    <div class="event-style-text">
-                                        <p>Arrive at Amsterdam</p>
-                                        <p>Amsterdam Airport</p>
-                                        <p>8:00am - 9:00am</p>
-                                    </div>
-                                    <div class="clear"></div>
-                                </section>
+    	textWrapper = $("<div />", {
+    		"class" : defaults.eventsTextHolder
+    	}).appendTo(sectionWrapper);
+
+    	$("<p />", {
+    		"text": params.title
+    	}).appendTo(textWrapper);
+
+    	$("<p />", {
+    		"text": params.location
+    	}).appendTo(textWrapper);
+
+    	$("<p />", {
+    		"text": params.time
+    	}).appendTo(textWrapper);
+
+		$("<div />", {
+			"class": "clear"
+    	}).appendTo(sectionWrapper);    	
 
     };

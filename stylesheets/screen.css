@@ -4,6 +4,8 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(lib/jquery.ui.min.css);
 @import url(lib/hover-min.css);
+@import url(../slick-1.5.0/slick/slick.css);
+@import url(../slick-1.5.0/slick/slick-theme.css);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 @import url(home-page.css);
@@ -79,17 +81,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: primary-font;
   src: url(../font/journal.ttf);
 }
-/* line 18, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 .clear {
   clear: both;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 .row {
   margin: 0px !important;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 .loader {
   position: fixed;
   left: 0px;
