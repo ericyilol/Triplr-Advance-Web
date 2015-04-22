@@ -52,7 +52,7 @@
   background-size: 160px;
   background-repeat: no-repeat;
 }
-/* line 94, ../sass/home-page.scss */
+/* line 95, ../sass/home-page.scss */
 .home-page-header #home-page-header-title {
   color: #fff;
   text-align: center;
@@ -61,7 +61,7 @@
   font-weight: 700;
   font-size: 40px;
 }
-/* line 103, ../sass/home-page.scss */
+/* line 104, ../sass/home-page.scss */
 .home-page-header #home-page-header-subtitle {
   color: #fff;
   text-align: center;
@@ -70,7 +70,7 @@
   font-weight: 300;
   font-size: 20px;
 }
-/* line 115, ../sass/home-page.scss */
+/* line 116, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
   background-color: #ff715b;
   border: none;
@@ -83,27 +83,27 @@
   padding-right: 50px;
   display: block;
 }
-/* line 129, ../sass/home-page.scss */
+/* line 130, ../sass/home-page.scss */
 .home-page-header .create-schedule-button:hover {
   background-color: #e74c39;
 }
 
-/* line 135, ../sass/home-page.scss */
+/* line 136, ../sass/home-page.scss */
 #search-location {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
 }
-/* line 140, ../sass/home-page.scss */
+/* line 141, ../sass/home-page.scss */
 #search-location input {
   border-radius: 2px;
 }
-/* line 144, ../sass/home-page.scss */
+/* line 145, ../sass/home-page.scss */
 #search-location select {
   border-radius: 2px;
 }
-/* line 149, ../sass/home-page.scss */
+/* line 150, ../sass/home-page.scss */
 #search-location button {
   background-color: #ff715b;
   color: #fff;
@@ -115,44 +115,40 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 156, ../sass/home-page.scss */
+/* line 157, ../sass/home-page.scss */
 #search-location button:hover {
   background-color: #e74c39;
 }
 
-/* line 178, ../sass/home-page.scss */
-.home-page-events .event {
-  height: 20vw;
-  padding: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  font-family: primary-font;
-  font-size: 25px;
-  font-weight: bold;
-  background-size: cover;
-  display: block;
-  -webkit-filter: grayscale(1) brightness(0.8);
-  filter: grayscale(1);
+@media screen and (max-width: 1000px) {
+  /* line 204, ../sass/home-page.scss */
+  .my-events {
+    width: 33.3%;
+    float: left;
+  }
 }
-/* line 195, ../sass/home-page.scss */
-.home-page-events .event .icon {
-  height: 100%;
-  background-image: url(../icon/icon-car.png);
-  background-size: 30%;
-  background-repeat: no-repeat;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-position: 50% 35%;
-  color: #fff;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 50%;
+@media screen and (max-width: 768px) {
+  /* line 211, ../sass/home-page.scss */
+  .home-page-header .home-page-header-bird {
+    background-size: 100px;
+  }
+
+  /* line 216, ../sass/home-page.scss */
+  .row {
+    display: inline;
+  }
+
+  /* line 220, ../sass/home-page.scss */
+  .my-events {
+    width: 50%;
+    float: left;
+    display: inline-block;
+  }
 }
-/* line 210, ../sass/home-page.scss */
-.home-page-events .event:hover {
-  z-index: 999;
+@media screen and (max-width: 500px) {
+  /* line 230, ../sass/home-page.scss */
+  .my-events {
+    width: 100%;
+    float: left;
+  }
 }
