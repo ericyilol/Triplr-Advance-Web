@@ -130,7 +130,14 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 	.create-schedule-button:hover{
 		background-color: $secondary-color-fade; 
 		}
+
+
+
+
 }
+	.not-home-page{
+		display: none;
+	}
 
 
 	#search-location{
@@ -215,12 +222,12 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		}
 		.row{
 			// float:left;
-			display: inline;
+			// display: inline;
 		}
 		.my-events{
 			width:50%;
 			float:left;
-			display: inline-block;
+			// display: inline-block;
 
 		}
 

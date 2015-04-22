@@ -84,7 +84,9 @@ var explore_init = function() //when user click on explore
         $(".home-page-header").animate({height:'170px'});
         // $(".home-page-header").animate({height:menu_height});
         $("#homepage-upper-content").css({'display':'none'});
-        $(".row").css({'display':'block'});
+        // $(".row").css({'display':'block'});
+        $(".not-home-page").css({'display':'block'});
+
         $("#search-form").css({'display':'block'});
         $(".menu-explore-button").css({'display':'none'});
             });
