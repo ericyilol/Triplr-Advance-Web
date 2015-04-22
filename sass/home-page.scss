@@ -88,6 +88,7 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		background-image: url("../img/triplr-logo.png");
 		background-size: 160px;
 		background-repeat: no-repeat;
+		
 	}
 
 
@@ -129,7 +130,14 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 	.create-schedule-button:hover{
 		background-color: $secondary-color-fade; 
 		}
+
+
+
+
 }
+	.not-home-page{
+		display: none;
+	}
 
 
 	#search-location{
@@ -159,64 +167,79 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		
 	}
 
-.home-page-events {
-	// .events {
-	// 	height: 20vw;
-	// 	padding: 0px;
-	// 	@include transition(all, 0.3s, ease-in-out);
-	// 	font-family: primary-font;
-	// 	font-size: 20px;
-		
-	// }
-	// .events:hover{
-	// 	// transform: scale(1.1);
-	// 	@include transform(scale(1.1));
-	// 	z-index: 999;
-	// }
+// .home-page-events {
 
+// .event {
 
-.event {
+// 			height: 20vw;
+// 			padding: 0px;
+// 			@include transition(all, 0.3s, ease-in-out);
+// 			font-family: primary-font;
+// 			font-size: 25px;
+// 			font-weight: bold;
 
-			height: 20vw;
-			padding: 0px;
-			@include transition(all, 0.3s, ease-in-out);
-			font-family: primary-font;
-			font-size: 25px;
-			font-weight: bold;
+// 			background-size: cover; 
+// 			display: block;
 
-			// background-image: url(../photo/photo-egypt.jpg);
-			background-size: cover; 
-			display: block;
-
-			 -webkit-filter: grayscale(1) brightness(0.8);
- 			 filter: grayscale(1);
+// 			 -webkit-filter: grayscale(1) brightness(0.8);
+//  			 filter: grayscale(1);
 
  			 
-			.icon {
-			height:100%; 
-			background-image: url(../icon/icon-car.png);
-			background-size: 30%;
-			background-repeat:no-repeat;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			background-position: 50% 35%;
-			color:#fff;
-			text-align: center;
-			vertical-align: middle;
-			padding-top: 50%;
+// 			.icon {
+// 			height:100%; 
+// 			background-image: url(../icon/icon-car.png);
+// 			background-size: 30%;
+// 			background-repeat:no-repeat;
+// 			display: block;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			background-position: 50% 35%;
+// 			color:#fff;
+// 			text-align: center;
+// 			vertical-align: middle;
+// 			padding-top: 50%;
+// 			}
+// 		}
+// .event:hover{
+// 		z-index: 999;
+// }
+
+// }
+
+
+@media screen and (max-width: 1000px){
+	.my-events{
+		width:33.3%;
+		float:left;
+	}
+}
+@media screen and (max-width: 768px){
+		.home-page-header{
+			.home-page-header-bird{
+
+			background-size: 100px;
 			}
 		}
-.event:hover{
-	// transform: scale(1.1);
-		// @include transform(scale(1.1));
-		z-index: 999;
+		.row{
+			// float:left;
+			// display: inline;
+		}
+		.my-events{
+			width:50%;
+			float:left;
+			// display: inline-block;
+
+		}
+
 }
 
-
+@media screen and (max-width: 500px){
+	.my-events{
+		width:100%;
+		float:left;
+	}
 
 }
-
 
 
 
