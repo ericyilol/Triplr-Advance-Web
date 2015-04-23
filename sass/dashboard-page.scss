@@ -151,6 +151,31 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
     }
 }
 
+
+#menu-dropdown{
+    button{
+
+    color: #fff;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 300;
+    }
+    ul{
+    margin-top: 10px;
+    border: none;
+    background-color: $primary-color; 
+    color: $text-dark-gray-color;  
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 2px;
+    }
+
+    
+}
+
 .black-white {
     img {
         -webkit-filter: grayscale(1) brightness(0.6);
