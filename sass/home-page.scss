@@ -209,21 +209,31 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 
 @media screen and (max-width: 1000px){
 	.my-events{
-		width:33.3%;
+		width:33.33%;
 		float:left;
+	}
+
+	#search-location{
+		width:60%;
 	}
 }
 @media screen and (max-width: 768px){
 		.home-page-header{
-			.home-page-header-bird{
 
+			.home-page-header-bird{
+			margin-right: auto;
+			margin-left: auto;
 			background-size: 100px;
+			background-position: center;
 			}
+
+			#home-page-header-title{
+				font-size: 30px;
+				margin-top: 0px;
+			}
+
 		}
-		.row{
-			// float:left;
-			// display: inline;
-		}
+		
 		.my-events{
 			width:50%;
 			float:left;
