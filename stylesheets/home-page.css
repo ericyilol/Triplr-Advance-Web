@@ -157,7 +157,7 @@
     float: left;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 420px) {
   /* line 247, ../sass/home-page.scss */
   .my-events {
     width: 100%;
