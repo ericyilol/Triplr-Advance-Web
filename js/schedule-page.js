@@ -60,7 +60,7 @@
 	var timePickerInit = function() {
 		$('.timePicker .time').timepicker({
 			'showDuration': true,
-			'timeFormat': 'g:ia'
+			'timeFormat': 'H:i'
 		});
 
     	// initialize datepair

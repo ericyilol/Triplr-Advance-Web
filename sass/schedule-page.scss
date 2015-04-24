@@ -47,7 +47,7 @@ body {
 }
 
 .trip-days-container {
-    padding: 20px 0 0 20px;
+    padding: 20px 0 0 2%;
     width: 70%;
     float: left;
     .trip-days-body {
@@ -56,7 +56,7 @@ body {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width: 100%;
-        padding: 20px 40px;
+        padding: 20px 4%;
     }
 }
 
@@ -96,17 +96,18 @@ body {
 
 .trip-days-content{
     padding: 20px 0px 0px 0px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 580px;
-    width: auto;
+    width: 100%;
     .trip-days {
-        padding: 0px 40px 0px 30px;
+        padding: 0px 4% 0px 4%;
         width: 33.33%;
         position:relative;
         float: left;
         border-left: 1px solid $line-color;
         h3 {
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             font-family: "primary-font";
             font-size: 2em;
         }
@@ -137,7 +138,7 @@ body {
     .trip-events-section {
         height: 630px;
         width: 100%;
-        padding: 20px 0px 0px;
+        padding: 8vw 0px 0px;
         overflow: scroll;
         .trip-events-category {
             padding: 0 50px;
@@ -217,6 +218,20 @@ body {
         font-size: 0.9em;
         // appearance: none;
     }
+    select{
+        border-radius: 0px !important;
+        background-color: #fff;
+        border: 0 none;
+        border-right: 1px solid #eeeeee;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0px;
+        margin: 0px 0px 10px !important;
+        height: 40px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        font-size: 0.9em;
+        // color:    $text-light-gray-color;
+    }
     input::-webkit-input-placeholder { /* WebKit browsers */
         color:    $text-light-gray-color;
     }
@@ -276,20 +291,61 @@ body {
 }
 
 .event-spot {
-   background: url('../icon/event-placeholder.png') no-repeat center center; 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
+   // background: url('../icon/event-placeholder.png') no-repeat center center; 
+   // -webkit-background-size: cover;
+   // -moz-background-size: cover;
+   // -o-background-size: cover;
+   // background-size: cover;
     width: 100%;
-    height: 127px;
+    height: 8vw;
+    margin-bottom: 30px;
+    .place-holder-circle {
+        width: 50%;
+        height: 100%;
+        float: left;
+        border-radius: 50%;
+        border: 1px dotted $text-light-gray-color; 
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            @include vertical-align;
+        }
+    }
+    .place-holder-text {
+        width: 50%;
+        height: 100%;
+        float: left;
+        p {
+            text-align: right;
+            font-weight: 500;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            @include vertical-align;
+        }
+    }
+}
+.event-spot:after{
+    content:"";
+    position: relative;
+    display: block;
+    height: 30px;
+    // width: 100px;
+    z-index: 1;
+    top: 0;
+    // bottom: 18px    ;
+    left: 25%;
+    border-left: 1px dotted $text-light-gray-color;
 }
 
 .event-style {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     .event-style-image{
-        width: 54%;
+        width: 50%;
         float: left;
         img {
             width: 100%;
@@ -297,7 +353,7 @@ body {
         }
     }
     .event-style-text{
-        width: 46%;
+        width: 50%;
         padding-left: 15px;
         float: left;
         @include vertical-align;
@@ -325,5 +381,26 @@ body {
 
 .noBackground {
     background: none !important;
+}
+
+.ui-timepicker-list {
+    li {
+        font-family: "Raleway", sans-serif;
+        color:    $text-light-gray-color;
+        font-size: 0.9em;
+    }
+}
+
+.time {
+    font-family: "Raleway", sans-serif !important;
+    padding-left: 10px !important;
+}
+
+.start {
+    border-right: 1px solid #eeeeee !important;
+}
+
+.gray-color-text {
+    color: $text-light-gray-color !important;
 }
 

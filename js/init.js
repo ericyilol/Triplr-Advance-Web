@@ -15,7 +15,7 @@ var WINDOW_WIDTH  = $(window).width();
         'slick-1.5.0/slick/slick.js',
         'js/lib/bootstrap-datepicker.js',
         'js/lib/datepair.js',
-        'js/jquery.datepair.js'
+        'js/lib/jquery.datepair.js'
 
     ];
 
