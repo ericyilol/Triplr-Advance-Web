@@ -5,7 +5,7 @@
 	<title>Triplr Dashboard</title>
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<script type="text/javascript">
@@ -29,10 +29,24 @@
 			</button>
 		</div>	
 		<div class="menu-account">
-			<img src="img/account.png" alt="">
+			<!-- <img src="img/account.png" alt=""> -->
+				<div class="dropdown" id="menu-dropdown">
+					  <button class="btn btn-default dropdown-toggle"  type="button"  data-toggle="dropdown" aria-expanded="true">
+					    Eric Yi
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu " role="menu">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+					    <li role="presentation" class="divider"></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+					  </ul>
+						</div>
+
 		</div>
 		<div class="menu-welcome-back-text">
-			<p>Eric</p>
+			<!-- <p>Eric</p> -->
 		</div>
 	</nav>
 	<div id="new-trip">

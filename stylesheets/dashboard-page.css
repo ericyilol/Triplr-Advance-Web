@@ -148,7 +148,28 @@
   white-space: nowrap;
 }
 
-/* line 155, ../sass/dashboard-page.scss */
+/* line 156, ../sass/dashboard-page.scss */
+#menu-dropdown button {
+  color: #fff;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 165, ../sass/dashboard-page.scss */
+#menu-dropdown ul {
+  margin-top: 10px;
+  border: none;
+  background-color: #6dd0f7;
+  color: #4e4e4e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 2px;
+}
+
+/* line 180, ../sass/dashboard-page.scss */
 .black-white img {
   -webkit-filter: grayscale(1) brightness(0.6);
   filter: grayscale(1) brightness(0.6);
@@ -159,7 +180,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 163, ../sass/dashboard-page.scss */
+/* line 188, ../sass/dashboard-page.scss */
 .black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);

@@ -128,24 +128,37 @@
 @media screen and (max-width: 1000px) {
   /* line 211, ../sass/home-page.scss */
   .my-events {
-    width: 33.3%;
+    width: 33.33%;
     float: left;
+  }
+
+  /* line 216, ../sass/home-page.scss */
+  #search-location {
+    width: 60%;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 218, ../sass/home-page.scss */
+  /* line 223, ../sass/home-page.scss */
   .home-page-header .home-page-header-bird {
+    margin-right: auto;
+    margin-left: auto;
     background-size: 100px;
+    background-position: center;
+  }
+  /* line 230, ../sass/home-page.scss */
+  .home-page-header #home-page-header-title {
+    font-size: 30px;
+    margin-top: 0px;
   }
 
-  /* line 227, ../sass/home-page.scss */
+  /* line 237, ../sass/home-page.scss */
   .my-events {
     width: 50%;
     float: left;
   }
 }
-@media screen and (max-width: 500px) {
-  /* line 237, ../sass/home-page.scss */
+@media screen and (max-width: 420px) {
+  /* line 247, ../sass/home-page.scss */
   .my-events {
     width: 100%;
     float: left;

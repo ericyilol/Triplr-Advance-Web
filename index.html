@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Triplr</title>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
 	<link rel="stylesheet" href="stylesheets/screen.css">
 </head>
 <body>
@@ -71,6 +71,21 @@
 			Sign Up
 			</button>
 		</div>
+		<div class="menu-login">
+				<div class="dropdown" id="menu-dropdown" style="display:none">
+					  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+					    Eric Yi
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu " role="menu" >
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+							    <li role="presentation" class="divider"></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+					  </ul>
+			</div>
+		</div>
 	</nav>
 
 
@@ -82,7 +97,6 @@
 				<div id ="home-page-header-title">Adventure with friends</div>
 				<div id="home-page-header-subtitle"> Plan, Explore, and Inspire your Story </div>	
 				<button class="btn btn-primary create-schedule-button btn-lg" type="button" onclick="location.href='dashboard.html'">Plan your trip</button>
-				
 			</div>
 				<form role="form" id="search-form" style="display:none">
         			<div class="input-group" id="search-location">
