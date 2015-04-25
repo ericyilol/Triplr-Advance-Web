@@ -13,7 +13,7 @@ Trip = function()
 
 
 function dashboard_init() {
-    eventHeight_init();
+    // eventHeight_init();
     timeLine_init();
     parseInput();
 }
@@ -27,10 +27,10 @@ var parseInput = function() {
 
 
 
-var eventHeight_init = function() {
-    var eventHeight = $('.my-events').width();
-    $('.my-events').css({'height':eventHeight+'px'});
-}
+// var eventHeight_init = function() {
+//     var eventHeight = $('.my-events').width();
+//     $('.my-events').css({'height':eventHeight+'px'});
+// }
 
 var timeLine_init = function()
 {

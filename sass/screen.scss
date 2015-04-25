@@ -39,6 +39,25 @@
 	background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
 }
 
+.your-class {
+	margin: 0 0 0 400px;
+	padding: 10px;
+	width: 600px;
+	padding: 0;
+	width: 900px !important;
+	div {
+		padding: 10px;
+		margin: 10px;
+		height:500px;
+		color: #fff;
+		background: #fcc;
+	}
+}
+
+.slick-track {
+	// width :1000px !important;
+}
+
 @import "home-page.css";
 @import "dashboard-page.css";
 @import "navigation.css";

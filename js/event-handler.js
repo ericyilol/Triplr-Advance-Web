@@ -105,7 +105,7 @@
         				if (tempData.startIndex >= lastEndCode && tempData.endIndex <= params.startIndex)
         				{
         					data[id] = tempData;
-        					localStorage.setItem("todoData", JSON.stringify(data));
+        					localStorage.setItem("eventsData", JSON.stringify(data));
         					eventsClearNoDelete();
         					eventInit();
         					return false;
@@ -124,7 +124,7 @@
         	if (lastElementFlag) {
         		generateElement(tempData);
         		data[id] = tempData;
-        		localStorage.setItem("todoData", JSON.stringify(data));
+        		localStorage.setItem("eventsData", JSON.stringify(data));
         	}
         	parentFormInput[0].value = "";
         	parentFormInput[1].value = "";

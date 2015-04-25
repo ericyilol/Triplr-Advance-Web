@@ -49,15 +49,17 @@
 /* line 79, ../sass/dashboard-page.scss */
 .my-events {
   padding: 0px !important;
+  height: 25vw;
+  cursor: pointer;
 }
-/* line 81, ../sass/dashboard-page.scss */
+/* line 83, ../sass/dashboard-page.scss */
 .my-events .city-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-/* line 86, ../sass/dashboard-page.scss */
+/* line 88, ../sass/dashboard-page.scss */
 .my-events .city-image img {
   position: absolute;
   left: 50%;
@@ -70,7 +72,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 95, ../sass/dashboard-page.scss */
+/* line 97, ../sass/dashboard-page.scss */
 .my-events .travel-info {
   position: absolute;
   left: 50%;
@@ -81,7 +83,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 97, ../sass/dashboard-page.scss */
+/* line 99, ../sass/dashboard-page.scss */
 .my-events .travel-info p {
   text-align: center;
   color: #fff;
@@ -90,7 +92,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 105, ../sass/dashboard-page.scss */
+/* line 107, ../sass/dashboard-page.scss */
 .my-events .travel-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -99,13 +101,13 @@
   font-size: 2em;
   white-space: nowrap;
 }
-/* line 114, ../sass/dashboard-page.scss */
+/* line 116, ../sass/dashboard-page.scss */
 .my-events .home-icon {
   color: #fff;
   text-align: center;
   vertical-align: middle;
 }
-/* line 119, ../sass/dashboard-page.scss */
+/* line 121, ../sass/dashboard-page.scss */
 .my-events .home-icon img {
   position: absolute;
   left: 50%;
@@ -118,7 +120,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 129, ../sass/dashboard-page.scss */
+/* line 131, ../sass/dashboard-page.scss */
 .my-events .home-info {
   position: absolute;
   left: 50%;
@@ -129,7 +131,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 135, ../sass/dashboard-page.scss */
+/* line 137, ../sass/dashboard-page.scss */
 .my-events .home-info p {
   text-align: center;
   color: #fff;
@@ -138,7 +140,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 143, ../sass/dashboard-page.scss */
+/* line 145, ../sass/dashboard-page.scss */
 .my-events .home-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -148,7 +150,7 @@
   white-space: nowrap;
 }
 
-/* line 156, ../sass/dashboard-page.scss */
+/* line 158, ../sass/dashboard-page.scss */
 #menu-dropdown button {
   color: #fff;
   border: none;
@@ -157,7 +159,7 @@
   font-size: 16px;
   font-weight: 300;
 }
-/* line 165, ../sass/dashboard-page.scss */
+/* line 167, ../sass/dashboard-page.scss */
 #menu-dropdown ul {
   margin-top: 10px;
   border: none;
@@ -169,7 +171,7 @@
   border-radius: 2px;
 }
 
-/* line 180, ../sass/dashboard-page.scss */
+/* line 182, ../sass/dashboard-page.scss */
 .black-white img {
   -webkit-filter: grayscale(1) brightness(0.6);
   filter: grayscale(1) brightness(0.6);
@@ -180,7 +182,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 188, ../sass/dashboard-page.scss */
+/* line 190, ../sass/dashboard-page.scss */
 .black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
