@@ -129,38 +129,39 @@
   /* line 211, ../sass/home-page.scss */
   .my-events {
     width: 33.33%;
-    float: left;
+    height: 33.33vw !important;
   }
 
-  /* line 216, ../sass/home-page.scss */
+  /* line 217, ../sass/home-page.scss */
   #search-location {
     width: 60%;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 223, ../sass/home-page.scss */
+  /* line 224, ../sass/home-page.scss */
   .home-page-header .home-page-header-bird {
     margin-right: auto;
     margin-left: auto;
     background-size: 100px;
     background-position: center;
   }
-  /* line 230, ../sass/home-page.scss */
+  /* line 231, ../sass/home-page.scss */
   .home-page-header #home-page-header-title {
     font-size: 30px;
     margin-top: 0px;
   }
 
-  /* line 237, ../sass/home-page.scss */
+  /* line 238, ../sass/home-page.scss */
   .my-events {
     width: 50%;
-    float: left;
+    height: 50vw !important;
   }
 }
 @media screen and (max-width: 420px) {
-  /* line 247, ../sass/home-page.scss */
+  /* line 249, ../sass/home-page.scss */
   .my-events {
     width: 100%;
+    height: 100vw !important;
     float: left;
   }
 }

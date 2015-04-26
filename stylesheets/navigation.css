@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 99;
   height: 60px;
   background-color: #6dd0f7;
 }
@@ -152,7 +152,7 @@
   width: 90px;
   position: fixed;
   border-radius: 50%;
-  z-index: 9999;
+  z-index: 99;
   background-color: #ff715b;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;

@@ -16,6 +16,7 @@ function dashboard_init() {
     // eventHeight_init();
     timeLine_init();
     parseInput();
+    create_new_trip();
 }
 
 var parseInput = function() {
@@ -60,4 +61,32 @@ var timeLine_init = function()
     var oldestYear = $('.trips-gone-timeline').last().height();
     oldestYear = oldestYear - 50;
     $('.trips-gone-timeline').last().css({'height':oldestYear+'px'});
+}
+
+function addUser() {
+      aleart("got here!");  
+    }
+
+var create_new_trip = function(){
+    var dialog, form;
+    dialog = $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 300,
+        width: 400,
+        modal: true,
+        buttons: {
+            "Create an account": addUser,
+            Cancel: function() {
+            dialog.dialog( "close" );   
+        }
+    },
+    close: function() {
+        // form[ 0 ].reset();
+        // allFields.removeClass( "ui-state-error" );
+        }
+    });
+    $( "#new-trip" ).button().on( "click", function() {
+      dialog.dialog( "open" );
+      // alert("got there!")
+    });
 }

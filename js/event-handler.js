@@ -1,5 +1,5 @@
 	var events = events || {},
-	events = JSON.parse(localStorage.getItem("eventsData"));
+	data = JSON.parse(localStorage.getItem("eventsData"));
 
 	data = data || {};
 
@@ -16,7 +16,7 @@
 	}, codes = {
 		"1" : "#day1",
 		"2" : "#day2",
-		"3" : "#day3"
+		"3" : "#day3",
 	};
 
 	var eventsAddListener = function() {
@@ -146,17 +146,6 @@
         eventsAddListener();
 	}
 
-	var eventInit = function(options) {
-		options = options || {};
-        options = $.extend({}, defaults, options);
-
-        $.each(data, function (index, params) {
-            generateElement(params);
-        });
-
-        eventsAddListener();
-	}
-
 	var eventsClear = function () {
         data = {};
         localStorage.setItem("eventsData", JSON.stringify(data));
@@ -233,6 +222,9 @@
     	$("<img />", {
     		"src" : params.imageSrc
     	}).appendTo(imageWrapper);
+    	// $("<p />", {
+    	// 	"text" : "EDIT"
+    	// }).appendTo(imageWrapper);
 
     	textWrapper = $("<div />", {
     		"class" : defaults.eventsTextHolder

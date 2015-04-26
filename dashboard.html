@@ -5,7 +5,6 @@
 	<title>Triplr Dashboard</title>
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<script type="text/javascript">
@@ -49,6 +48,23 @@
 			<!-- <p>Eric</p> -->
 		</div>
 	</nav>
+	<div id="dialog-form" title="Create new user">
+		<p class="validateTips">All form fields are required.</p>
+
+		<form>
+			<fieldset>
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+				<label for="email">Email</label>
+				<input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+
+				<!-- Allow form submission with keyboard without duplicating the dialog button -->
+				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+			</fieldset>
+		</form>
+	</div>
 	<div id="new-trip">
 		<!-- <div class="hvr-radial-out"> -->
 		<!-- <i class="fa fa-plus new-trip-icon"></i> -->
@@ -63,7 +79,7 @@
 					<div class="trips-planning-timeline">
 					</div>
 				</div>
-				<div class="col-md-3 my-events">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events">
 					<div class="city-image">
 						<img src="photo/nyc2.jpg" alt="">
 					</div>
@@ -72,7 +88,7 @@
 						<h4 class="travel-city">New York</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events">
 					<div class="city-image">
 						<img src="photo/london.jpg" alt="">
 					</div>
@@ -88,7 +104,7 @@
 					<div class="trips-gone-timeline">
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/beijing2.jpg" alt="">
 					</div>
@@ -97,7 +113,7 @@
 						<h4 class="travel-city">Beijing, Shanghai</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/lisbon.jpg" alt="">
 					</div>
@@ -106,7 +122,7 @@
 						<h4 class="travel-city">Lisbon</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/venice.jpg" alt="">
 					</div>
@@ -122,7 +138,7 @@
 					<div class="trips-gone-timeline">
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/taipei.jpg" alt="">
 					</div>
@@ -131,7 +147,7 @@
 						<h4 class="travel-city">Taipei, Kaohsiung</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image">
 						<img src="photo/java.jpg" alt="">
 					</div>
@@ -140,7 +156,7 @@
 						<h4 class="travel-city">Tokyo, Yokohama, Osaka </h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/seoul.jpg" alt="">
 					</div>
@@ -149,7 +165,7 @@
 						<h4 class="travel-city">Seoul</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/egypt.jpg" alt="">
 					</div>
@@ -158,7 +174,7 @@
 						<h4 class="travel-city">Egypt</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image ">
 						<img src="photo/greece.jpg" alt="">
 					</div>
@@ -174,7 +190,7 @@
 					<div class="trips-gone-timeline">
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image">
 						<img src="photo/sanfran.jpg" alt="">
 					</div>
@@ -183,7 +199,7 @@
 						<h4 class="travel-city">San Francisco</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image">
 						<img src="photo/agra.jpg" alt="">
 					</div>
@@ -192,7 +208,7 @@
 						<h4 class="travel-city">Agra</h4>
 					</div>
 				</div>
-				<div class="col-md-3 my-events black-white">
+				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
 					<div class="city-image">
 						<img src="photo/la.jpg" alt="">
 					</div>

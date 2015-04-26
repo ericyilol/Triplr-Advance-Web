@@ -2,12 +2,15 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-@import "lib/jquery.ui.min.css";
 @import "lib/hover-min.css";
 @import "lib/bootstrap-datepicker.css";
 @import "lib/animate.css";
-@import "../slick-1.5.0/slick/slick.css";
-@import "../slick-1.5.0/slick/slick-theme.css";
+@import "../lib/slick-1.5.0/slick/slick.css";
+@import "../lib/slick-1.5.0/slick/slick-theme.css";
+@import "../lib/slick-1.5.0/slick/slick-theme.css";
+// @import "../lib/jquery-ui-1.11.4/jquery-ui.theme.min.css";
+@import "../lib/jquery-ui-1.11.4/jquery-ui.css";
+
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
@@ -57,7 +60,7 @@
 .slick-track {
 	// width :1000px !important;
 }
-
+@import "modal.css";
 @import "home-page.css";
 @import "dashboard-page.css";
 @import "navigation.css";

@@ -97,14 +97,16 @@ body {
 .trip-days-content{
     padding: 20px 0px 0px 0px;
     overflow-y: scroll;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     height: 580px;
     width: 100%;
+    .slick-test {
+        height: 500px;
+    }
     .trip-days {
+        // height: 100%;
+        // width: 33.33%;
         padding: 0px 4% 0px 4%;
-        width: 33.33%;
-        position:relative;
-        float: left;
         border-left: 1px solid $line-color;
         h3 {
             padding-bottom: 20px;
@@ -116,30 +118,72 @@ body {
             height: auto;
             z-index: 99999; 
         }
-        // background-color: #333;
     }
     .trip-days:first-child {
-        border-left: 0;
+        border-left: 1px solid #fff;
     }
-    // .trip-days:after {
-    //     content:"";
-    //     position: absolute;
-    //     z-index: -1;
-    //     top: 0;
-    //     bottom: 0;
-    //     left: 30%;
-    //     border-left: 1px dashed $line-color; /*change these values to suit your liking*/
-    // }
+}
+
+.trip-days-content::-webkit-scrollbar { 
+  display: none;
+}
+.event-spot {
+    height: 7vw;
+    margin-bottom: 30px;
+    @include transition(all, 0.6s, ease-in-out);
+    .place-holder-circle {
+        width: 50%;
+        height: 100%;
+        float: left;
+        border-radius: 50%;
+        border: 1px dotted $text-light-gray-color; 
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            @include vertical-align;
+        }
+    }
+    .place-holder-text {
+        width: 50%;
+        height: 100%;
+        float: left;
+        p {
+            text-align: right;
+            font-weight: 500;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            @include vertical-align;
+        }
+    }
+}
+.event-spot:after{
+    content:"";
+    position: relative;
+    display: block;
+    height: 30px;
+    // width: 100px;
+    z-index: 1;
+    top: 0;
+    // bottom: 18px    ;
+    left: 25%;
+    border-left: 1px dotted $text-light-gray-color;
 }
 
 .trip-events-container {
     width: 30%;
     float: left;
+    overflow: hidden;
     .trip-events-section {
         height: 630px;
         width: 100%;
-        padding: 8vw 0px 0px;
-        overflow: scroll;
+        margin-right: 20px;
+        padding: 4vw 0px 0px;
+        overflow-x: hidden;
+        overflow-y: scroll;
         .trip-events-category {
             padding: 0 50px;
             h2 {
@@ -168,6 +212,9 @@ body {
             }
         }
     }
+    .trip-events-section::-webkit-scrollbar { 
+        display: none; 
+    }
     .trip-events-footer {
         border-top: 1px solid $text-light-gray-color;
         margin: 0px 50px;
@@ -176,14 +223,14 @@ body {
 }
 
 .trip-events-add {
+    @include transition(all, 0.4s, ease-in-out);
     margin: 10px 0;
     background-color: $text-light-gray-color;
     height: 0px;
-    @include transition(all, 0.6s, ease-in-out);
     overflow: hidden;
     width: 100%;
-    #triangle_1 {
-        z-index: 98;
+    .triangle_1 {
+        z-index: 20;
         position:absolute;
         height: 20px;
         width: 30px;
@@ -192,8 +239,8 @@ body {
             height: auto;
         }
     }
-    #triangle_2 {
-        z-index: 99;
+    .triangle_2 {
+        z-index: 21;
         position:absolute;
         height: 20px;
         width: 30px;
@@ -290,66 +337,27 @@ body {
     }
 }
 
-.event-spot {
-   // background: url('../icon/event-placeholder.png') no-repeat center center; 
-   // -webkit-background-size: cover;
-   // -moz-background-size: cover;
-   // -o-background-size: cover;
-   // background-size: cover;
-    width: 100%;
-    height: 8vw;
-    margin-bottom: 30px;
-    .place-holder-circle {
-        width: 50%;
-        height: 100%;
-        float: left;
-        border-radius: 50%;
-        border: 1px dotted $text-light-gray-color; 
-        p {
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.6em;
-            font-family: "Raleway", sans-serif;
-            color: $text-light-gray-color;
-            @include vertical-align;
-        }
-    }
-    .place-holder-text {
-        width: 50%;
-        height: 100%;
-        float: left;
-        p {
-            text-align: right;
-            font-weight: 500;
-            font-size: 0.6em;
-            font-family: "Raleway", sans-serif;
-            color: $text-light-gray-color;
-            @include vertical-align;
-        }
-    }
-}
-.event-spot:after{
-    content:"";
-    position: relative;
-    display: block;
-    height: 30px;
-    // width: 100px;
-    z-index: 1;
-    top: 0;
-    // bottom: 18px    ;
-    left: 25%;
-    border-left: 1px dotted $text-light-gray-color;
-}
-
 .event-style {
-    // width: 100%;
-    // height: 100%;
     .event-style-image{
         width: 50%;
         float: left;
         img {
+            @include transition(all, 0.3s, ease-in-out);
             width: 100%;
             height: auto;
+        }
+        p {
+            @include center-align;
+            text-align: center;
+            opacity: 0;
+            color: $primary-dark-gray-color;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
         }
     }
     .event-style-text{
@@ -368,6 +376,15 @@ body {
             line-height: 1;
             text-rendering: optimizeLegibility;
         }
+    }
+}
+.event-style-image:hover {
+    img {
+        -webkit-filter: grayscale(0) brightness(0.4);
+        filter: grayscale(0) brightness(0.5);
+    }
+    p {
+        opacity: 1
     }
 }
 

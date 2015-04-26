@@ -40,7 +40,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
   	top: 0;
   	left: 0;
 	width: 100%;
-	z-index: 9999;
+	z-index: 99;
 	height: 60px;
 	background-color: $primary-color;
 }
@@ -135,7 +135,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	width: 90px; 
 	position: fixed; 
 	border-radius: 50%;
-	z-index: 9999;
+	z-index: 99;
 	background-color: $secondary-color;
 	@include transition(all, 0.2s, ease-in-out);
 	

@@ -22,7 +22,7 @@
     font-size: 0;
     line-height: 0;
 
-    position: absolute;
+    position: fixed;
     top: 50%;
 
     display: block;
@@ -69,7 +69,7 @@
     line-height: 1;
 
     opacity: .75;
-    color: white;
+    color: #4e4e4e;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -77,7 +77,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 3%;
 }
 [dir='rtl'] .slick-prev
 {
@@ -95,7 +95,7 @@
 
 .slick-next
 {
-    right: -25px;
+    left: 67%;
 }
 [dir='rtl'] .slick-next
 {

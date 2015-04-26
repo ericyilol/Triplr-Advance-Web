@@ -210,7 +210,8 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 @media screen and (max-width: 1000px){
 	.my-events{
 		width:33.33%;
-		float:left;
+		// float:left;
+		height: 33.33vw !important;
 	}
 
 	#search-location{
@@ -236,7 +237,8 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		
 		.my-events{
 			width:50%;
-			float:left;
+			height: 50vw !important;
+			// float:left;
 			// display: inline-block;
 
 		}
@@ -246,6 +248,7 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 @media screen and (max-width: 420px){
 	.my-events{
 		width:100%;
+		height: 100vw !important;
 		float:left;
 	}
 
