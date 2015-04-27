@@ -158,14 +158,22 @@
     margin-top: 0px;
   }
 
+<<<<<<< HEAD
   /* line 244, ../sass/home-page.scss */
+=======
+  /* line 237, ../sass/home-page.scss */
+>>>>>>> origin/mz
   .my-events {
     width: 50%;
     height: 50vw !important;
   }
 }
 @media screen and (max-width: 420px) {
+<<<<<<< HEAD
   /* line 258, ../sass/home-page.scss */
+=======
+  /* line 246, ../sass/home-page.scss */
+>>>>>>> origin/mz
   .my-events {
     width: 100%;
     height: 100vw !important;

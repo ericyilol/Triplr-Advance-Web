@@ -91,7 +91,7 @@ var explore_init = function() //when user click on explore
         $(".menu-explore-button").css({'display':'none'});
             });
        
-
+        
 
 
 }
