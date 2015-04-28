@@ -28,6 +28,7 @@ Trip = function()
 function home_page_init() {
     eventHeight_init();
     explore_init();
+    mobile_init();
     // timeLine_init();
     // parseInput();
 }
@@ -91,9 +92,30 @@ var explore_init = function() //when user click on explore
         $(".menu-explore-button").css({'display':'none'});
             });
        
-        
-
 
 }
 
+var mobile_init = function()
+{
+    var toggle = false;
+    $(".hamburger-icon").click(function(){
+        if (toggle){
+        $("#hamburger-menu").animate({height:'60px'});
+        $(".hamburger-list").css({'display':'none'});
+        $(".hamburger-list").css({'background-color':'#6dd0f7'});
+        $("#hamburger-menu").css({'background-color':'#6dd0f7'});
+        $(".hamburger-icon").attr({src: './img/hamburger.png'});
+        toggle =false;
+        }
+        else{
+        $("#hamburger-menu").animate({height:'160px'});
+        $(".hamburger-list").css({'display':'block'});
+        $(".hamburger-list").css({'background-color':'white'});
+        $("#hamburger-menu").css({'background-color':'white'});
+        $(".hamburger-icon").attr({src: './img/hamburger-icon-blue.png'});
+        toggle =true;
 
+        }
+    });
+
+}

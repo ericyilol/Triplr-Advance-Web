@@ -1,11 +1,38 @@
 /* line 29, ../sass/home-page.scss */
 #hamburger-menu {
-  display: none;
-  background-color: black;
+  background-color: #6dd0f7;
   height: 150px;
 }
-
 /* line 35, ../sass/home-page.scss */
+#hamburger-menu ul {
+  text-align: center;
+  padding-top: 10px;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 43, ../sass/home-page.scss */
+#hamburger-menu ul li {
+  padding-bottom: 20px;
+}
+/* line 47, ../sass/home-page.scss */
+#hamburger-menu ul a {
+  color: #6dd0f7;
+}
+
+/* line 53, ../sass/home-page.scss */
+.hamburger-icon {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+/* line 60, ../sass/home-page.scss */
+.hamburger-list {
+  display: none;
+}
+
+/* line 64, ../sass/home-page.scss */
 .home-page-header-logo {
   float: left;
   font-size: 45px;
@@ -15,7 +42,7 @@
   font-family: primary-font;
 }
 
-/* line 45, ../sass/home-page.scss */
+/* line 74, ../sass/home-page.scss */
 .home-page-header {
   background-color: #6dd0f7;
   background-size: cover;
@@ -25,13 +52,13 @@
   padding: 10px 0 0 0;
   font-family: 'Raleway', sans-serif;
 }
-/* line 56, ../sass/home-page.scss */
+/* line 85, ../sass/home-page.scss */
 .home-page-header .home-page-header-text {
   color: #fff;
   float: right;
   padding: 0 30px 0 0;
 }
-/* line 61, ../sass/home-page.scss */
+/* line 90, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button {
   background-color: transparent;
   font-size: 16px;
@@ -42,11 +69,11 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 68, ../sass/home-page.scss */
+/* line 97, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button:hover {
   color: #ff715b;
 }
-/* line 84, ../sass/home-page.scss */
+/* line 113, ../sass/home-page.scss */
 .home-page-header .home-page-header-bird {
   width: 150px;
   height: 150px;
@@ -59,7 +86,7 @@
   background-size: 160px;
   background-repeat: no-repeat;
 }
-/* line 101, ../sass/home-page.scss */
+/* line 130, ../sass/home-page.scss */
 .home-page-header #home-page-header-title {
   color: #fff;
   text-align: center;
@@ -68,7 +95,7 @@
   font-weight: 700;
   font-size: 40px;
 }
-/* line 110, ../sass/home-page.scss */
+/* line 139, ../sass/home-page.scss */
 .home-page-header #home-page-header-subtitle {
   color: #fff;
   text-align: center;
@@ -77,7 +104,7 @@
   font-weight: 300;
   font-size: 20px;
 }
-/* line 122, ../sass/home-page.scss */
+/* line 151, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
   background-color: #ff715b;
   border: none;
@@ -90,32 +117,32 @@
   padding-right: 50px;
   display: block;
 }
-/* line 136, ../sass/home-page.scss */
+/* line 165, ../sass/home-page.scss */
 .home-page-header .create-schedule-button:hover {
   background-color: #e74c39;
 }
 
-/* line 144, ../sass/home-page.scss */
+/* line 173, ../sass/home-page.scss */
 .not-home-page {
   display: none;
 }
 
-/* line 149, ../sass/home-page.scss */
+/* line 178, ../sass/home-page.scss */
 #search-location {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
 }
-/* line 154, ../sass/home-page.scss */
+/* line 183, ../sass/home-page.scss */
 #search-location input {
   border-radius: 2px;
 }
-/* line 158, ../sass/home-page.scss */
+/* line 187, ../sass/home-page.scss */
 #search-location select {
   border-radius: 2px;
 }
-/* line 163, ../sass/home-page.scss */
+/* line 192, ../sass/home-page.scss */
 #search-location button {
   background-color: #ff715b;
   color: #fff;
@@ -127,53 +154,55 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 170, ../sass/home-page.scss */
+/* line 199, ../sass/home-page.scss */
 #search-location button:hover {
   background-color: #e74c39;
 }
 
 @media screen and (max-width: 1000px) {
-  /* line 217, ../sass/home-page.scss */
+  /* line 246, ../sass/home-page.scss */
+  #menu-bar {
+    display: none;
+  }
+
+  /* line 249, ../sass/home-page.scss */
   .my-events {
     width: 33.33%;
     height: 33.33vw !important;
   }
 
-  /* line 223, ../sass/home-page.scss */
+  /* line 255, ../sass/home-page.scss */
   #search-location {
     width: 60%;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 230, ../sass/home-page.scss */
+  /* line 262, ../sass/home-page.scss */
   .home-page-header .home-page-header-bird {
     margin-right: auto;
     margin-left: auto;
     background-size: 100px;
     background-position: center;
   }
-  /* line 237, ../sass/home-page.scss */
+  /* line 269, ../sass/home-page.scss */
   .home-page-header #home-page-header-title {
     font-size: 30px;
     margin-top: 0px;
   }
 
-<<<<<<< HEAD
-  /* line 244, ../sass/home-page.scss */
-=======
-  /* line 237, ../sass/home-page.scss */
->>>>>>> origin/mz
+  /* line 275, ../sass/home-page.scss */
   .my-events {
     width: 50%;
     height: 50vw !important;
   }
 }
 @media screen and (max-width: 420px) {
-<<<<<<< HEAD
-  /* line 258, ../sass/home-page.scss */
-=======
-  /* line 246, ../sass/home-page.scss */
->>>>>>> origin/mz
+  /* line 285, ../sass/home-page.scss */
+  #menu-bar {
+    display: none;
+  }
+
+  /* line 290, ../sass/home-page.scss */
   .my-events {
     width: 100%;
     height: 100vw !important;

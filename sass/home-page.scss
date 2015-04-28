@@ -27,9 +27,38 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 
 
 #hamburger-menu{
-	display: none;
-	background-color: black;
+	// position: absolute;
+	// position: fixed;
+	// display: none;
+	background-color: $primary-color;
 	height:150px;
+	ul{
+
+		text-align: center;
+		padding-top: 10px; 
+		border: none;
+		font-family: 'Raleway', sans-serif;
+		font-size: 16px;
+		font-weight: 300;
+		li{
+			padding-bottom: 20px;
+
+		}
+		a {
+			color:$primary-color;
+		}
+	}
+}
+
+.hamburger-icon{
+	margin-top:20px;
+	margin-left:30px;
+
+
+
+}
+.hamburger-list{
+	display: none;
 }
 
 .home-page-header-logo{
@@ -214,6 +243,9 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 
 
 @media screen and (max-width: 1000px){
+	#menu-bar{   //delete this
+	display:none;
+	}
 	.my-events{
 		width:33.33%;
 		// float:left;
@@ -250,7 +282,10 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 
 @media screen and (max-width: 420px){
 	
-	
+	#menu-bar{
+	display:none;
+	}
+
 
 	.my-events{
 		width:100%;
