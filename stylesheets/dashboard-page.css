@@ -152,8 +152,8 @@
 
 /* line 165, ../sass/dashboard-page.scss */
 .black-white img {
-  -webkit-filter: grayscale(1) brightness(0.6);
-  filter: grayscale(1) brightness(0.6);
+  -webkit-filter: grayscale(1) brightness(0.7);
+  filter: grayscale(1) brightness(0.7);
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -163,6 +163,23 @@
 
 /* line 173, ../sass/dashboard-page.scss */
 .black-white:hover img {
+  -webkit-filter: grayscale(0) brightness(0.8);
+  filter: grayscale(0) brightness(0.8);
+}
+
+/* line 180, ../sass/dashboard-page.scss */
+.half-black-white img {
+  -webkit-filter: grayscale(0.4) brightness(0.8);
+  filter: grayscale(0.4) brightness(0.8);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 188, ../sass/dashboard-page.scss */
+.half-black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
 }

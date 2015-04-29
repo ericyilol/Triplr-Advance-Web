@@ -10,7 +10,6 @@ var WINDOW_WIDTH  = $(window).width();
         'js/dashboard.js',
         'js/home-page.js',
         'js/schedule-page.js',
-        'js/event-handler.js',
         'lib/slick-1.5.0/slick/slick.js',
         'lib/jquery-ui-1.11.4/jquery-ui.min.js',
         'js/lib/bootstrap-datepicker.js',

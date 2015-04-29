@@ -73,7 +73,7 @@ $line-color: #959595;
 .pop-modal-container {
   position: relative;
   width: 90%;
-  max-width: 500px;
+  max-width: 450px;
   background: #FFF;
   margin: 10em auto 4em;
   cursor: auto;
@@ -157,16 +157,12 @@ $line-color: #959595;
 .first-half{
 	border-right: 0px solid !important;
 }
-// .cd-form label.cd-password {
-//   background-image: url("../img/cd-icon-password.svg");
-// }
 .cd-form input {
   margin: 0;
   padding: 0;
   border-radius: 0px;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  // font-size: 15px;
   font-size: 1rem;
 }
 .cd-form input.full-width {

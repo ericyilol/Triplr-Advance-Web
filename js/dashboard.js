@@ -17,11 +17,12 @@ function dashboard_init() {
     timelineInit();
     newTripButtonInit();
     createNewTripFunc();
+    arriveToDepartdates();
     $('.datePicker .date').datepicker({
         'format': 'M. d  yyyy',
         'autoclose': true
     });
-    console.log(LOCALDATA);
+    // console.log(LOCALDATA);
     // initialize datepair
     $('.datePicker').datepair();
 }
@@ -30,6 +31,7 @@ var clearLocalStorage = function() {
     var LOCALDATA = [];
     localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
     console.log(LOCALDATA);
+    // location.reload();
 }
 
 var jsonInit = function() {
@@ -37,13 +39,12 @@ var jsonInit = function() {
         './data.json',
         function(data){
             LOCALDATA = data.slice(0);
-            console.log(LOCALDATA);
             localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
         });
 }
 var tripsInit = function() {
-    console.log(LOCALDATA);
-    var parentSection = $('.all-events'),
+    // console.log(LOCALDATA);
+    var $parentSection = $('.all-events'),
         pastTripPre = 'year-',
         myEvents = 'my-events ',
         cityImage = 'city-image',
@@ -52,6 +53,7 @@ var tripsInit = function() {
         travelCity = 'travel-city',
         columnClass = 'col-md-3 col-sm-4 col-xs-6 ',
         blackWhite = 'black-white',
+        halfBlackWhite = 'half-black-white',
         sectionWapper, //<div class="row year" id="year-future">
         tripWapper, //<div class="col-md-3 col-sm-4 col-xs-6 my-events">
         imageWapper, //<div class="city-image">
@@ -59,8 +61,8 @@ var tripsInit = function() {
 
     sectionWapper  = $("<div />", {
             "class" : "row year",
-            "id" : "year-future"
-        }).appendTo(parentSection);
+            "id" : "year-Future"
+        }).appendTo($parentSection);
 
     var today = new Date(Date.now()),
         todayYear = today.getFullYear();
@@ -72,23 +74,23 @@ var tripsInit = function() {
         sectionWapper  = $("<div />", {
                 "class" : "row year",
                 "id" : pastTripPre + i
-            }).appendTo(parentSection);
+            }).appendTo($parentSection);
     };
 
     for (var i = LOCALDATA.length - 1; i >= 0; i--) {
         var Monthday = LOCALDATA[i].arrive.split('. ');
-        var thisMonth = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(Monthday[0]) / 3 + 1;
+        var thisMonth = "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(Monthday[0]) / 3;
         var thisDate = new Date(LOCALDATA[i].year,thisMonth,Monthday[1]);
-        console.log(LOCALDATA[i].year,thisMonth,Monthday[1]);
+        // console.log(LOCALDATA[i].year,thisMonth,Monthday[1]);
         if (thisDate.getTime() > today.getTime())
         {
-            sectionWapper = parentSection.find('#year-future');
+            sectionWapper = $parentSection.find('#year-Future');
             tripWapper  = $("<div />", {
-                "class" : columnClass + myEvents
+                "class" : columnClass + myEvents + halfBlackWhite
                 }).appendTo(sectionWapper);
         }
         else {
-            sectionWapper = parentSection.find('#' + pastTripPre + LOCALDATA[i].year);
+            sectionWapper = $parentSection.find('#' + pastTripPre + LOCALDATA[i].year);
             tripWapper  = $("<div />", {
                 "class" : columnClass + myEvents + blackWhite
                 }).appendTo(sectionWapper);
@@ -154,20 +156,26 @@ var timelineInit = function()
 }
 
 var newTripButtonInit = function(){
-    var parent = $('body'),
+    var $parent = $('body'),
         sectionWapper, //<button id="new-trip">
         newTripButtonLeft = WINDOW_WIDTH - 120,
         newTripButtonTop = WINDOW_HEIGTH - 120;
 
-    sectionWapper = $('<button \>', {
+    sectionWapper = $('<button />', {
         "id" : "new-trip",
-        "class" : "animated fadeIn"
-    }).appendTo(parent);
+        "class" : "animated fadeIn",
+        "onclick" : "newTripButtonClick()"
+    }).appendTo($parent);
     $("<img />",{
         "src" : "img/bagy-11.png"
     }).appendTo(sectionWapper);
     $(sectionWapper).css({'top':newTripButtonTop +'px'});
     $(sectionWapper).css({'left':newTripButtonLeft +'px'});
+}
+
+var newTripButtonClick = function(event){
+    $('.pop-modal').addClass('is-visible'); 
+    $('#new-trip-modal').addClass('is-selected');
 }
 
 var createNewTripFunc = function(){
@@ -182,23 +190,23 @@ var createNewTripFunc = function(){
         $form_submit = $('#new-trip-submit');
 
     //open modal
-    $main_nav.on('click', function(event){
-        // console.log("here");
-        if( $(event.target).is($main_nav) ) {
-            // on mobile open the submenu
-            $(this).children('ul').toggleClass('is-visible');
-            // console.log("here1");
-        } else {
-            // on mobile close submenu
-            $main_nav.children('ul').removeClass('is-visible');
-            //show modal layer
-            $form_modal.addClass('is-visible'); 
-            //show the selected form
-            // ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
-            $form_new_trip.addClass('is-selected');
-            // console.log("here2");
-        }
-    });
+    // $main_nav.on('click', function(event){
+    //     // console.log("here");
+    //     if( $(event.target).is($main_nav) ) {
+    //         // on mobile open the submenu
+    //         $(this).children('ul').toggleClass('is-visible');
+    //         // console.log("here1");
+    //     } else {
+    //         // on mobile close submenu
+    //         $main_nav.children('ul').removeClass('is-visible');
+    //         //show modal layer
+    //         $form_modal.addClass('is-visible'); 
+    //         //show the selected form
+    //         // ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
+    //         $form_new_trip.addClass('is-selected');
+    //         // console.log("here2");
+    //     }
+    // });
     
     //close modal
     $('.pop-modal').on('click', function(event){
@@ -235,22 +243,36 @@ var createNewTripFunc = function(){
 }
 
 var addNewTrip = function() {
-    var parentForm = $('body').find('#new-trip-form'),
-        parentFormInput = parentForm.find(':input'),
+    var $parentForm = $('body').find('#new-trip-form'),
+        parentFormInput = $parentForm.find(':input'),
         tripObject = {},
         tempDate;
 
-        tripObject.location = parentFormInput[0].value;
-        tripObject.image = "photo/greece.jpg";
-        tempDate = parentFormInput[1].value.split("  ");
-        tripObject.arrive = tempDate[0];
-        tripObject.year = tempDate[1];
-        tempDate = parentFormInput[2].value.split("  ");
-        tripObject.depart = tempDate[0];
-
-        // console.log(tripObject);
-        LOCALDATA.push (tripObject);
-        localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
-        window.location = "./schedule.html?page="+tripObject.year;
+    tripObject.location = parentFormInput[0].value;
+    tripObject.image = "photo/greece.jpg";
+    tempDate = parentFormInput[1].value.split("  ");
+    tripObject.arrive = tempDate[0];
+    tripObject.year = tempDate[1];
+    tempDate = parentFormInput[2].value.split("  ");
+    tripObject.depart = tempDate[0];
+    // console.log(tripObject);
+    LOCALDATA.push (tripObject);
+    localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
+    var pageID = LOCALDATA.length - 1;
+    window.location = "./schedule.html?ID=" + pageID;
+    // arriveToDepartdates(tripObject.arrive,tripObject.depart)
 } 
+
+var arriveToDepartdates = function() {
+    // console.log("he?");
+    var now = new Date(Date.now());
+    // console.log(now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate());
+    var daysOfYear = [];
+    for (var d = new Date(2015, 2, 20); d <= now; d.setDate(d.getDate() + 1)) {
+        var thisDate = new Date(d);
+        console.log(thisDate.getFullYear() + "-" + thisDate.getMonth() + "-" + thisDate.getDate());
+    }
+}
+
+
 

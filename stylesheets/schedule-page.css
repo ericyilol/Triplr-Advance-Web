@@ -82,7 +82,7 @@ body {
 }
 /* line 106, ../sass/schedule-page.scss */
 .trip-days-content .trip-days {
-  padding: 0px 4% 0px 4%;
+  padding: 0px 10px 0px 10px;
   border-left: 1px solid #959595;
 }
 /* line 111, ../sass/schedule-page.scss */
@@ -109,7 +109,7 @@ body {
 
 /* line 130, ../sass/schedule-page.scss */
 .event-spot {
-  height: 7vw;
+  height: 11vh;
   margin-bottom: 30px;
   -webkit-transition: all 0.6s ease-in-out;
   -moz-transition: all 0.6s ease-in-out;
