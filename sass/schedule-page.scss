@@ -256,12 +256,18 @@ body {
     padding: 30px 50px 0px 50px;
     // @include center-align;
     input{
+      border: 1px solid #d2d8d8;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
         border-radius: 0px;
         border: 0 none;
         margin: 0px 0px 10px !important;
         height: 40px;
         font-family: "Raleway", sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 0.9em;
         // appearance: none;
     }
@@ -275,7 +281,7 @@ body {
         margin: 0px 0px 10px !important;
         height: 40px;
         font-family: "Raleway", sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 0.9em;
         // color:    $text-light-gray-color;
     }

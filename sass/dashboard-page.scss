@@ -40,10 +40,11 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
     margin: 60px 0px 0px 0px;
 }
 
-.trips-planning {
+.trips-year {
+    // @include transition(all, 0.5s, ease-in-out);
     position: absolute;
     top: 0;
-    z-index: 99;
+    z-index: 10;
     p {
         color: $primary-color;
         font-family: "Raleway", sans-serif;
@@ -51,25 +52,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
         font-size: 1.2em;
         padding: 0 0 15px 0;
     }
-    .trips-planning-timeline {
-        background-color: $primary-color;
-        width: 1px;
-        height: 1px;
-    }
-}
-
-.trips-gone {
-    position: absolute;
-    top: 0;
-    z-index: 99;
-    p {
-        color: $primary-color;
-        font-family: "Raleway", sans-serif;
-        font-weight: 600;
-        font-size: 1.2em;
-        padding: 0 0 15px 0;
-    }
-    .trips-gone-timeline {
+    .trips-year-timeline {
         background-color: $primary-color;
         width: 1px;
         height: 1px;

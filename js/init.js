@@ -24,16 +24,3 @@ var WINDOW_WIDTH  = $(window).width();
     }
     document.write(temp.join(''));
 })();
-
-
-
-
-
-function navigation_init() {
-    var newTripButtonLeft = WINDOW_WIDTH - 120;
-    var newTripButtonTop = WINDOW_HEIGTH - 120;
-    $('#new-trip').css({'top':newTripButtonTop +'px'});
-    $('#new-trip').css({'left':newTripButtonLeft +'px'});
-}
-
-
