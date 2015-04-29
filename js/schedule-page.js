@@ -387,10 +387,6 @@
     	var beforeNode = $('#' + defaults.eventId + paramsInsert.id);
     	console.log(beforeNode);
 
-    	// var nextEmpty = parent.find('.empty' + ':first');
-    	// if (!nextEmpty) {
-    	// 	return;
-    	// }
     	//Mine
     	sectionWrapper = $("<div />", {
     		"class" : defaults.eventsStyle + " animated fadeIn" + defaults.eventSpot,
