@@ -81,7 +81,7 @@ var explore_init = function() //when user click on explore
 
 
 
-        $("#explore-button").click(function() {
+        $(".menu-explore-button").click(function() {
         $(".home-page-header").animate({height:'170px'});
         // $(".home-page-header").animate({height:menu_height});
         $("#homepage-upper-content").css({'display':'none'});

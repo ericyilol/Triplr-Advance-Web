@@ -1,38 +1,57 @@
 /* line 29, ../sass/home-page.scss */
 #hamburger-menu {
+  position: inline-block;
   background-color: #6dd0f7;
   height: 150px;
 }
-/* line 35, ../sass/home-page.scss */
+/* line 36, ../sass/home-page.scss */
 #hamburger-menu ul {
   text-align: center;
   padding-top: 10px;
+  margin-top: 10px;
   border: none;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
-/* line 43, ../sass/home-page.scss */
+/* line 45, ../sass/home-page.scss */
 #hamburger-menu ul li {
   padding-bottom: 20px;
 }
-/* line 47, ../sass/home-page.scss */
+/* line 49, ../sass/home-page.scss */
 #hamburger-menu ul a {
   color: #6dd0f7;
 }
 
-/* line 53, ../sass/home-page.scss */
-.hamburger-icon {
-  margin-top: 20px;
-  margin-left: 30px;
+/* line 55, ../sass/home-page.scss */
+#explore-button-mobile {
+  display: none;
 }
 
 /* line 60, ../sass/home-page.scss */
+.hamburger-icon {
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+/* line 67, ../sass/home-page.scss */
 .hamburger-list {
   display: none;
 }
 
-/* line 64, ../sass/home-page.scss */
+/* line 71, ../sass/home-page.scss */
+.hamburger-logo {
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+}
+/* line 80, ../sass/home-page.scss */
+.hamburger-logo img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 87, ../sass/home-page.scss */
 .home-page-header-logo {
   float: left;
   font-size: 45px;
@@ -42,7 +61,7 @@
   font-family: primary-font;
 }
 
-/* line 74, ../sass/home-page.scss */
+/* line 97, ../sass/home-page.scss */
 .home-page-header {
   background-color: #6dd0f7;
   background-size: cover;
@@ -52,13 +71,13 @@
   padding: 10px 0 0 0;
   font-family: 'Raleway', sans-serif;
 }
-/* line 85, ../sass/home-page.scss */
+/* line 108, ../sass/home-page.scss */
 .home-page-header .home-page-header-text {
   color: #fff;
   float: right;
   padding: 0 30px 0 0;
 }
-/* line 90, ../sass/home-page.scss */
+/* line 113, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button {
   background-color: transparent;
   font-size: 16px;
@@ -69,11 +88,11 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 97, ../sass/home-page.scss */
+/* line 120, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button:hover {
   color: #ff715b;
 }
-/* line 113, ../sass/home-page.scss */
+/* line 136, ../sass/home-page.scss */
 .home-page-header .home-page-header-bird {
   width: 150px;
   height: 150px;
@@ -86,7 +105,7 @@
   background-size: 160px;
   background-repeat: no-repeat;
 }
-/* line 130, ../sass/home-page.scss */
+/* line 153, ../sass/home-page.scss */
 .home-page-header #home-page-header-title {
   color: #fff;
   text-align: center;
@@ -95,7 +114,7 @@
   font-weight: 700;
   font-size: 40px;
 }
-/* line 139, ../sass/home-page.scss */
+/* line 162, ../sass/home-page.scss */
 .home-page-header #home-page-header-subtitle {
   color: #fff;
   text-align: center;
@@ -104,7 +123,7 @@
   font-weight: 300;
   font-size: 20px;
 }
-/* line 151, ../sass/home-page.scss */
+/* line 174, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
   background-color: #ff715b;
   border: none;
@@ -117,32 +136,32 @@
   padding-right: 50px;
   display: block;
 }
-/* line 165, ../sass/home-page.scss */
+/* line 188, ../sass/home-page.scss */
 .home-page-header .create-schedule-button:hover {
   background-color: #e74c39;
 }
 
-/* line 173, ../sass/home-page.scss */
+/* line 196, ../sass/home-page.scss */
 .not-home-page {
   display: none;
 }
 
-/* line 178, ../sass/home-page.scss */
+/* line 201, ../sass/home-page.scss */
 #search-location {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
 }
-/* line 183, ../sass/home-page.scss */
+/* line 206, ../sass/home-page.scss */
 #search-location input {
   border-radius: 2px;
 }
-/* line 187, ../sass/home-page.scss */
+/* line 210, ../sass/home-page.scss */
 #search-location select {
   border-radius: 2px;
 }
-/* line 192, ../sass/home-page.scss */
+/* line 215, ../sass/home-page.scss */
 #search-location button {
   background-color: #ff715b;
   color: #fff;
@@ -154,58 +173,115 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 199, ../sass/home-page.scss */
+/* line 222, ../sass/home-page.scss */
 #search-location button:hover {
   background-color: #e74c39;
 }
 
 @media screen and (max-width: 1000px) {
-  /* line 246, ../sass/home-page.scss */
-  #menu-bar {
-    display: none;
-  }
-
-  /* line 249, ../sass/home-page.scss */
+  /* line 233, ../sass/home-page.scss */
   .my-events {
     width: 33.33%;
     height: 33.33vw !important;
   }
 
-  /* line 255, ../sass/home-page.scss */
+  /* line 239, ../sass/home-page.scss */
   #search-location {
     width: 60%;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 262, ../sass/home-page.scss */
+  /* line 244, ../sass/home-page.scss */
+  #menu-bar {
+    display: none;
+  }
+
+  /* line 249, ../sass/home-page.scss */
   .home-page-header .home-page-header-bird {
     margin-right: auto;
     margin-left: auto;
-    background-size: 100px;
+    background-size: 120px;
     background-position: center;
   }
-  /* line 269, ../sass/home-page.scss */
+  /* line 256, ../sass/home-page.scss */
   .home-page-header #home-page-header-title {
     font-size: 30px;
     margin-top: 0px;
   }
 
-  /* line 275, ../sass/home-page.scss */
+  /* line 262, ../sass/home-page.scss */
+  .home-page-header {
+    height: 450px;
+  }
+
+  /* line 266, ../sass/home-page.scss */
   .my-events {
     width: 50%;
     height: 50vw !important;
   }
+
+  /* line 272, ../sass/home-page.scss */
+  #explore-button-mobile {
+    display: block;
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+  }
 }
 @media screen and (max-width: 420px) {
-  /* line 285, ../sass/home-page.scss */
+  /* line 284, ../sass/home-page.scss */
   #menu-bar {
     display: none;
   }
 
-  /* line 290, ../sass/home-page.scss */
+  /* line 288, ../sass/home-page.scss */
+  .hamburger-menu-bar {
+    width: 100%;
+  }
+
+  /* line 292, ../sass/home-page.scss */
+  #hamburger-menu {
+    height: 100px;
+  }
+
+  /* line 305, ../sass/home-page.scss */
+  .home-page-header {
+    height: 350px;
+  }
+  /* line 310, ../sass/home-page.scss */
+  .home-page-header .home-page-header-bird {
+    margin-top: 0px;
+  }
+
+  /* line 316, ../sass/home-page.scss */
   .my-events {
     width: 100%;
     height: 100vw !important;
     float: left;
+  }
+
+  /* line 322, ../sass/home-page.scss */
+  input::-webkit-input-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 326, ../sass/home-page.scss */
+  input::-moz-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 330, ../sass/home-page.scss */
+  input:-moz-placeholder {
+    /* Older versions of Firefox */
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 334, ../sass/home-page.scss */
+  input:-ms-input-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
   }
 }
