@@ -18,17 +18,18 @@
 						<input class="full-width has-padding has-border" id="cd-location" type="text" placeholder="City">
 						<span class="cd-error-message">Where you are going? (e.x. Paris)</span>
 					</p>
-
-					<p class="fieldset half-width datePicker">
-						<label class="image-replace cd-date">Date</label>
-						<input class="first-half full-width has-padding has-border date start" id="cd-arrive-date" type="text"  placeholder="Arrive Date">
-						<span class="cd-error-message">When are you arriving?</span>
-					</p>
-					<p class="fieldset half-width datePicker">
-						<label class="image-replace cd-date">Date</label>
-						<input class="full-width has-padding has-border date end" id="cd-depart-date" type="text"  placeholder="Depart Date">
-						<span class="cd-error-message">When are you leaving?</span>
-					</p>
+					<span id="datePicker">
+						<p class="fieldset half-width">
+							<label class="image-replace cd-date">Date</label>
+							<input class="first-half full-width has-padding has-border date start" id="cd-arrive-date" type="text"  placeholder="Arrive Date">
+							<span class="cd-error-message">When are you arriving?</span>
+						</p>
+						<p class="fieldset half-width">
+							<label class="image-replace cd-date">Date</label>
+							<input class="full-width has-padding has-border date end" id="cd-depart-date" type="text"  placeholder="Depart Date">
+							<span class="cd-error-message">When are you leaving?</span>
+						</p>
+					</span>
 					<div class="clear"></div>
 					<p class="fieldset">
 						<input class="full-width" id="new-trip-submit"type="submit" value="Create New Trip">

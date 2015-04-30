@@ -16,15 +16,16 @@ function dashboard_init() {
     }
     timelineInit();
     newTripButtonInit();
+    tripClickInit();
     createNewTripFunc();
     arriveToDepartdates();
-    $('.datePicker .date').datepicker({
+    $('#datePicker .date').datepicker({
         'format': 'M. d  yyyy',
         'autoclose': true
     });
     // console.log(LOCALDATA);
     // initialize datepair
-    $('.datePicker').datepair();
+    $('#datePicker').datepair();
 }
 
 var clearLocalStorage = function() {
@@ -86,13 +87,15 @@ var tripsInit = function() {
         {
             sectionWapper = $parentSection.find('#year-Future');
             tripWapper  = $("<div />", {
-                "class" : columnClass + myEvents + halfBlackWhite
+                "class" : columnClass + myEvents + halfBlackWhite,
+                "id" : "Trip-" + i
                 }).appendTo(sectionWapper);
         }
         else {
             sectionWapper = $parentSection.find('#' + pastTripPre + LOCALDATA[i].year);
             tripWapper  = $("<div />", {
-                "class" : columnClass + myEvents + blackWhite
+                "class" : columnClass + myEvents + blackWhite,
+                "id" : "Trip-" + i
                 }).appendTo(sectionWapper);
         }
         imageWapper  = $("<div />", {
@@ -153,6 +156,14 @@ var timelineInit = function()
     var oldestYear = $('.trips-year-timeline').last().height();
     oldestYear = oldestYear - 50;
     $('.trips-year-timeline').last().css({'height':oldestYear+'px'});
+}
+
+var tripClickInit = function(){
+    $('.my-events').on('click',function(event){
+        var thisID = $(this).attr("id");
+        var thisIDSplit = thisID.split("-");
+        window.location = "./schedule.html?ID=" + thisIDSplit[1];
+    });
 }
 
 var newTripButtonInit = function(){

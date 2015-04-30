@@ -16,21 +16,19 @@
 		plcaeHolderRight: "place-holder-text",
 		dayIndexGap: 50
 	}
-	var codes = {
-		"1" : "#day1",
-		"2" : "#day2",
-		"3" : "#day3"
-	};
+	// var codes = {
+	// 	"1" : "#day1",
+	// 	"2" : "#day2",
+	// 	"3" : "#day3"
+	// };
 	var monthRef = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 	function schedule_init(){
 		getIDfromURL();				//Know which trip this is
 		calcArriveToDepartDates(LOCALDATA[tripID].arrive,LOCALDATA[tripID].depart);  //culculate a list of dates
-
+		// codes();
 		tripTableInit();			//for each trip day create a column
 		expandFunc();        		//make the form expandable
-		timePickerInit();     		//timePicker for the form
-		eventsAddListener();    	//When click on save, a new event pop up
 		eventInit();				//Init all the exist events
 		slickInit();				//Init slick slider
 	}
@@ -60,6 +58,12 @@
             dateRange.push(monthRef[d.getMonth()] + ". " + d.getDate());
         }
     }
+
+    // var codesInit = function() {
+    // 	for (var i = 0; i < dateRange.length; i++) {
+    // 		codes[i] = "day-" + i;
+    // 	}
+    // }
 
     var tripTableInit = function() {
     	var $tripHeaderText = $('#trip-title-h2'),
@@ -121,6 +125,9 @@
 				openBox = !openBox;
 				$(this).addClass('changeOpacity');
 				nextAddEvent.addClass('expandHeight');
+				createNewEventForm(nextAddEvent);
+				timePickerInit();     		//timePicker for the form
+				eventsAddListener();    	//When click on save, a new event pop up
 			}
 			else {
 				openBox = !openBox;
@@ -129,6 +136,7 @@
 				});
 				$('.trip-events-add').each(function() {
 					$(this).removeClass('expandHeight');
+					$(this).empty();
 				});
 			}
 		});
@@ -141,6 +149,110 @@
 				$(this).removeClass('expandHeight');
 			});
 		});
+	}
+
+	var createNewEventForm = function($parent) {
+		var sectionWrapper, 
+		//<form action="" class="new-form" id="new-event-form">
+		fieldset, 
+		// <p class="fieldset">
+		selectWrapper, 
+		//<select class="input-style full-width has-padding has-border date start" type="text"  placeholder="Date">
+		timePicker; 
+		// <span class="timePicker">
+
+		//from div
+		sectionWrapper = $('<form />', {
+			'class' : "new-form",
+			'id' : "new-event-form"
+		}).prependTo($parent);
+
+		// input -> Title
+		fieldset = $('<p />', {
+			'class' : "fieldset"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'placeholder' : "Title"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Maybe a title?"
+		}).appendTo(fieldset);
+
+		// input -> Location
+		fieldset = $('<p />', {
+			'class' : "fieldset"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'placeholder' : "Location"
+		}).appendTo(fieldset);
+
+		// input -> Date Select
+		fieldset = $('<p />', {
+			'class' : "fieldset half-width"
+		}).appendTo(sectionWrapper);
+		selectWrapper = $('<select />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'placeholder' : "Date"
+		}).appendTo(fieldset);
+		for (var i = 0; i < dateRange.length; i++) {
+			$('<option />', {
+				'value' : i,
+				'text' : dateRange[i]
+			}).appendTo(selectWrapper);
+		}
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "What Date?"
+		}).appendTo(fieldset);
+
+		//input -> time
+		timePicker = $('<span />', {
+			'class' : "timePicker"
+		}).appendTo(sectionWrapper);
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(timePicker);
+		$('<input />', {
+			'class' : "input-style half-border full-width has-padding time start",
+			'type' : "text",
+			'placeholder' : "From"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Start Time?"
+		}).appendTo(fieldset);
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(timePicker);
+		$('<input />', {
+			'class' : "input-style has-border full-width has-padding time end",
+			'type' : "text",
+			'placeholder' : "To"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "End Time?"
+		}).appendTo(fieldset);
+		$("<div />", {
+			"class": "clear"
+    	}).appendTo(sectionWrapper);   		
+		// input -> submit
+
+		fieldset = $('<p />', {
+			'class' : "fieldset"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width",
+			'id' : "new-event-submit",
+			'type' : "submit",
+			'value' : "Create New Event"
+		}).appendTo(fieldset);
 	}
 
 	var timePickerInit = function() {
@@ -162,9 +274,12 @@
     }
 
 	var eventsAddListener = function() {
-		$('.new-event-save').click(function() {
+		$('#new-event-submit').on('click', function(event){
+			console.log("here!");
+			event.preventDefault();
 			var $parentForm = $(this).closest('.new-form');
 			var parentFormInput = $parentForm.find(':input');
+			console.log(parentFormInput.length);
 			// var parentFormSelect = parentForm.find(':select');
 			var errorTitle = "Title can not be empty",
 			errorDate = "Date can not be empty",
@@ -265,7 +380,7 @@
 
         	if (lastElementFlag) {
         		generateElement(tempData);
-        		data[id] = tempData;
+        		EVENTDATA[id] = tempData;
         		localStorage.setItem("eventsData", JSON.stringify(EVENTDATA));
         	}
         	parentFormInput[0].value = "";
@@ -323,7 +438,8 @@
     };
 
     var generateElement = function(params){
-    	var parent = $(codes[params.code]),
+    	// var tempId = "#day-" + 
+    	var parent = $("#day-" + params.code),
     	sectionWrapper,
     	imageWrapper,
     	textWrapper;
