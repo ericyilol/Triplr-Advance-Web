@@ -17,7 +17,6 @@ var explore_init = function() //when user click on explore
 
         $(".menu-explore-button").click(function() {
 
-        // $("#explore-button").click(function() {
 
         $(".home-page-header").animate({height:'170px'});
         // $(".home-page-header").animate({height:menu_height});
@@ -40,6 +39,8 @@ var mobile_init = function()
         $(".hamburger-list").css({'background-color':'#6dd0f7'});
         $("#hamburger-menu").css({'background-color':'#6dd0f7'});
         $(".hamburger-icon").attr({src: './img/hamburger.png'});
+        $(".hamburger-logo").attr({src: './img/logo_white.png'});
+        
         toggle =false;
         }
         else{
@@ -48,6 +49,7 @@ var mobile_init = function()
         $(".hamburger-list").css({'background-color':'white'});
         $("#hamburger-menu").css({'background-color':'white'});
         $(".hamburger-icon").attr({src: './img/hamburger-icon-blue.png'});
+        $(".hamburger-logo").attr({src: './img/logo-blue.png'});
         toggle =true;
 
         }
