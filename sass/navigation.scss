@@ -133,8 +133,10 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 #new-trip{
 	height: 90px; 
 	width: 90px; 
-	position: fixed; 
+	position: fixed;
+	display:block;
 	border-radius: 50%;
+	border: 0;
 	z-index: 99;
 	background-color: $secondary-color;
 	@include transition(all, 0.2s, ease-in-out);

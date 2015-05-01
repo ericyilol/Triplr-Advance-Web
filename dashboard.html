@@ -7,13 +7,37 @@
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-	<script type="text/javascript">
-		$(window).load(function() {
-			$(".loader").fadeOut("slow");
-		})
-	</script>
 </head>
 <body>
+	<div class="pop-modal">
+		<div class="pop-modal-container">
+			<div id="new-trip-modal">
+				<form action="" class="cd-form" id="new-trip-form">
+					<p class="fieldset">
+						<label class="image-replace cd-location" for="signin-email">Location</label>
+						<input class="full-width has-padding has-border" id="cd-location" type="text" placeholder="City">
+						<span class="cd-error-message">Where you are going? (e.x. Paris)</span>
+					</p>
+
+					<p class="fieldset half-width datePicker">
+						<label class="image-replace cd-date">Date</label>
+						<input class="first-half full-width has-padding has-border date start" id="cd-arrive-date" type="text"  placeholder="Arrive Date">
+						<span class="cd-error-message">When are you arriving?</span>
+					</p>
+					<p class="fieldset half-width datePicker">
+						<label class="image-replace cd-date">Date</label>
+						<input class="full-width has-padding has-border date end" id="cd-depart-date" type="text"  placeholder="Depart Date">
+						<span class="cd-error-message">When are you leaving?</span>
+					</p>
+					<div class="clear"></div>
+					<p class="fieldset">
+						<input class="full-width" id="new-trip-submit"type="submit" value="Create New Trip">
+					</p>
+				</form>
+
+			</div>
+		</div>
+	</div>
 	<!-- <div class="loader"></div>	 -->
 	<nav class="nav-bar">
 		<div class="menu-logo">
@@ -25,6 +49,9 @@
 		<div class="menu-explore">
 			<button type="button" class="btn menu-explore-button">
 			Explore New Locations
+			</button>
+			<button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
+			Reset data
 			</button>
 		</div>	
 		<div class="menu-account">
@@ -48,182 +75,15 @@
 			<!-- <p>Eric</p> -->
 		</div>
 	</nav>
-	<div id="dialog-form" title="Create new user">
-		<p class="validateTips">All form fields are required.</p>
-
-		<form>
-			<fieldset>
-				<label for="name">Name</label>
-				<input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-				<label for="email">Email</label>
-				<input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-				<label for="password">Password</label>
-				<input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
-
-				<!-- Allow form submission with keyboard without duplicating the dialog button -->
-				<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-			</fieldset>
-		</form>
-	</div>
-	<div id="new-trip">
-		<!-- <div class="hvr-radial-out"> -->
-		<!-- <i class="fa fa-plus new-trip-icon"></i> -->
-		<img src="img/bagy-11.png" alt="">
-		<!-- </div> -->
-	</div>
 	<section class="dashboard-body">
 		<section class="all-events">
-			<div class="row">
-				<div class="trips-planning">
-					<p>Future</p>
-					<div class="trips-planning-timeline">
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events">
-					<div class="city-image">
-						<img src="photo/nyc2.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">August. 10 - August. 19</p>
-						<h4 class="travel-city">New York</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events">
-					<div class="city-image">
-						<img src="photo/london.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">September. 10 - September. 19</p>
-						<h4 class="travel-city">London</h4>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="trips-gone">
-					<p>2015</p>
-					<div class="trips-gone-timeline">
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/beijing2.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">March. 11 - March. 24</p>
-						<h4 class="travel-city">Beijing, Shanghai</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/lisbon.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">February. 3 - February. 6</p>
-						<h4 class="travel-city">Lisbon</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/venice.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">February. 7 - February. 9</p>
-						<h4 class="travel-city">Venice</h4>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="trips-gone">
-					<p>2014</p>
-					<div class="trips-gone-timeline">
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/taipei.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">December. 1 - December. 12</p>
-						<h4 class="travel-city">Taipei, Kaohsiung</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image">
-						<img src="photo/java.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">March. 23 - March. 30</p>
-						<h4 class="travel-city">Tokyo, Yokohama, Osaka </h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/seoul.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">June. 6 - June. 13</p>
-						<h4 class="travel-city">Seoul</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/egypt.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">April. 2 - April. 8</p>
-						<h4 class="travel-city">Egypt</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image ">
-						<img src="photo/greece.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">January. 2 - January. 11</p>
-						<h4 class="travel-city">Monterosso</h4>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="trips-gone">
-					<p>2013</p>
-					<div class="trips-gone-timeline">
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image">
-						<img src="photo/sanfran.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">July. 6 - July. 10</p>
-						<h4 class="travel-city">San Francisco</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image">
-						<img src="photo/agra.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">May. 6 - May. 10</p>
-						<h4 class="travel-city">Agra</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4 col-xs-6 my-events black-white">
-					<div class="city-image">
-						<img src="photo/la.jpg" alt="">
-					</div>
-					<div class="travel-info">
-						<p class="travel-time">March. 9 - March. 22</p>
-						<h4 class="travel-city">Los Angeles</h4>
-					</div>
-				</div>
-			</div>
 		</section>
 	</section>
 	<script src="./js/init.js" type="text/javascript"></script>
 	<script>
-		dashboard_init();
-		navigation_init();
+		$(function() {
+			dashboard_init();
+		});
 	</script>
 </body>
 </html>

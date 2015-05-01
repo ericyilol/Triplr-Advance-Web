@@ -40,10 +40,11 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
     margin: 60px 0px 0px 0px;
 }
 
-.trips-planning {
+.trips-year {
+    // @include transition(all, 0.5s, ease-in-out);
     position: absolute;
     top: 0;
-    z-index: 99;
+    z-index: 10;
     p {
         color: $primary-color;
         font-family: "Raleway", sans-serif;
@@ -51,25 +52,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
         font-size: 1.2em;
         padding: 0 0 15px 0;
     }
-    .trips-planning-timeline {
-        background-color: $primary-color;
-        width: 1px;
-        height: 1px;
-    }
-}
-
-.trips-gone {
-    position: absolute;
-    top: 0;
-    z-index: 99;
-    p {
-        color: $primary-color;
-        font-family: "Raleway", sans-serif;
-        font-weight: 600;
-        font-size: 1.2em;
-        padding: 0 0 15px 0;
-    }
-    .trips-gone-timeline {
+    .trips-year-timeline {
         background-color: $primary-color;
         width: 1px;
         height: 1px;
@@ -180,13 +163,28 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 
 .black-white {
     img {
-        -webkit-filter: grayscale(1) brightness(0.6);
-        filter: grayscale(1) brightness(0.6);
+        -webkit-filter: grayscale(1) brightness(0.7);
+        filter: grayscale(1) brightness(0.7);
         @include transition(all, 0.4s, ease-in-out);
     }
     // opacity: 0.7;
 }
 .black-white:hover {
+    img {
+        -webkit-filter: grayscale(0) brightness(0.8);
+        filter: grayscale(0) brightness(0.8);
+    }
+    // opacity: 0.7;
+}
+.half-black-white {
+    img {
+        -webkit-filter: grayscale(0.4) brightness(0.8);
+        filter: grayscale(0.4) brightness(0.8);
+        @include transition(all, 0.4s, ease-in-out);
+    }
+    // opacity: 0.7;
+}
+.half-black-white:hover {
     img {
         -webkit-filter: grayscale(0) brightness(0.9);
         filter: grayscale(0) brightness(0.9);

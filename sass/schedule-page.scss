@@ -48,7 +48,7 @@ body {
 
 .trip-days-container {
     padding: 20px 0 0 2%;
-    width: 70%;
+    width: 76%;
     float: left;
     .trip-days-body {
         background-color: #fff;
@@ -56,7 +56,7 @@ body {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width: 100%;
-        padding: 20px 4%;
+        padding: 20px 2vw;
     }
 }
 
@@ -106,7 +106,7 @@ body {
     .trip-days {
         // height: 100%;
         // width: 33.33%;
-        padding: 0px 4% 0px 4%;
+        padding: 0px 1.6vw;
         border-left: 1px solid $line-color;
         h3 {
             padding-bottom: 20px;
@@ -128,11 +128,11 @@ body {
   display: none;
 }
 .event-spot {
-    height: 7vw;
+    height: 8vw;
     margin-bottom: 30px;
     @include transition(all, 0.6s, ease-in-out);
     .place-holder-circle {
-        width: 50%;
+        width: 40%;
         height: 100%;
         float: left;
         border-radius: 50%;
@@ -140,7 +140,7 @@ body {
         p {
             text-align: center;
             font-weight: 500;
-            font-size: 0.6em;
+            font-size: 0.7em;
             font-family: "Raleway", sans-serif;
             color: $text-light-gray-color;
             @include vertical-align;
@@ -153,7 +153,7 @@ body {
         p {
             text-align: right;
             font-weight: 500;
-            font-size: 0.6em;
+            font-size: 0.7em;
             font-family: "Raleway", sans-serif;
             color: $text-light-gray-color;
             @include vertical-align;
@@ -164,28 +164,95 @@ body {
     content:"";
     position: relative;
     display: block;
-    height: 30px;
+    height: 31px;
     // width: 100px;
     z-index: 1;
     top: 0;
     // bottom: 18px    ;
-    left: 25%;
+    left: 20%;
     border-left: 1px dotted $text-light-gray-color;
 }
 
+.event-style {
+    height: 8vw;
+    margin-bottom: 30px;
+    @include transition(all, 0.6s, ease-in-out);
+    .event-style-image{
+        width: 40%;
+        float: left;
+        img {
+            @include transition(all, 0.3s, ease-in-out);
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+        }
+        p {
+            @include vertical-align;
+            text-align: center;
+            opacity: 0;
+            color: $primary-dark-gray-color;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+        }
+    }
+    .event-style-text{
+        width: 60%;
+        padding-left: 15px;
+        float: left;
+        @include vertical-align;
+        p {
+            text-align: left;
+            color: $primary-dark-gray-color;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+        }
+    }
+}
+.event-style:after{
+    content:"";
+    position: relative;
+    display: block;
+    height: 33px;
+    // width: 100px;
+    z-index: 1;
+    top: 0;
+    // bottom: 18px    ;
+    left: 20%;
+    border-left: 1px dotted $text-light-gray-color;
+}
+.event-style-image:hover {
+    img {
+        -webkit-filter: grayscale(0) brightness(0.4);
+        filter: grayscale(0) brightness(0.5);
+    }
+    p {
+        opacity: 1
+    }
+}
+
 .trip-events-container {
-    width: 30%;
+    width: 24%;
     float: left;
     overflow: hidden;
     .trip-events-section {
         height: 630px;
         width: 100%;
         margin-right: 20px;
-        padding: 4vw 0px 0px;
+        padding: 20px 0px 0px;
         overflow-x: hidden;
         overflow-y: scroll;
         .trip-events-category {
-            padding: 0 50px;
+            padding: 0 2vw;
             h2 {
                 padding: 5px 20px;
                 font-family: "Raleway", sans-serif;
@@ -256,12 +323,18 @@ body {
     padding: 30px 50px 0px 50px;
     // @include center-align;
     input{
+      border: 1px solid #d2d8d8;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
         border-radius: 0px;
         border: 0 none;
         margin: 0px 0px 10px !important;
         height: 40px;
         font-family: "Raleway", sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 0.9em;
         // appearance: none;
     }
@@ -275,7 +348,7 @@ body {
         margin: 0px 0px 10px !important;
         height: 40px;
         font-family: "Raleway", sans-serif;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 0.9em;
         // color:    $text-light-gray-color;
     }
@@ -334,57 +407,6 @@ body {
     }
     .new-event-cancel:hover{
         color: #898989;
-    }
-}
-
-.event-style {
-    .event-style-image{
-        width: 50%;
-        float: left;
-        img {
-            @include transition(all, 0.3s, ease-in-out);
-            width: 100%;
-            height: auto;
-        }
-        p {
-            @include center-align;
-            text-align: center;
-            opacity: 0;
-            color: $primary-dark-gray-color;
-            font-size: 0.6em;
-            font-family: "Raleway", sans-serif;
-            // white-space: nowrap;
-            margin-bottom: 10px;
-            font-weight: 600;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-        }
-    }
-    .event-style-text{
-        width: 50%;
-        padding-left: 15px;
-        float: left;
-        @include vertical-align;
-        p {
-            text-align: left;
-            color: $primary-dark-gray-color;
-            font-size: 0.6em;
-            font-family: "Raleway", sans-serif;
-            // white-space: nowrap;
-            margin-bottom: 10px;
-            font-weight: 600;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-        }
-    }
-}
-.event-style-image:hover {
-    img {
-        -webkit-filter: grayscale(0) brightness(0.4);
-        filter: grayscale(0) brightness(0.5);
-    }
-    p {
-        opacity: 1
     }
 }
 

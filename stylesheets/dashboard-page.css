@@ -5,61 +5,40 @@
 }
 
 /* line 43, ../sass/dashboard-page.scss */
-.trips-planning {
+.trips-year {
   position: absolute;
   top: 0;
-  z-index: 99;
+  z-index: 10;
 }
-/* line 47, ../sass/dashboard-page.scss */
-.trips-planning p {
+/* line 48, ../sass/dashboard-page.scss */
+.trips-year p {
   color: #6dd0f7;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 1.2em;
   padding: 0 0 15px 0;
 }
-/* line 54, ../sass/dashboard-page.scss */
-.trips-planning .trips-planning-timeline {
+/* line 55, ../sass/dashboard-page.scss */
+.trips-year .trips-year-timeline {
   background-color: #6dd0f7;
   width: 1px;
   height: 1px;
 }
 
-/* line 61, ../sass/dashboard-page.scss */
-.trips-gone {
-  position: absolute;
-  top: 0;
-  z-index: 99;
-}
-/* line 65, ../sass/dashboard-page.scss */
-.trips-gone p {
-  color: #6dd0f7;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 1.2em;
-  padding: 0 0 15px 0;
-}
-/* line 72, ../sass/dashboard-page.scss */
-.trips-gone .trips-gone-timeline {
-  background-color: #6dd0f7;
-  width: 1px;
-  height: 1px;
-}
-
-/* line 79, ../sass/dashboard-page.scss */
+/* line 62, ../sass/dashboard-page.scss */
 .my-events {
   padding: 0px !important;
   height: 25vw;
   cursor: pointer;
 }
-/* line 83, ../sass/dashboard-page.scss */
+/* line 66, ../sass/dashboard-page.scss */
 .my-events .city-image {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-/* line 88, ../sass/dashboard-page.scss */
+/* line 71, ../sass/dashboard-page.scss */
 .my-events .city-image img {
   position: absolute;
   left: 50%;
@@ -72,7 +51,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 97, ../sass/dashboard-page.scss */
+/* line 80, ../sass/dashboard-page.scss */
 .my-events .travel-info {
   position: absolute;
   left: 50%;
@@ -83,7 +62,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 99, ../sass/dashboard-page.scss */
+/* line 82, ../sass/dashboard-page.scss */
 .my-events .travel-info p {
   text-align: center;
   color: #fff;
@@ -92,7 +71,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 107, ../sass/dashboard-page.scss */
+/* line 90, ../sass/dashboard-page.scss */
 .my-events .travel-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -101,13 +80,13 @@
   font-size: 2em;
   white-space: nowrap;
 }
-/* line 116, ../sass/dashboard-page.scss */
+/* line 99, ../sass/dashboard-page.scss */
 .my-events .home-icon {
   color: #fff;
   text-align: center;
   vertical-align: middle;
 }
-/* line 121, ../sass/dashboard-page.scss */
+/* line 104, ../sass/dashboard-page.scss */
 .my-events .home-icon img {
   position: absolute;
   left: 50%;
@@ -120,7 +99,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 131, ../sass/dashboard-page.scss */
+/* line 114, ../sass/dashboard-page.scss */
 .my-events .home-info {
   position: absolute;
   left: 50%;
@@ -131,7 +110,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 137, ../sass/dashboard-page.scss */
+/* line 120, ../sass/dashboard-page.scss */
 .my-events .home-info p {
   text-align: center;
   color: #fff;
@@ -140,7 +119,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 145, ../sass/dashboard-page.scss */
+/* line 128, ../sass/dashboard-page.scss */
 .my-events .home-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -150,7 +129,7 @@
   white-space: nowrap;
 }
 
-/* line 158, ../sass/dashboard-page.scss */
+/* line 141, ../sass/dashboard-page.scss */
 #menu-dropdown button {
   color: #fff;
   border: none;
@@ -159,7 +138,7 @@
   font-size: 16px;
   font-weight: 300;
 }
-/* line 167, ../sass/dashboard-page.scss */
+/* line 150, ../sass/dashboard-page.scss */
 #menu-dropdown ul {
   margin-top: 10px;
   border: none;
@@ -171,10 +150,10 @@
   border-radius: 2px;
 }
 
-/* line 182, ../sass/dashboard-page.scss */
+/* line 165, ../sass/dashboard-page.scss */
 .black-white img {
-  -webkit-filter: grayscale(1) brightness(0.6);
-  filter: grayscale(1) brightness(0.6);
+  -webkit-filter: grayscale(1) brightness(0.7);
+  filter: grayscale(1) brightness(0.7);
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -182,8 +161,25 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 190, ../sass/dashboard-page.scss */
+/* line 173, ../sass/dashboard-page.scss */
 .black-white:hover img {
+  -webkit-filter: grayscale(0) brightness(0.8);
+  filter: grayscale(0) brightness(0.8);
+}
+
+/* line 180, ../sass/dashboard-page.scss */
+.half-black-white img {
+  -webkit-filter: grayscale(0.4) brightness(0.8);
+  filter: grayscale(0.4) brightness(0.8);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 188, ../sass/dashboard-page.scss */
+.half-black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
 }

@@ -1,7 +1,6 @@
-	var events = events || {},
-	data = JSON.parse(localStorage.getItem("eventsData"));
-
-	data = data || {};
+	var events = events || {};
+	var data = JSON.parse(localStorage.getItem("eventsData"));
+    var dateRange = [];
 
 	var defaults = {
 		eventsStyle: "event-style",
@@ -18,6 +17,27 @@
 		"2" : "#day2",
 		"3" : "#day3",
 	};
+
+    
+    var eventInit = function(options) {
+        options = options || {};
+        options = $.extend({}, defaults, options);
+
+        $.each(data, function (index, params) {
+            generateElement(params);
+        });
+
+        eventsAddListener();
+    }
+
+    var arriveToDepartDates = function() {
+        var now = new Date(Date.now());
+        var daysOfYear = [];
+        for (var d = new Date(2015, 2, 20); d <= now; d.setDate(d.getDate() + 1)) {
+            var thisDate = new Date(d);
+            console.log(thisDate.getFullYear() + "-" + thisDate.getMonth() + "-" + thisDate.getDate());
+        }
+    }
 
 	var eventsAddListener = function() {
 		$('.new-event-save').click(function() {
@@ -133,17 +153,6 @@
         	parentFormInput[4].value = "";
         	tempData = {};
 		});
-	}
-
-	var eventInit = function(options) {
-		options = options || {};
-        options = $.extend({}, defaults, options);
-
-        $.each(data, function (index, params) {
-            generateElement(params);
-        });
-
-        eventsAddListener();
 	}
 
 	var eventsClear = function () {
