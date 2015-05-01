@@ -289,7 +289,12 @@ body {
     }
 }
 
+.trip-events-add-container {
+    position: relative;
+}
+
 .trip-events-add {
+    position: relative;
     @include transition(all, 0.4s, ease-in-out);
     margin: 10px 0;
     background-color: $text-light-gray-color;
@@ -317,20 +322,36 @@ body {
         }
     }
 }
-
-.trip-events-add::after {
+.trip-events-add-before {
   /* triangle */
-  content: '';
+  // content: '';
+  // display: inline-block;
   position: absolute;
-  left: 1162px;
-  bottom: 575px;
+  left: 30px;
+  top: -13px;
   height: 0;
   width: 0;
   z-index: 99;
-  display: none;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 15px solid $text-light-gray-color;
+  // display: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 13px solid $text-light-gray-color;
+}
+
+.trip-events-add-after {
+  /* triangle */
+  // content: '';
+  // @include transition(all, 0.4s, ease-in-out);
+  position: absolute;
+  left: 30px;
+  bottom: 0px;
+  height: 0;
+  width: 0;
+  z-index: 99;
+  // display: none;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 14px solid $primary-dark-gray-color;
 }
 
 .new-form {
@@ -491,3 +512,6 @@ body {
     color: $text-light-gray-color !important;
 }
 
+.animationAdd {
+    @include transition(all, 0.4s, ease-in-out);
+}

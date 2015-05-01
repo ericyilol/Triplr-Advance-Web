@@ -120,11 +120,23 @@
 		var openBox = false;
 		$('.trip-events-detail').click(function() {
 			var parentCategory = $(this).closest('.trip-events-category');
-			var nextAddEvent = parentCategory.next('.trip-events-add');
+			var nextAddEventContainer = parentCategory.next('.trip-events-add-container');
+			var nextAddEvent = nextAddEventContainer.find('.trip-events-add');
+			// var thisEventTypeID = $(this).attr("id");
 			if (!openBox){
 				openBox = !openBox;
+				$('.trip-events-add').each(function() {
+					$(this).empty();
+				});
+				$('.trip-events-add-before').each(function() {
+					$(this).remove();
+				});
+				$('.trip-events-add-after').each(function() {
+					$(this).remove();
+				});
 				$(this).addClass('changeOpacity');
 				nextAddEvent.addClass('expandHeight');
+				triangleInit(nextAddEventContainer,$(this));
 				createNewEventForm(nextAddEvent);
 				timePickerInit();     		//timePicker for the form
 				eventsAddListener();    	//When click on save, a new event pop up
@@ -136,7 +148,6 @@
 				});
 				$('.trip-events-add').each(function() {
 					$(this).removeClass('expandHeight');
-					$(this).empty();
 				});
 			}
 		});
@@ -151,6 +162,25 @@
 		});
 	}
 
+	var triangleInit = function($parent,$thisEventType) {
+		$('<div />', {
+			'class' : 'trip-events-add-before'
+		}).appendTo($parent);
+
+		$('<div />', {
+			'class' : 'trip-events-add-after'
+		}).appendTo($parent);
+
+		var $beforeTriangle = $parent.find('.trip-events-add-before');
+		var $afterTriangle = $parent.find('.trip-events-add-after');
+
+		var EventTyplePostion = $thisEventType.position();
+		var parentPostion = $parent.position();
+
+		$beforeTriangle.css({"left": EventTyplePostion.left -parentPostion.left + 36 + "px"});
+		$afterTriangle.css({"left": EventTyplePostion.left -parentPostion.left + 35 + "px"});
+	}
+
 	var createNewEventForm = function($parent) {
 		var sectionWrapper, 
 		//<form action="" class="new-form" id="new-event-form">
@@ -159,13 +189,13 @@
 		selectWrapper, 
 		//<select class="input-style full-width has-padding has-border date start" type="text"  placeholder="Date">
 		timePicker; 
-		// <span class="timePicker">
+		// <span class="timePicker"
 
-		//from div
+		//form div
 		sectionWrapper = $('<form />', {
 			'class' : "new-form",
 			'id' : "new-event-form"
-		}).prependTo($parent);
+		}).appendTo($parent);
 
 		// input -> Title
 		fieldset = $('<p />', {
@@ -174,7 +204,8 @@
 		$('<input />', {
 			'class' : "input-style full-width has-padding has-border",
 			'type' : "text",
-			'placeholder' : "Title"
+			'id' : "cd-event-title",
+ 			'placeholder' : "Title"
 		}).appendTo(fieldset);
 		$('<span />', {
 			'class' : "cd-error-message",
@@ -188,7 +219,12 @@
 		$('<input />', {
 			'class' : "input-style full-width has-padding has-border",
 			'type' : "text",
+			'id' : "cd-event-location",
 			'placeholder' : "Location"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Where are you going?"
 		}).appendTo(fieldset);
 
 		// input -> Date Select
@@ -198,6 +234,7 @@
 		selectWrapper = $('<select />', {
 			'class' : "input-style full-width has-padding has-border",
 			'type' : "text",
+			'id' : "cd-event-date",
 			'placeholder' : "Date"
 		}).appendTo(fieldset);
 		for (var i = 0; i < dateRange.length; i++) {
@@ -221,6 +258,7 @@
 		$('<input />', {
 			'class' : "input-style half-border full-width has-padding time start",
 			'type' : "text",
+			'id' : "cd-event-start",
 			'placeholder' : "From"
 		}).appendTo(fieldset);
 		$('<span />', {
@@ -233,6 +271,7 @@
 		$('<input />', {
 			'class' : "input-style has-border full-width has-padding time end",
 			'type' : "text",
+			'id' : "cd-event-end",
 			'placeholder' : "To"
 		}).appendTo(fieldset);
 		$('<span />', {
@@ -274,6 +313,21 @@
     }
 
 	var eventsAddListener = function() {
+		$('#cd-event-title').on('input', function() {
+			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+		});
+		$('#cd-event-location').on('input', function() {
+			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+		});
+		$('#cd-event-date').on('input', function() {
+			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+		});
+		$('#cd-event-start').on('input', function() {
+			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+		});
+		$('#cd-event-end').on('input', function() {
+			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+		});
 		$('#new-event-submit').on('click', function(event){
 			console.log("here!");
 			event.preventDefault();
@@ -281,12 +335,12 @@
 			var parentFormInput = $parentForm.find(':input');
 			console.log(parentFormInput.length);
 			// var parentFormSelect = parentForm.find(':select');
-			var errorTitle = "Title can not be empty",
-			errorDate = "Date can not be empty",
-			errorTitle = "Title can not be empty",
-			errorTime = "Time can not be empty",
-			errorConflict = "Time conflict!",
-            id, imageSrc, title, date,
+			// var errorTitle = "Title can not be empty",
+			// errorDate = "Date can not be empty",
+			// errorTitle = "Title can not be empty",
+			// errorTime = "Time can not be empty",
+			var errorConflict = "Time conflict!",
+            id, imageSrc, title, date, location,
             startTime, startTimeSplit, startTimeCode,
             endTime, endTimeSplit, endTimeCode,
             tempData,
@@ -309,32 +363,32 @@
             console.log("id:" + id);
 
             title = parentFormInput[0].value;
+            location = parentFormInput[1].value;
             date = parentFormInput[2].value;
             if (!title && !date && !startTime && !endTime)
             {
             	return;
             }
             if (!title) {
-            	alert(errorTitle);
-            	console.log("title:" + parentFormInput[0].value);
-            	console.log("location:" + parentFormInput[1].value);
-            	console.log("date:" + parentFormInput[2].value);
-            	console.log("start:" + parentFormInput[3].value);
-            	console.log("end:" + parentFormInput[4].value);
+            	$('#cd-event-title').addClass('has-error').next('span').addClass('is-visible');
             	return;
         	}
-
+        	if (!location) {
+            	$('#cd-event-location').addClass('has-error').next('span').addClass('is-visible'); 
+            	return;
+        	}
         	if (!date) {
-            	alert(errorDate);
+            	$('#cd-event-date').addClass('has-error').next('span').addClass('is-visible'); 
             	return;
         	}
-
-        	if (!startTime || !endTime) {
-            	alert(errorTime);
+        	if (!startTime) {
+            	$('#cd-event-start').addClass('has-error').next('span').addClass('is-visible'); 
             	return;
         	}
-
-
+        	if (!endTime) {
+            	$('#cd-event-end').addClass('has-error').next('span').addClass('is-visible'); 
+            	return;
+        	}
         	tempData = {
         		id : id,
         		code: parentFormInput[2].value,

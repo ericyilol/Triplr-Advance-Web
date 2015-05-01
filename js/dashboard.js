@@ -19,6 +19,10 @@ function dashboard_init() {
     tripClickInit();
     createNewTripFunc();
     arriveToDepartdates();
+    datePickInit();
+}
+
+var datePickInit = function(){
     $('#datePicker .date').datepicker({
         'format': 'M. d  yyyy',
         'autoclose': true
@@ -31,7 +35,7 @@ function dashboard_init() {
 var clearLocalStorage = function() {
     var LOCALDATA = [];
     localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
-    console.log(LOCALDATA);
+    // console.log(LOCALDATA);
     // location.reload();
 }
 
@@ -281,7 +285,7 @@ var arriveToDepartdates = function() {
     var daysOfYear = [];
     for (var d = new Date(2015, 2, 20); d <= now; d.setDate(d.getDate() + 1)) {
         var thisDate = new Date(d);
-        console.log(thisDate.getFullYear() + "-" + thisDate.getMonth() + "-" + thisDate.getDate());
+        // console.log(thisDate.getFullYear() + "-" + thisDate.getMonth() + "-" + thisDate.getDate());
     }
 }
 
