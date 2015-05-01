@@ -8,7 +8,7 @@ function home_page_init() {
 
 var explore_init = function() //when user click on explore
 {
-<<<<<<< HEAD
+
     // var event_height= $('.my-events').height();
     // var viewport_height = $(window).height();
     // var menu_height = viewport_height- (2 * event_height);
@@ -16,9 +16,9 @@ var explore_init = function() //when user click on explore
 
 
         $(".menu-explore-button").click(function() {
-=======
-        $("#explore-button").click(function() {
->>>>>>> origin/mz
+
+        // $("#explore-button").click(function() {
+
         $(".home-page-header").animate({height:'170px'});
         // $(".home-page-header").animate({height:menu_height});
         $("#homepage-upper-content").css({'display':'none'});
