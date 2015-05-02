@@ -183,3 +183,10 @@
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
 }
+
+@media screen and (max-width: 768px) {
+  /* line 197, ../sass/dashboard-page.scss */
+  #dashboard-menu-bar {
+    display: none;
+  }
+}
