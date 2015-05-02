@@ -20,7 +20,7 @@ function dashboard_init() {
     createNewTripFunc();
     arriveToDepartdates();
     datePickInit();
-    mobile_init();
+    dashboard_mobile_init();
 }
 
 var datePickInit = function(){
@@ -290,7 +290,7 @@ var arriveToDepartdates = function() {
     }
 }
 
-var mobile_init = function()
+var dashboard_mobile_init = function()
 {
     var toggle = false;
     $(".hamburger-icon").click(function(){
@@ -301,16 +301,20 @@ var mobile_init = function()
         $("#hamburger-menu").css({'background-color':'#6dd0f7'});
         $(".hamburger-icon").attr({src: './img/hamburger.png'});
         $(".hamburger-logo").attr({src: './img/logo_white.png'});
+        $("#year-Future-timeline").animate({'top':'110px'});
         
         toggle =false;
         }
         else{
-        $("#hamburger-menu").animate({height:'160px'});
+        $("#hamburger-menu").animate({height:'190px'});
         $(".hamburger-list").css({'display':'block'});
         $(".hamburger-list").css({'background-color':'white'});
         $("#hamburger-menu").css({'background-color':'white'});
         $(".hamburger-icon").attr({src: './img/hamburger-icon-blue.png'});
         $(".hamburger-logo").attr({src: './img/logo-blue.png'});
+        $("#year-Future-timeline").animate({'top':'240px'});
+
+
         toggle =true;
 
         }

@@ -189,4 +189,9 @@
   #dashboard-menu-bar {
     display: none;
   }
+
+  /* line 201, ../sass/dashboard-page.scss */
+  .dashboard-body {
+    margin: 0;
+  }
 }
