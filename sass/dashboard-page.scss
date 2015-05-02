@@ -202,12 +202,23 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
     margin:0;
 }
 
+#hamburger-menu{
+    height: 80px;
+}
+
 
 }
 
 
 
+@media screen and (max-width: 420px){
+    #new-trip{
+        height: 30px;
+        width: 30px;
+    }
 
+
+}
 
 
 

@@ -194,4 +194,16 @@
   .dashboard-body {
     margin: 0;
   }
+
+  /* line 205, ../sass/dashboard-page.scss */
+  #hamburger-menu {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 420px) {
+  /* line 215, ../sass/dashboard-page.scss */
+  #new-trip {
+    height: 30px;
+    width: 30px;
+  }
 }

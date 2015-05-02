@@ -322,3 +322,20 @@ var dashboard_mobile_init = function()
 
 }
 
+$(window).resize(function() {
+    var WINDOW_HEIGTH = $(window).height();
+    var WINDOW_WIDTH  = $(window).width();
+    var newTripButtonLeft = WINDOW_WIDTH - 120;
+    var newTripButtonTop = WINDOW_HEIGTH - 120;
+
+    $("#new-trip").animate({'top':newTripButtonTop});
+    $("#new-trip").animate({'left':newTripButtonLeft});
+
+    // if (WINDOW_WIDTH < 420){
+    //     $("#new-trip").css({'height':'70px'});
+    //     $("#new-trip").css({'width':'70px'});
+
+    // }
+
+    });
+
