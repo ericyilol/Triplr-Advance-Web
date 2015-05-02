@@ -4,7 +4,16 @@
         "arrive":"Aug. 10",
         "depart":"Aug. 19",
         "year": 2015,
-        "image":"photo/nyc2.jpg"
+        "image":"photo/nyc2.jpg",
+        "events" : [
+            {
+                "title" : "Museum",
+                "Location" : ""
+            },
+            {
+
+            }
+        ]
     },
     {
         "location":"London",
