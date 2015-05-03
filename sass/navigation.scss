@@ -173,3 +173,14 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
     transition-timing-function: ease-out;
 }
 
+
+@media screen and (max-width: 420px){
+    #new-trip{
+        height: 60px;
+        width: 60px;
+    }
+
+
+}
+
+

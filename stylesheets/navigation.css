@@ -212,3 +212,11 @@
   transition-property: transform;
   transition-timing-function: ease-out;
 }
+
+@media screen and (max-width: 420px) {
+  /* line 178, ../sass/navigation.scss */
+  #new-trip {
+    height: 60px;
+    width: 60px;
+  }
+}
