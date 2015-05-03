@@ -610,3 +610,10 @@ body {
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
+
+@media screen and (max-width: 768px) {
+  /* line 542, ../sass/schedule-page.scss */
+  .trip-days-container {
+    width: 60%;
+  }
+}

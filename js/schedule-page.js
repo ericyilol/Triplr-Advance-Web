@@ -571,9 +571,32 @@
     };
 
     var slickInit = function() {
+    	// console.log(WINDOW_WIDTH);
+    	if (WINDOW_WIDTH < 768){
+    			$('.trip-days-content').slick({
+
+    		        slidesToShow: 2,
+    		        slidesToScroll: 1,
+    		        infinite: false
+    		    }); 	
+    	} else {
     	$('.trip-days-content').slick({
+
             slidesToShow: 3,
             slidesToScroll: 1,
             infinite: false
         }); 
+    	}
     }
+
+  
+    // $(window).resize(function() {  	//change slick if resizes 
+    // // WINDOW_HEIGTH = $(window).height();
+    // WINDOW_WIDTH  = $(window).width();
+    // console.log(WINDOW_WIDTH);
+
+    // slickInit();
+
+    // });
+
+
