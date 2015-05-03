@@ -7,6 +7,7 @@ var LOCALDATA = JSON.parse(localStorage.getItem("tripData"));
 
 function dashboard_init() {
     // clearLocalStorage();
+    console.log(LOCALDATA);
     if ($.isEmptyObject(LOCALDATA)) {
         jsonInit();
         tripsInit();
@@ -271,6 +272,7 @@ var addNewTrip = function() {
     tripObject.year = tempDate[1];
     tempDate = parentFormInput[2].value.split("  ");
     tripObject.depart = tempDate[0];
+    tripObject.events = [];
     // console.log(tripObject);
     LOCALDATA.push (tripObject);
     localStorage.setItem("tripData", JSON.stringify(LOCALDATA));

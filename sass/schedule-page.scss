@@ -97,21 +97,19 @@ body {
 .trip-days-content{
     padding: 20px 0px 0px 0px;
     overflow-y: scroll;
-    // overflow-x: hidden;
     height: 580px;
     width: 100%;
     .slick-test {
         height: 500px;
     }
     .trip-days {
-        // height: 100%;
-        // width: 33.33%;
         padding: 0px 1.6vw;
         border-left: 1px solid $line-color;
         h3 {
             padding-bottom: 20px;
             font-family: "primary-font";
             font-size: 2em;
+            // position: fixed;
         }
         img {
             width: 100%;
@@ -286,6 +284,26 @@ body {
         border-top: 1px solid $text-light-gray-color;
         margin: 0px 50px;
         height: 50px;
+        #delete-trip {
+          float: right;
+          margin: 25px 10px 0px 0px;
+          width: 25px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        #mode-switch {
+          margin: 30px 0px 0px 0px;
+          float: left;
+          width: 50%;
+          font-family: "Raleway", sans-serif;
+          font-weight: 400;
+          font-size: 0.8em;
+          span {
+            color: $primary-dark-gray-color !important;
+          }
+        }
     }
 }
 

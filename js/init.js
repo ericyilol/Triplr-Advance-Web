@@ -15,7 +15,7 @@ var WINDOW_WIDTH  = $(window).width();
         'js/home-page.js',
         'js/schedule-page.js',
         'lib/slick-1.5.0/slick/slick.js',
-        // 'lib/jquery-ui-1.11.4/jquery-ui.min.js'
+        // 'lib/css-toggle/bower_components/prism/prism.js'
     ];
 
     var temp = [];

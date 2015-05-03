@@ -1,9 +1,11 @@
 // $(function() {
 	var events = events || {};
-	var EVENTDATA = JSON.parse(localStorage.getItem("eventsData"));
 	var LOCALDATA = JSON.parse(localStorage.getItem("tripData"));
+	// var LOCALDATA[tripID].events;
     var dateRange = [];  //Aug. 11 - Aug. 14
     var tripID;
+    var eventType;
+    var openBox = false;
 
 	var defaults = {
 		eventsStyle: "event-style",
@@ -29,7 +31,7 @@
 		// codes();
 		tripTableInit();			//for each trip day create a column
 		expandFunc();        		//make the form expandable
-		eventInit();				//Init all the exist events
+		eventsInit();				//Init all the exist events
 		slickInit();				//Init slick slider
 	}
 
@@ -117,7 +119,6 @@
     }
 
 	var expandFunc = function(){
-		var openBox = false;
 		$('.trip-events-detail').click(function() {
 			var parentCategory = $(this).closest('.trip-events-category');
 			var nextAddEventContainer = parentCategory.next('.trip-events-add-container');
@@ -134,6 +135,9 @@
 				$('.trip-events-add-after').each(function() {
 					$(this).remove();
 				});
+
+				eventType = $(this).attr("id");
+
 				$(this).addClass('changeOpacity');
 				nextAddEvent.addClass('expandHeight');
 				triangleInit(nextAddEventContainer,$(this));
@@ -142,13 +146,7 @@
 				eventsAddListener();    	//When click on save, a new event pop up
 			}
 			else {
-				openBox = !openBox;
-				$('.trip-events-detail').each(function() {
-					$(this).removeClass('changeOpacity');
-				});
-				$('.trip-events-add').each(function() {
-					$(this).removeClass('expandHeight');
-				});
+				closeExpandForm();
 			}
 		});
 		$('.div-button').click(function() {
@@ -159,6 +157,16 @@
 			$('.trip-events-add').each(function() {
 				$(this).removeClass('expandHeight');
 			});
+		});
+	}
+
+	var closeExpandForm = function(){
+		openBox = !openBox;
+		$('.trip-events-detail').each(function() {
+			$(this).removeClass('changeOpacity');
+		});
+		$('.trip-events-add').each(function() {
+			$(this).removeClass('expandHeight');
 		});
 	}
 
@@ -263,7 +271,7 @@
 		}).appendTo(fieldset);
 		$('<span />', {
 			'class' : "cd-error-message",
-			'text' : "Start Time?"
+			'text' : "What Time?"
 		}).appendTo(fieldset);
 		fieldset = $('<p />', {
 			'class' : "fieldset quater-width"
@@ -273,10 +281,6 @@
 			'type' : "text",
 			'id' : "cd-event-end",
 			'placeholder' : "To"
-		}).appendTo(fieldset);
-		$('<span />', {
-			'class' : "cd-error-message",
-			'text' : "End Time?"
 		}).appendTo(fieldset);
 		$("<div />", {
 			"class": "clear"
@@ -292,6 +296,10 @@
 			'type' : "submit",
 			'value' : "Create New Event"
 		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Time Conflict!"
+		}).appendTo(fieldset);
 	}
 
 	var timePickerInit = function() {
@@ -302,15 +310,6 @@
     	// initialize datepair
     	$('.timePicker').datepair();
 	}
-    
-    var eventInit = function(options) {
-        options = options || {};
-        options = $.extend({}, defaults, options);
-
-        $.each(EVENTDATA, function (index, params) {
-            generateElement(params);
-        });
-    }
 
 	var eventsAddListener = function() {
 		$('#cd-event-title').on('input', function() {
@@ -321,15 +320,18 @@
 		});
 		$('#cd-event-date').on('input', function() {
 			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+			$('#new-event-submit').removeClass('has-error').next('span').removeClass('is-visible');
 		});
 		$('#cd-event-start').on('input', function() {
 			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+			$('#new-event-submit').removeClass('has-error').next('span').removeClass('is-visible');
 		});
 		$('#cd-event-end').on('input', function() {
-			$(this).removeClass('has-error').next('span').removeClass('is-visible');
+			$('#cd-event-start').removeClass('has-error').next('span').removeClass('is-visible');
+			$('#new-event-submit').removeClass('has-error').next('span').removeClass('is-visible');
 		});
 		$('#new-event-submit').on('click', function(event){
-			console.log("here!");
+			console.log(eventType);
 			event.preventDefault();
 			var $parentForm = $(this).closest('.new-form');
 			var parentFormInput = $parentForm.find(':input');
@@ -347,20 +349,20 @@
             tempI,smallClosestData,bigClosestData,
             lastEndCode, lastElementFlag;
 
-            imageSrc = "icon/icon-plane-e.png";
+            var eventTypeSplit = eventType.split("-");
+
+            imageSrc = "icon/events/" + eventTypeSplit[1] + "-add.png";
  
-            startTime = parentFormInput[3].value;
-            endTime = parentFormInput[4].value;
+            startTime = parentFormInput[3].value;   //2:30
+            endTime = parentFormInput[4].value;		//4:30
 
-            startTimeSplit = startTime.split(':');
-            endTimeSplit = endTime.split(':');
+            startTimeSplit = startTime.split(':');  //2:30 -> [2,30]
+            endTimeSplit = endTime.split(':');   	//4:30 -> [4,30]
 
-            startTimeCode = startTimeSplit[0] * 2 + startTimeSplit[1]/30;
-            endTimeCode = endTimeSplit[0] * 2 + endTimeSplit[1]/30;
+            startTimeCode = startTimeSplit[0] * 2 + startTimeSplit[1]/30; 	// 2:30 -> 5
+            endTimeCode = endTimeSplit[0] * 2 + endTimeSplit[1]/30; 		// 4:30 -> 9
 
-            id = startTimeCode + parentFormInput[2].value * defaults.dayIndexGap;
-
-            console.log("id:" + id);
+            id = startTimeCode + parentFormInput[2].value * defaults.dayIndexGap;  //day 2 2:30 -> 50 + 5 = 55;
 
             title = parentFormInput[0].value;
             location = parentFormInput[1].value;
@@ -381,80 +383,100 @@
             	$('#cd-event-date').addClass('has-error').next('span').addClass('is-visible'); 
             	return;
         	}
-        	if (!startTime) {
+        	if (!startTime || !endTime) {
             	$('#cd-event-start').addClass('has-error').next('span').addClass('is-visible'); 
             	return;
         	}
-        	if (!endTime) {
-            	$('#cd-event-end').addClass('has-error').next('span').addClass('is-visible'); 
-            	return;
-        	}
+        	// if (!endTime) {
+         //    	$('#cd-event-end').addClass('has-error').next('span').addClass('is-visible'); 
+         //    	return;
+        	// }
         	tempData = {
-        		id : id,
-        		code: parentFormInput[2].value,
-        		title: parentFormInput[0].value,
+        		id : id, //55
+        		day: parentFormInput[2].value, //1
+        		duration: endTimeCode - startTimeCode,
+        		image: imageSrc,
+        		title: parentFormInput[0].value,  
         		location: parentFormInput[1].value,
         		startTime: parentFormInput[3].value,
-        		startIndex: startTimeCode,
         		endTime: parentFormInput[4].value,
-        		endIndex: endTimeCode,
-        		imageSrc: imageSrc
         	};
 
         	lastEndCode = 0;
         	lastElementFlag = true;
-        	$.each(EVENTDATA, function (index, params) {
-        		if (tempData.code == params.code) {
-        			if (tempData.startIndex < params.startIndex) {
-        				lastElementFlag = false;
-        				console.log(tempData.code);
-        				console.log(params.code);
-        				console.log(tempData.startIndex);
-        				console.log(lastEndCode);
-        				console.log(tempData.endIndex);
-        				console.log(params.startIndex);
-        				if (tempData.startIndex >= lastEndCode && tempData.endIndex <= params.startIndex)
-        				{
-        					EVENTDATA[id] = tempData;
-        					localStorage.setItem("eventsData", JSON.stringify(EVENTDATA));
-        					eventsClearNoDelete();
-        					eventInit();
-        					return false;
-        				}
-        				else {
-        					alert(errorConflict);
-        					return false;
-        				}
-        			}
-        			else {
-        				lastEndCode = params.endIndex;
-        			}
-        		}
-        	});
 
-        	if (lastElementFlag) {
-        		generateElement(tempData);
-        		EVENTDATA[id] = tempData;
-        		localStorage.setItem("eventsData", JSON.stringify(EVENTDATA));
-        	}
-        	parentFormInput[0].value = "";
-        	parentFormInput[1].value = "";
-        	parentFormInput[2].value = "";
-        	parentFormInput[3].value = "";
-        	parentFormInput[4].value = "";
-        	tempData = {};
+			var allEvents = LOCALDATA[tripID].events;
+			console.log(allEvents);
+
+			if (allEvents.length == 0)
+			{
+				allEvents.push(tempData);
+        		eventsRefresh();
+        		closeExpandForm();
+			}
+			else
+			{
+				for (var i = 0; i < allEvents.length - 1; i++) {
+					if (tempData.id > allEvents[i].id && tempData.id < allEvents[i+1].id) {
+						if (tempData.id >= allEvents[i].id + allEvents[i].duration && tempData.id + tempData.duration <= allEvents[i+1].id) 
+						{
+							allEvents.splice(i+1,0,tempData);
+							eventsRefresh();
+							closeExpandForm();
+							return ;
+						}
+						else {
+							$('#new-event-submit').addClass('has-error').next('span').addClass('is-visible'); 
+							return;
+						}
+
+					}
+				};
+				var allEvents
+				if (tempData.id >= allEvents[allEvents.length - 1].id + allEvents[allEvents.length - 1].duration)
+				{
+					allEvents.push(tempData);
+					eventsRefresh();
+					closeExpandForm();
+				}
+				else if (tempData.id + tempData.duration < allEvents[0].id){
+					allEvents.splice(0,0,tempData);
+					eventsRefresh();
+					closeExpandForm();
+				}
+				else {
+					$('#new-event-submit').addClass('has-error').next('span').addClass('is-visible'); 
+				}
+			}
+        	return ;
 		});
 	}
 
-	var eventsClear = function () {
-        EVENTDATA = {};
-        localStorage.setItem("eventsData", JSON.stringify(EVENTDATA));
+	var eventsInit = function(options) {
+        options = options || {};
+        options = $.extend({}, defaults, options);
 
+        // $.each(LOCALDATA[tripID].events, function (index, params) {
+        //     generateElement(params);
+        // });
+
+		// console.log(LOCALDATA[tripID].events);
+		localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
+        for (var i = 0; i < LOCALDATA[tripID].events.length; i++) {
+        	generateElement(LOCALDATA[tripID].events[i]);
+        };
+    }
+
+    var eventsRefresh = function() {
         var $notEmptySpot = $("." + defaults.notEmptySpot);
         eventsDelete($notEmptySpot);
-    };
+        eventsInit();
+    }
 
-    var eventsClearNoDelete = function () {
+	var eventsClear = function () {
+        LOCALDATA[tripID].events = [];
+        localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
+
         var $notEmptySpot = $("." + defaults.notEmptySpot);
         eventsDelete($notEmptySpot);
     };
@@ -493,7 +515,7 @@
 
     var generateElement = function(params){
     	// var tempId = "#day-" + 
-    	var parent = $("#day-" + params.code),
+    	var parent = $("#day-" + params.day),
     	sectionWrapper,
     	imageWrapper,
     	textWrapper;
@@ -521,7 +543,7 @@
     	}).appendTo(sectionWrapper);
 
     	$("<img />", {
-    		"src" : params.imageSrc
+    		"src" : params.image
     	}).appendTo(imageWrapper);
     	// $("<p />", {
     	// 	"text" : "EDIT"
@@ -540,52 +562,7 @@
     	}).appendTo(textWrapper);
 
     	$("<p />", {
-    		"text": params.startTime + " ~ " + params.endTime
-    	}).appendTo(textWrapper);
-
-		$("<div />", {
-			"class": "clear"
-    	}).appendTo(sectionWrapper);    	
-    };
-
-    var insertElementBefore = function(params,paramsInsert){
-    	// var parent = $(codes[params.code]),
-    	var sectionWrapper,
-    	imageWrapper,
-    	textWrapper;
-
-    	var beforeNode = $('#' + defaults.eventId + paramsInsert.id);
-    	console.log(beforeNode);
-
-    	//Mine
-    	sectionWrapper = $("<div />", {
-    		"class" : defaults.eventsStyle + " animated fadeIn" + defaults.eventSpot,
-    		"id" : defaults.eventId + params.id,
-
-    	}).insertBefore(beforeNode);
-
-    	imageWrapper = $("<div />", {
-    		"class" : defaults.eventsImageHolder
-    	}).appendTo(sectionWrapper);
-
-    	$("<img />", {
-    		"src" : params.imageSrc
-    	}).appendTo(imageWrapper);
-
-    	textWrapper = $("<div />", {
-    		"class" : defaults.eventsTextHolder
-    	}).appendTo(sectionWrapper);
-
-    	$("<p />", {
-    		"text": params.title
-    	}).appendTo(textWrapper);
-
-    	$("<p />", {
-    		"text": params.location
-    	}).appendTo(textWrapper);
-
-    	$("<p />", {
-    		"text": params.startTime + " ~ " + params.endTime
+    		"text": params.startTime + " - " + params.endTime
     	}).appendTo(textWrapper);
 
 		$("<div />", {
