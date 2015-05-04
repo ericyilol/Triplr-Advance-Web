@@ -533,3 +533,24 @@ body {
 .animationAdd {
     @include transition(all, 0.4s, ease-in-out);
 }
+
+
+
+
+
+@media screen and (max-width: 768px){
+.trip-days-container{
+    width: 60%;
+}
+
+
+
+}
+
+
+
+
+@media screen and (max-width: 420px){
+
+
+}
