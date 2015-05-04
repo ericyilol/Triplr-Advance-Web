@@ -144,7 +144,7 @@
   border-radius: 0px;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 /* line 167, ../sass/modal.scss */
@@ -264,7 +264,7 @@
 
   /* line 256, ../sass/modal.scss */
   .cd-form input.has-padding {
-    padding: 16px 20px 16px 50px;
+    padding: 12px 20px 12px 50px;
   }
 
   /* line 259, ../sass/modal.scss */

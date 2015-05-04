@@ -1,6 +1,7 @@
 var WINDOW_HEIGTH = $(window).height();
 var WINDOW_WIDTH  = $(window).width();
 var LOCALDATA = JSON.parse(localStorage.getItem("tripData"));
+var autocomplete;
 
 // var tripInput = [];
 
@@ -13,15 +14,54 @@ function dashboard_init() {
         tripsInit();
     }
     else {
-        tripsInit();
+        tripsInit();            //Init all the trips.
     }
-    timelineInit();
-    newTripButtonInit();
-    tripClickInit();
-    createNewTripFunc();
-    arriveToDepartdates();
-    datePickInit();
-    dashboard_mobile_init();
+    timelineInit();             //Init the timeline
+    newTripButtonInit();        // Init the new trip button
+    tripClickInit();            //Click on a trip go to schedule page
+    createNewTripFunc();        //Setup the create new trip button
+    //arriveToDepartdates();      //Calcu
+    datePickInit();             //Init the date picker 
+    locationAutocomplete();     //Google autocomplete city API
+    dashboard_mobile_init();    //
+    // jsonFlickrApi();
+}
+
+var jsonFlickrApi = function() {
+    
+    // $('#a-link').remove();   
+    
+    // $('<img alt="" />').attr('id', 'loader').attr('src', 'ajax-loader.gif').appendTo('#image-container');
+    
+    //assign your api key equal to a variable
+    var apiKey = 'f099f199aedf91c2cfaf8cf0e3135729';
+    // console.log("here1");
+    var userID = "132046702@N03";
+    
+    //the initial json request to flickr
+    //to get your latest public photos, use this request: http://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=' + apiKey + '&amp;user_id=29096781@N02&amp;per_page=15&amp;page=2&amp;format=json&amp;jsoncallback=?
+    // var flickerAPI = "https://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=" + apiKey + "&amp;user_id=" + userID + "&amp;tags=paris&amp;per_page=12&amp;format=JSON$amp;&amp;jsoncallback=?";
+    var flickerAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + apiKey + '?jsoncallback=?';
+    // var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    // $.getJSON( flickerAPI, function(data) {
+        // console.log("here!");
+    // });
+  $.getJSON( flickerAPI, {
+    tags: "london landmark",
+    // tagmode: "any",
+    format: "json",
+    per_page: 10,
+    page: 1
+  })
+    .done(function( data ) {
+        // console.log("here");
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "body" );
+        if ( i === 10 ) {
+          return false;
+        }
+      });
+    });
 }
 
 var datePickInit = function(){
@@ -33,6 +73,32 @@ var datePickInit = function(){
     // initialize datepair
     $('#datePicker').datepair();
 }
+
+var locationAutocomplete = function() {
+  autocomplete = new google.maps.places.Autocomplete(
+    (document.getElementById('cd-location')),
+      {
+        types: ['(cities)']
+    });
+  // places = new google.maps.places.PlacesService(map);
+
+  google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+}
+
+var onPlaceChanged = function() {
+  var place = autocomplete.getPlace();
+  if (place.geometry) {
+    // map.panTo(place.geometry.location);
+    // map.setZoom(15);
+    // search();
+    console.log("here!");
+  } else {
+    document.getElementById('autocomplete').placeholder = 'Enter a city';
+  }
+
+}
+
+
 
 var clearLocalStorage = function() {
     var LOCALDATA = [];
@@ -104,11 +170,18 @@ var tripsInit = function() {
                 "id" : "Trip-" + i
                 }).appendTo(sectionWapper);
         }
+
         imageWapper  = $("<div />", {
             "class" : cityImage
             }).appendTo(tripWapper);
+        // var imagesrc;
+var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    // $.getJSON( flickerAPI, function(data) {
+        // console.log("here!");
+    // });
         $("<img />", {
             "src" : LOCALDATA[i].image
+            // "src" : imagesrc
             }).appendTo(imageWapper);
         textWapper  = $("<div />", {
             "class" : travelInfo
@@ -205,25 +278,6 @@ var createNewTripFunc = function(){
         $form_depart = $form_modal.find('#cd-depart-date'),
         $form_forgot_password = $form_modal.find('#cd-reset-password');
         $form_submit = $('#new-trip-submit');
-
-    //open modal
-    // $main_nav.on('click', function(event){
-    //     // console.log("here");
-    //     if( $(event.target).is($main_nav) ) {
-    //         // on mobile open the submenu
-    //         $(this).children('ul').toggleClass('is-visible');
-    //         // console.log("here1");
-    //     } else {
-    //         // on mobile close submenu
-    //         $main_nav.children('ul').removeClass('is-visible');
-    //         //show modal layer
-    //         $form_modal.addClass('is-visible'); 
-    //         //show the selected form
-    //         // ( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
-    //         $form_new_trip.addClass('is-selected');
-    //         // console.log("here2");
-    //     }
-    // });
     
     //close modal
     $('.pop-modal').on('click', function(event){
@@ -236,6 +290,15 @@ var createNewTripFunc = function(){
         if(event.which=='27'){
             $form_modal.removeClass('is-visible');
         }
+    });
+    $('#cd-location').on('input', function() {
+        $(this).removeClass('has-error').next('span').removeClass('is-visible');
+    });
+    $('#cd-arrive-date').on('input', function() {
+        $(this).removeClass('has-error').next('span').removeClass('is-visible');
+    });
+    $('#cd-depart-date').on('input', function() {
+        $(this).removeClass('has-error').next('span').removeClass('is-visible');
     });
 
     $form_submit.on('click', function(event){
@@ -264,8 +327,9 @@ var addNewTrip = function() {
         parentFormInput = $parentForm.find(':input'),
         tripObject = {},
         tempDate;
+    var tripLocationSplit = parentFormInput[0].value.split(",");
 
-    tripObject.location = parentFormInput[0].value;
+    tripObject.location = tripLocationSplit[0];
     tripObject.image = "photo/greece.jpg";
     tempDate = parentFormInput[1].value.split("  ");
     tripObject.arrive = tempDate[0];
@@ -332,12 +396,5 @@ $(window).resize(function() {
 
     $("#new-trip").animate({'top':newTripButtonTop});
     $("#new-trip").animate({'left':newTripButtonLeft});
-
-    // if (WINDOW_WIDTH < 420){
-    //     $("#new-trip").css({'height':'70px'});
-    //     $("#new-trip").css({'width':'70px'});
-
-    // }
-
-    });
+});
 
