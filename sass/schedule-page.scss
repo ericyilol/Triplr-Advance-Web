@@ -535,22 +535,50 @@ body {
 }
 
 
+@media screen and (min-width: 769px){
 
+  #hamburger-menu{
+    display:none;
+  }
+
+}
 
 
 @media screen and (max-width: 768px){
+  #schedule-menu-bar{
+    display: none;
+}
+
+.dashboard-body{
+    margin:0;
+}
+
+#hamburger-menu{
+    height: 80px;
+}
+
+.trip-days-body{
+  border-top-right-radius: 5px;
+}
+
 .trip-days-container{
     width: 60%;
-}
-
-
+  padding: 5px;
 
 }
+.schedule-body{
+  padding-top: 0;
+}
+
+}
+
 
 
 
 
 @media screen and (max-width: 420px){
-
+.trip-days-container{
+    width: 100%;
+}
 
 }
