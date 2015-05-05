@@ -687,4 +687,14 @@ body {
   .trip-days-container {
     width: 100%;
   }
+
+  /* line 584, ../sass/schedule-page.scss */
+  .event-spot {
+    height: 30vw;
+  }
+
+  /* line 588, ../sass/schedule-page.scss */
+  .slick-next {
+    left: 93%;
+  }
 }
