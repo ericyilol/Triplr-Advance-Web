@@ -37,7 +37,11 @@
                 "endTime": "18:30"
             },
             {
+<<<<<<< HEAD
                 "id" : 37,
+=======
+                "id" : 41,
+>>>>>>> 17e525fbfb0ac22349df8dbd3a4577073d33b4ea
                 "day": 0,
                 "duration": 4,
                 "image": "icon/events/restaurant-add.png",
@@ -47,7 +51,11 @@
                 "endTime": "20:30"
             },
             {
+<<<<<<< HEAD
                 "id" : 41,
+=======
+                "id" : 45,
+>>>>>>> 17e525fbfb0ac22349df8dbd3a4577073d33b4ea
                 "day": 0,
                 "duration": 4,
                 "image": "icon/events/b&b-add.png",
@@ -153,7 +161,21 @@
         "depart":"Feb. 9",
         "year": 2015,
         "image":"photo/venice.jpg",
-        "events" : []
+        "events" : [
+            {"id":29,"day":"0","duration":3,"image":"icon/events/airplane-add.png","title":"Arrive at Venice","location":"airport","startTime":"14:30","endTime":"16:00"},
+            {"id":34,"day":"0","duration":2,"image":"icon/events/bus-add.png","title":"To town","location":"Doge's palace","startTime":"17:00","endTime":"18:00"},
+            {"id":38,"day":"0","duration":2,"image":"icon/events/B&B-add.png","title":"Tommy's Airbnb","location":"Doge's palace","startTime":"19:00","endTime":"20:00"},
+            {"id":68,"day":"1","duration":4,"image":"icon/events/landmark-add.png","title":"Basilica di San Marco","location":"near downtown","startTime":"09:00","endTime":"11:00"},
+            {"id":76,"day":"1","duration":8,"image":"icon/events/shopping-add.png","title":"shopping district","location":"district 14","startTime":"13:00","endTime":"17:00"},
+            {"id":86,"day":"1","duration":4,"image":"icon/events/boat-add.png","title":"Gondola Ride back home","location":"river","startTime":"18:00","endTime":"20:00"},
+            {"id":118,"day":"2","duration":3,"image":"icon/events/restaurant-add.png","title":"Yusee Bistro","location":"downtown","startTime":"09:00","endTime":"10:30"},
+            {"id":122,"day":"2","duration":2,"image":"icon/events/sightsee-add.png","title":"Grand Canal","location":"river","startTime":"11:00","endTime":"12:00"},
+            {"id":126,"day":"2","duration":2,"image":"icon/events/museum-add.png","title":"Venetian masters of art","location":"venice","startTime":"13:00","endTime":"14:00"},
+            {"id":130,"day":"2","duration":2,"image":"icon/events/bar-add.png","title":"Venetian vino","location":"vino bar","startTime":"15:00","endTime":"16:00"},
+            {"id":134,"day":"2","duration":4,"image":"icon/events/airplane-add.png","title":"Flight back","location":"airport","startTime":"17:00","endTime":"19:00"},
+            {"id":92,"day":"1","duration":2,"image":"icon/events/B&B-add.png","title":"Tommy's Airbnb","location":"Doge's Palace","startTime":"21:00","endTime":"22:00"}
+
+        ]
     },
     {
         "location":"Taipei",
@@ -183,7 +205,7 @@
     {
         "location":"Tokyo",
         "arrive":"Mar. 23",
-        "depart":"Mar. 30",
+        "depart":"Mar. 25",
         "year": 2014,
         "image":"photo/java.jpg",
         "events" : []
@@ -199,7 +221,7 @@
     {
         "location":"Egypt",
         "arrive":"Apr. 2",
-        "depart":"Apr. 8",
+        "depart":"Apr. 5",
         "year": 2014,
         "image":"photo/egypt.jpg",
         "events" : []
@@ -210,7 +232,24 @@
         "depart":"Jul. 10",
         "year": 2014,
         "image":"photo/greece.jpg",
-        "events" : []
+        "events" : [
+            {"id":37,"day":"0","duration":2,"image":"icon/events/airplane-add.png","title":"Arrive at Monterosso","location":"airport","startTime":"18:30","endTime":"19:30"},
+            {"id":40,"day":"0","duration":4,"image":"icon/events/car-add.png","title":"Taxi to Hotel Villa Steno","location":"Hotel Villa Steno","startTime":"20:00","endTime":"22:00"},
+            {"id":46,"day":"0","duration":-46,"image":"icon/events/hotel-add.png","title":"Check in","location":"Hotel Villa Steno","startTime":"23:00","endTime":"00:00"},
+            {"id":70,"day":"1","duration":2,"image":"icon/events/hotel-add.png","title":"Morning call","location":"Hotel Villa Steno","startTime":"10:00","endTime":"11:00"},
+            {"id":74,"day":"1","duration":2,"image":"icon/events/restaurant-add.png","title":"Brunch","location":"Hotel Villa Steno","startTime":"12:00","endTime":"13:00"},
+            {"id":78,"day":"1","duration":6,"image":"icon/events/sightsee-add.png","title":"Footpath Monterosso ","location":"Vernazza","startTime":"14:00","endTime":"17:00"},
+            {"id":86,"day":"1","duration":2,"image":"icon/events/hiking-add.png","title":"Spiaggia di Fegina","location":"di Fegina","startTime":"18:00","endTime":"19:00"},
+            {"id":118,"day":"2","duration":3,"image":"icon/events/cafe-add.png","title":"Breakfast","location":"Santuario di Soviore","startTime":"09:00","endTime":"10:30"},
+            {"id":122,"day":"2","duration":3,"image":"icon/events/landmark-add.png","title":"Oratorio della Confraternita","location":" al Mare","startTime":"11:00","endTime":"12:30"},
+            {"id":126,"day":"2","duration":3,"image":"icon/events/sightsee-add.png","title":"Vineria U Pussu","location":"al Mare","startTime":"13:00","endTime":"14:30"},
+            {"id":36,"day":"0","duration":2,"image":"icon/events/sightsee-add.png","title":"Monumento a Giuseppe Garibaldi","location":"al Mare","startTime":"18:00","endTime":"19:00"},
+            {"id":136,"day":"2","duration":2,"image":"icon/events/sightsee-add.png","title":"Monumento a Giuseppe Garibaldi","location":"al Mare","startTime":"18:00","endTime":"19:00"},
+            
+
+
+
+        ]
     },
     {
         "location":"San Francisco",
@@ -218,15 +257,42 @@
         "depart":"Jun. 13",
         "year": 2013,
         "image":"photo/sanfran.jpg",
+<<<<<<< HEAD
         "events" : []
+=======
+        "events" : [
+        {"id":32,"day":"0","duration":2,"image":"icon/events/airplane-add.png","title":"Fly Delta Airpline","location":"San Fran","startTime":"16:00","endTime":"17:00"},
+        {"id":36,"day":"0","duration":5,"image":"icon/events/bus-add.png","title":"\"FLYING\" airport flyer","location":"to downtown","startTime":"18:00","endTime":"20:30"},
+        {"id":46,"day":"0","duration":-46,"image":"icon/events/restaurant-add.png","title":"late night snack","location":"Main road","startTime":"23:00","endTime":"00:00"},
+        {"id":47,"day":"0","duration":-46,"image":"icon/events/hotel-add.png","title":"Howard Hotel","location":"San Fran","startTime":"23:30","endTime":"00:30"},
+        {"id":69,"day":"1","duration":2,"image":"icon/events/hotel-add.png","title":"Morning Call ","location":"Cassie Hotel","startTime":"09:30","endTime":"10:30"},
+        {"id":72,"day":"1","duration":2,"image":"icon/events/restaurant-add.png","title":"Breakfast in hotel","location":"howard","startTime":"11:00","endTime":"12:00"},
+        {"id":77,"day":"1","duration":3,"image":"icon/events/sightsee-add.png","title":"Golden Gate","location":"muzha","startTime":"13:30","endTime":"15:00"},
+        {"id":84,"day":"1","duration":2,"image":"icon/events/park-add.png","title":"Pier Park","location":"daan district","startTime":"17:00","endTime":"18:00"},
+        {"id":122,"day":"2","duration":2,"image":"icon/events/shopping-add.png","title":"Walnut Street","location":"downtown","startTime":"11:00","endTime":"12:00"},
+        {"id":126,"day":"2","duration":4,"image":"icon/events/cafe-add.png","title":"long islands cafe","location":"downtown","startTime":"13:00","endTime":"15:00"},
+        {"id":133,"day":"2","duration":5,"image":"icon/events/theatre-add.png","title":"Treg Village","location":"downtown","startTime":"16:30","endTime":"19:00"},
+        {"id":144,"day":"2","duration":2,"image":"icon/events/bar-add.png","title":"Mist","location":"market district","startTime":"22:00","endTime":"23:00"},
+        {"id":163,"day":"3","duration":7,"image":"icon/events/museum-add.png","title":"museum","location":"Wilcon st","startTime":"06:30","endTime":"10:00"},
+        {"id":176,"day":"3","duration":2,"image":"icon/events/bus-add.png","title":"airport bus","location":"airport","startTime":"13:00","endTime":"14:00"},
+        {"id":182,"day":"3","duration":14,"image":"icon/events/airplane-add.png","title":"Flight back","location":"airport","startTime":"16:00","endTime":"23:00"}
+        ]
+>>>>>>> 17e525fbfb0ac22349df8dbd3a4577073d33b4ea
     },
 
     {
         "location":"Los Angeles",
         "arrive":"May. 13",
-        "depart":"May. 15",
+        "depart":"May. 14",
         "year": 2013,
         "image":"photo/la.jpg",
-        "events" : []
+        "events" : [
+            {"id":29,"day":"0","duration":3,"image":"icon/events/airplane-add.png","title":"Arrive at LA","location":"airport","startTime":"14:30","endTime":"16:00"},
+            {"id":34,"day":"0","duration":2,"image":"icon/events/bus-add.png","title":"Bus To downtown","location":"downtown","startTime":"17:00","endTime":"18:00"},
+            {"id":38,"day":"0","duration":2,"image":"icon/events/B&B-add.png","title":"Friend's house","location":"downtown","startTime":"19:00","endTime":"20:00"},
+            {"id":68,"day":"1","duration":4,"image":"icon/events/landmark-add.png","title":"visit UCLA","location":"near downtown","startTime":"09:00","endTime":"11:00"},
+            {"id":76,"day":"1","duration":8,"image":"icon/events/shopping-add.png","title":"shopping district","location":"downtown","startTime":"13:00","endTime":"17:00"},
+            {"id":82,"day":"1","duration":14,"image":"icon/events/airplane-add.png","title":"Flight back","location":"airport","startTime":"16:00","endTime":"23:00"}
+        ]
     }
 ]
