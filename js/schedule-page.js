@@ -33,6 +33,8 @@
 		expandFunc();        		//make the form expandable
 		eventsInit();				//Init all the exist events
 		slickInit();				//Init slick slider
+		// modalListener();			//listen to open modal
+		// modalEvent();				//action to close modal
 		schedule_mobile_init();
 	}
 
@@ -545,6 +547,7 @@
 
     	$("<img />", {
     		"src" : params.image
+    		// "onclick" : editEvent()
     	}).appendTo(imageWrapper);
     	// $("<p />", {
     	// 	"text" : "EDIT"
@@ -600,7 +603,153 @@
     	}
     }
 
-    var schedule_mobile_init = function()
+    var modalListener = function(){
+    	$("#delete-trip").on('click',function() {
+    		$('.pop-modal').addClass('is-visible'); 
+    		$('#delete-trip-modal').addClass('is-selected');
+    	});
+    	$(".event-style-image").on('click',function() {
+    		
+           	editEventForm($('#edit-event-modal'),$(this));
+    		$('.pop-modal').addClass('is-visible'); 
+    		$('#edit-event-modal').addClass('is-selected');
+    	});
+    }
+ //    var editEventForm = function($parent,$data) {
+	// 	var sectionWrapper, 
+	// 	//<form action="" class="new-form" id="new-event-form">
+	// 	fieldset, 
+	// 	// <p class="fieldset">
+	// 	selectWrapper, 
+	// 	//<select class="input-style full-width has-padding has-border date start" type="text"  placeholder="Date">
+	// 	timePicker; 
+	// 	// <span class="timePicker"
+
+	// 	//form div
+	// 	sectionWrapper = $('<form />', {
+	// 		'class' : "new-form",
+	// 		'id' : "new-event-form"
+	// 	}).appendTo($parent);
+
+	// 	// input -> Title
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset"
+	// 	}).appendTo(sectionWrapper);
+	// 	$('<input />', {
+	// 		'class' : "input-style full-width has-padding has-border",
+	// 		'type' : "text",
+	// 		'id' : "cd-event-title",
+ // 			'placeholder' : "Title",
+ // 			'vale':
+	// 	}).appendTo(fieldset);
+	// 	$('<span />', {
+	// 		'class' : "cd-error-message",
+	// 		'text' : "Maybe a title?"
+	// 	}).appendTo(fieldset);
+
+	// 	// input -> Location
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset"
+	// 	}).appendTo(sectionWrapper);
+	// 	$('<input />', {
+	// 		'class' : "input-style full-width has-padding has-border",
+	// 		'type' : "text",
+	// 		'id' : "cd-event-location",
+	// 		'placeholder' : "Location"
+	// 	}).appendTo(fieldset);
+	// 	$('<span />', {
+	// 		'class' : "cd-error-message",
+	// 		'text' : "Where are you going?"
+	// 	}).appendTo(fieldset);
+
+	// 	// input -> Date Select
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset half-width"
+	// 	}).appendTo(sectionWrapper);
+	// 	selectWrapper = $('<select />', {
+	// 		'class' : "input-style full-width has-padding has-border",
+	// 		'type' : "text",
+	// 		'id' : "cd-event-date",
+	// 		'placeholder' : "Date"
+	// 	}).appendTo(fieldset);
+	// 	for (var i = 0; i < dateRange.length; i++) {
+	// 		$('<option />', {
+	// 			'value' : i,
+	// 			'text' : dateRange[i]
+	// 		}).appendTo(selectWrapper);
+	// 	}
+	// 	$('<span />', {
+	// 		'class' : "cd-error-message",
+	// 		'text' : "What Date?"
+	// 	}).appendTo(fieldset);
+
+	// 	//input -> time
+	// 	timePicker = $('<span />', {
+	// 		'class' : "timePicker"
+	// 	}).appendTo(sectionWrapper);
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset quater-width"
+	// 	}).appendTo(timePicker);
+	// 	$('<input />', {
+	// 		'class' : "input-style half-border full-width has-padding time start",
+	// 		'type' : "text",
+	// 		'id' : "cd-event-start",
+	// 		'placeholder' : "From"
+	// 	}).appendTo(fieldset);
+	// 	$('<span />', {
+	// 		'class' : "cd-error-message",
+	// 		'text' : "What Time?"
+	// 	}).appendTo(fieldset);
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset quater-width"
+	// 	}).appendTo(timePicker);
+	// 	$('<input />', {
+	// 		'class' : "input-style has-border full-width has-padding time end",
+	// 		'type' : "text",
+	// 		'id' : "cd-event-end",
+	// 		'placeholder' : "To"
+	// 	}).appendTo(fieldset);
+	// 	$("<div />", {
+	// 		"class": "clear"
+ //    	}).appendTo(sectionWrapper);   		
+	// 	// input -> submit
+
+	// 	fieldset = $('<p />', {
+	// 		'class' : "fieldset"
+	// 	}).appendTo(sectionWrapper);
+	// 	$('<input />', {
+	// 		'class' : "input-style full-width",
+	// 		'id' : "new-event-submit",
+	// 		'type' : "submit",
+	// 		'value' : "Create New Event"
+	// 	}).appendTo(fieldset);
+	// 	$('<span />', {
+	// 		'class' : "cd-error-message",
+	// 		'text' : "Time Conflict!"
+	// 	}).appendTo(fieldset);
+	// }
+
+var modalEvent = function(){
+    
+    //close modal
+    $('.pop-modal').on('click', function(event){
+        if( $(event.target).is($('.pop-modal')) || $(event.target).is('.cd-close-form') ) {
+            $('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+            $('#edit-event-modal').empty();
+        }   
+    });
+    //close modal when clicking the esc keyboard button
+    $(document).keyup(function(event){
+        if(event.which=='27'){
+            $('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+            $('#edit-event-modal').empty();
+        }
+    });
+}
+
+var schedule_mobile_init = function()
 {
     var toggle = false;
     $(".hamburger-icon").click(function(){

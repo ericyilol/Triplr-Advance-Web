@@ -534,43 +534,73 @@ body {
     @include transition(all, 0.4s, ease-in-out);
 }
 
+//modal
+.schedule-modal{
+    display: none;
+}
+#delete-trip-form{
+    // display: none;
+    height: 140px;
+    .explain-text {
+        text-align: center;
+        font-family: "Raleway",sans-serif;
+        font-size: 0.9em;
+        font-weight: 400;
+        padding-bottom: 20px;
+        position:relative;
+        // margin: 20px;
+    }
+    #delete-trip-delete {
+        padding: 10px;
+        // margin-right: 10px;
+    }
+    #delete-trip-cancel {
+        padding: 10px;
+        background-color: $text-dark-gray-color;
+    }
+}
+
+.is-selected {
+    display: block !important;
+}
+
 
 @media screen and (min-width: 769px){
 
   #hamburger-menu{
     display:none;
   }
-
 }
 
 
 @media screen and (max-width: 768px){
   #schedule-menu-bar{
     display: none;
-}
+  }
 
-.dashboard-body{
+  .dashboard-body{
     margin:0;
-}
+  }
 
-#hamburger-menu{
+  #hamburger-menu{
     height: 80px;
-}
+  }
 
-.trip-days-body{
-  border-top-right-radius: 5px;
-}
+  .trip-days-body{
+    border-top-right-radius: 5px;
+  }
 
-.trip-days-container{
+  .trip-days-container{
     width: 60%;
-  padding: 5px;
+    padding: 5px;
+
+  }
+  .schedule-body{
+    padding-top: 0;
+  }
 
 }
-.schedule-body{
-  padding-top: 0;
-}
 
-}
 
 
 
