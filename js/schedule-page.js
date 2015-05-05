@@ -33,6 +33,7 @@
 		expandFunc();        		//make the form expandable
 		eventsInit();				//Init all the exist events
 		slickInit();				//Init slick slider
+		schedule_mobile_init();
 	}
 
 	var getIDfromURL = function(){
@@ -572,6 +573,14 @@
 
     var slickInit = function() {
     	// console.log(WINDOW_WIDTH);
+    	if (WINDOW_WIDTH < 420){
+    			$('.trip-days-content').slick({
+
+    		        slidesToShow: 1,
+    		        slidesToScroll: 1,
+    		        infinite: false
+    		    }); 	
+    	}
     	if (WINDOW_WIDTH < 768){
     			$('.trip-days-content').slick({
 
@@ -586,17 +595,50 @@
             slidesToScroll: 1,
             infinite: false
         }); 
+
+
     	}
     }
 
+    var schedule_mobile_init = function()
+{
+    var toggle = false;
+    $(".hamburger-icon").click(function(){
+        if (toggle){
+        $("#hamburger-menu").animate({height:'60px'});
+        $(".hamburger-list").css({'display':'none'});
+        $(".hamburger-list").css({'background-color':'#6dd0f7'});
+        $("#hamburger-menu").css({'background-color':'#6dd0f7'});
+        $(".hamburger-icon").attr({src: './img/hamburger.png'});
+        $(".hamburger-logo").attr({src: './img/logo_white.png'});
+        $("#year-Future-timeline").animate({'top':'110px'});
+        
+        toggle =false;
+        }
+        else{
+        $("#hamburger-menu").animate({height:'220px'});
+        $(".hamburger-list").css({'display':'block'});
+        $(".hamburger-list").css({'background-color':'white'});
+        $("#hamburger-menu").css({'background-color':'white'});
+        $(".hamburger-icon").attr({src: './img/hamburger-icon-blue.png'});
+        $(".hamburger-logo").attr({src: './img/logo-blue.png'});
+        $("#year-Future-timeline").animate({'top':'240px'});
+
+
+        toggle =true;
+
+        }
+    });
+
+}
   
-    // $(window).resize(function() {  	//change slick if resizes 
-    // // WINDOW_HEIGTH = $(window).height();
-    // WINDOW_WIDTH  = $(window).width();
-    // console.log(WINDOW_WIDTH);
+    $(window).resize(function() {  	//change slick if resizes 
+    // WINDOW_HEIGTH = $(window).height();
+    WINDOW_WIDTH  = $(window).width();
+    console.log(WINDOW_WIDTH);
 
-    // slickInit();
+    slickInit();
 
-    // });
+    });
 
 

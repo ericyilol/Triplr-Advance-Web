@@ -611,9 +611,47 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
+@media screen and (min-width: 769px) {
+  /* line 540, ../sass/schedule-page.scss */
+  #hamburger-menu {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
-  /* line 542, ../sass/schedule-page.scss */
+  /* line 548, ../sass/schedule-page.scss */
+  #schedule-menu-bar {
+    display: none;
+  }
+
+  /* line 552, ../sass/schedule-page.scss */
+  .dashboard-body {
+    margin: 0;
+  }
+
+  /* line 556, ../sass/schedule-page.scss */
+  #hamburger-menu {
+    height: 80px;
+  }
+
+  /* line 560, ../sass/schedule-page.scss */
+  .trip-days-body {
+    border-top-right-radius: 5px;
+  }
+
+  /* line 564, ../sass/schedule-page.scss */
   .trip-days-container {
     width: 60%;
+    padding: 5px;
+  }
+
+  /* line 569, ../sass/schedule-page.scss */
+  .schedule-body {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  /* line 580, ../sass/schedule-page.scss */
+  .trip-days-container {
+    width: 100%;
   }
 }

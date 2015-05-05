@@ -15,22 +15,66 @@
 </head>
     <body>
         <!-- <div class="loader"></div>   -->
-        <nav class="nav-bar">
-            <div class="menu-logo">
-                <a href="index.html"> <img src="img/logo_white.png" alt=""></a>
+       <nav class="nav-bar" id = "schedule-menu-bar">
+        <div 
+        <div class="menu-logo">
+            <a href="index.html"> <img src="img/logo_white.png" alt=""></a>
+        </div>
+        <!-- <div class="menu-center-text">
+            <p>My Trips</p>
+        </div> -->
+        <div class="menu-explore">
+            <button type="button" class="btn menu-explore-button">
+            Explore New Locations
+            </button>
+            <button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
+            Reset data
+            </button>
+        </div>  
+        <div class="menu-account">
+                <div class="dropdown" id="menu-dropdown">
+                      <button class="btn btn-default dropdown-toggle"  type="button"  data-toggle="dropdown" aria-expanded="true">
+                        <img src="img/user-eric.png">
+                        <p> Eric Yi </p>
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu " role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+                      </ul>
+                        </div>
+
+        </div>
+        <div class="menu-welcome-back-text">
+            <!-- <p>Eric</p> -->
+        </div>
+    </nav>
+        <div id= "hamburger-menu">
+            <div class= "row hamburger-menu-bar">
+            <div class= "col-xs-4 col-md-4">    
+                <img class=" hamburger-icon" src="img/hamburger.png" alt="">
             </div>
-            <div class="menu-explore">
-                <button type="button" class="btn menu-explore-button" onclick="window.location.href='./dashboard.html'">
-                    Explore New Locations
-                </button>
-            </div>  
-            <div class="menu-account">
-                <img src="img/account.png" alt="">
+            <div class= "col-xs-4 col-md-4">    
+            <div class="hamburger-logo-container">
+                <a href="index.html"> <img class="hamburger-logo" src="img/logo_white.png" alt=""></a>
             </div>
-            <div class="menu-welcome-back-text">
-                <p>Eric</p>
             </div>
-        </nav>
+            <div class= "col-xs-4 col-md-4">    
+            <button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile">
+                Explore
+            </button>
+            </div>
+        </div>
+            <ul class="hamburger-list" >
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+            </ul>
+        </div>
         <div class="schedule-body">
             <section class="trip-days-container">
                 <div class="trip-days-body">
@@ -137,15 +181,15 @@
                     <div class="trip-events-category">
                         <h2>event</h2>
                         <div class="row">
-                            <div class="col-md-4 trip-events-detail" id="event-landmark">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-landmark">
                                 <img src="icon/events/landmark.png" alt="">
                                 <p>landmark</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-sightsee">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-sightsee">
                                 <img src="icon/events/sightsee.png" alt="">
                                 <p>sightsee</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-park">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-park">
                                 <img src="icon/events/park.png" alt="">
                                 <p>park</p>
                             </div>
@@ -157,15 +201,15 @@
                     </div>
                     <div class="trip-events-category">
                         <div class="row">
-                            <div class="col-md-4 trip-events-detail" id="event-museum">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-museum">
                                 <img src="icon/events/museum.png" alt="">
                                 <p>museum</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-music">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-music">
                                 <img src="icon/events/music.png" alt="">
                                 <p>music</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-theatre">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-theatre">
                                 <img src="icon/events/theatre.png" alt="">
                                 <p>theatre</p>
                             </div>
@@ -177,15 +221,15 @@
                     </div>
                     <div class="trip-events-category">
                         <div class="row">
-                            <div class="col-md-4 trip-events-detail" id="event-sports">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-sports">
                                 <img src="icon/events/sports.png" alt="">
                                 <p>sports</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-shopping">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-shopping">
                                 <img src="icon/events/shopping.png" alt="">
                                 <p>shopping</p>
                             </div>
-                            <div class="col-md-4 trip-events-detail" id="event-hiking">
+                            <div class="col-md-4 col-sm-1 trip-events-detail" id="event-hiking">
                                 <img src="icon/events/hiking.png" alt="">
                                 <p>hiking</p>
                             </div>
