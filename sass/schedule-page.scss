@@ -214,6 +214,21 @@ body {
             line-height: 1;
             text-rendering: optimizeLegibility;
         }
+        .timeP {
+            font-style: italic
+        }
+        h4 {
+            text-align: left;
+            color: $primary-dark-gray-color;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            // text-transform:uppercase;
+        }
     }
 }
 .event-style:after{
@@ -505,6 +520,12 @@ body {
   transition: opacity 0.2s 0, visibility 0 0;
 }
 
+#cd-change-event-change {
+    background-color: $primary-color;
+}
+#cd-change-event-cancel {
+    background-color: $text-light-gray-color;
+}
 
 .expandHeight {
     height: 230px !important;
@@ -538,7 +559,7 @@ body {
 .schedule-modal{
     display: none;
 }
-#delete-trip-form{
+.text-form{
     // display: none;
     height: 140px;
     .explain-text {
@@ -548,6 +569,12 @@ body {
         font-weight: 400;
         padding-bottom: 20px;
         position:relative;
+        line-height: 1.5;
+        strong {
+            // color: 
+            // font-weight: 700;
+            color: $secondary-color;
+        }
         // margin: 20px;
     }
     #delete-trip-delete {
@@ -556,8 +583,18 @@ body {
     }
     #delete-trip-cancel {
         padding: 10px;
-        background-color: $text-dark-gray-color;
+        background-color: $text-light-gray-color;
     }
+    #save-trip-dashboard {
+        padding: 10px;
+        // margin-right: 10px;
+    }
+    #save-trip-stay {
+        padding: 10px;
+        background-color: $primary-color;
+    }
+    
+
 }
 
 .is-selected {
@@ -600,9 +637,6 @@ body {
   }
 
 }
-
-
-
 
 
 

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheets/screen.css">
-
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <script src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css" />
@@ -17,7 +17,7 @@
         <div class="pop-modal">
             <div class="pop-modal-container">
                 <div id="delete-trip-modal" class="schedule-modal">
-                    <form action="" class="cd-form" id="delete-trip-form">
+                    <form action="" class="cd-form text-form" id="delete-trip-form">
                         <p class="explain-text">Are you sure you want to delete this trip?</p>
                         <p class="fieldset half-width">
                             <input class="full-width" id="delete-trip-delete"type="submit" value="Delete">
@@ -25,6 +25,23 @@
                         <p class="fieldset half-width">
                             <input class="full-width" id="delete-trip-cancel"type="submit" value="Cancel">
                         </p>
+                    </form>
+                </div>
+                <div id="save-trip-modal" class="schedule-modal">
+                    <form action="" class="cd-form text-form" id="save-trip-form">
+                        <p class="explain-text">Trip Saved!</p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="save-trip-dashboard"type="submit" value="Go to Dashboard">
+                        </p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="save-trip-stay"type="submit" value="Stay here">
+                        </p>
+                    </form>
+                </div>
+                <div id="share-trip-modal" class="schedule-modal">
+                    <form action="" class="cd-form text-form" id="share-trip-form">
+                        <p class="explain-text">Share function coming soon:)</p>
+                        <p class="explain-text">This website is made by <strong>Mirae Kim, Eric Yi, Mingrui Zhang</strong>.</p>
                     </form>
                 </div>
                 <div id="edit-event-modal" class="schedule-modal">
@@ -40,8 +57,8 @@
             <p>My Trips</p>
         </div> -->
         <div class="menu-explore">
-            <button type="button" class="btn menu-explore-button">
-                Explore New Locations
+            <button type="button" class="btn menu-explore-button" onclick="location.href = './dashboard.html'">
+                Dashboard
             </button>
             <button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
             Reset data
@@ -98,13 +115,10 @@
                             <h2 id="trip-title-h2"></h2>
                         </div>
                         <div class="trip-days-header-buttons">
-                            <button class="trip-days-publish">Publish</button>
+                            <button class="trip-days-publish" id="share-trip">Share</button>
                         </div>
                         <div class="trip-days-header-buttons">
-                            <button class="trip-days-save">Save</button>
-                        </div>
-                        <div class="trip-days-header-buttons">
-                            <button class="trip-days-save" onclick="eventsClear()">Delete</button>
+                            <button class="trip-days-save" id="save-trip">Save</button>
                         </div>
                         <div class="clear"></div>
                     </header>

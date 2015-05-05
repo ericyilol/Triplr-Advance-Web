@@ -235,8 +235,23 @@ body {
   line-height: 1;
   text-rendering: optimizeLegibility;
 }
+/* line 217, ../sass/schedule-page.scss */
+.event-style .event-style-text .timeP {
+  font-style: italic;
+}
+/* line 220, ../sass/schedule-page.scss */
+.event-style .event-style-text h4 {
+  text-align: left;
+  color: #373737;
+  font-size: 0.7em;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+}
 
-/* line 219, ../sass/schedule-page.scss */
+/* line 234, ../sass/schedule-page.scss */
 .event-style:after {
   content: "";
   position: relative;
@@ -248,23 +263,23 @@ body {
   border-left: 1px dotted #d7d7d7;
 }
 
-/* line 232, ../sass/schedule-page.scss */
+/* line 247, ../sass/schedule-page.scss */
 .event-style-image:hover img {
   -webkit-filter: grayscale(0) brightness(0.4);
   filter: grayscale(0) brightness(0.5);
 }
-/* line 236, ../sass/schedule-page.scss */
+/* line 251, ../sass/schedule-page.scss */
 .event-style-image:hover p {
   opacity: 1;
 }
 
-/* line 241, ../sass/schedule-page.scss */
+/* line 256, ../sass/schedule-page.scss */
 .trip-events-container {
   width: 24%;
   float: left;
   overflow: hidden;
 }
-/* line 245, ../sass/schedule-page.scss */
+/* line 260, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section {
   height: 630px;
   width: 100%;
@@ -273,11 +288,11 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-/* line 252, ../sass/schedule-page.scss */
+/* line 267, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category {
   padding: 0 2vw;
 }
-/* line 254, ../sass/schedule-page.scss */
+/* line 269, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category h2 {
   padding: 5px 20px;
   font-family: "Raleway", sans-serif;
@@ -287,17 +302,17 @@ body {
   text-decoration: underline;
   color: #d7d7d7;
 }
-/* line 263, ../sass/schedule-page.scss */
+/* line 278, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail {
   opacity: 0.4;
   padding: 10px 20px;
 }
-/* line 266, ../sass/schedule-page.scss */
+/* line 281, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail img {
   width: 100%;
   height: auto;
 }
-/* line 270, ../sass/schedule-page.scss */
+/* line 285, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section .trip-events-category .trip-events-detail p {
   font-family: "Raleway", sans-serif;
   font-size: 0.9em;
@@ -305,28 +320,28 @@ body {
   color: #fff;
   text-align: center;
 }
-/* line 280, ../sass/schedule-page.scss */
+/* line 295, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-section::-webkit-scrollbar {
   display: none;
 }
-/* line 283, ../sass/schedule-page.scss */
+/* line 298, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer {
   border-top: 1px solid #d7d7d7;
   margin: 0px 50px;
   height: 50px;
 }
-/* line 287, ../sass/schedule-page.scss */
+/* line 302, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer #delete-trip {
   float: right;
   margin: 25px 10px 0px 0px;
   width: 25px;
 }
-/* line 291, ../sass/schedule-page.scss */
+/* line 306, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer #delete-trip img {
   width: 100%;
   height: auto;
 }
-/* line 296, ../sass/schedule-page.scss */
+/* line 311, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer #mode-switch {
   margin: 30px 0px 0px 0px;
   float: left;
@@ -335,17 +350,17 @@ body {
   font-weight: 400;
   font-size: 0.8em;
 }
-/* line 303, ../sass/schedule-page.scss */
+/* line 318, ../sass/schedule-page.scss */
 .trip-events-container .trip-events-footer #mode-switch span {
   color: #373737 !important;
 }
 
-/* line 310, ../sass/schedule-page.scss */
+/* line 325, ../sass/schedule-page.scss */
 .trip-events-add-container {
   position: relative;
 }
 
-/* line 314, ../sass/schedule-page.scss */
+/* line 329, ../sass/schedule-page.scss */
 .trip-events-add {
   position: relative;
   -webkit-transition: all 0.4s ease-in-out;
@@ -359,32 +374,32 @@ body {
   overflow: hidden;
   width: 100%;
 }
-/* line 322, ../sass/schedule-page.scss */
+/* line 337, ../sass/schedule-page.scss */
 .trip-events-add .triangle_1 {
   z-index: 20;
   position: absolute;
   height: 20px;
   width: 30px;
 }
-/* line 327, ../sass/schedule-page.scss */
+/* line 342, ../sass/schedule-page.scss */
 .trip-events-add .triangle_1 img {
   width: 100%;
   height: auto;
 }
-/* line 332, ../sass/schedule-page.scss */
+/* line 347, ../sass/schedule-page.scss */
 .trip-events-add .triangle_2 {
   z-index: 21;
   position: absolute;
   height: 20px;
   width: 30px;
 }
-/* line 337, ../sass/schedule-page.scss */
+/* line 352, ../sass/schedule-page.scss */
 .trip-events-add .triangle_2 img {
   width: 100%;
   height: auto;
 }
 
-/* line 343, ../sass/schedule-page.scss */
+/* line 358, ../sass/schedule-page.scss */
 .trip-events-add-before {
   /* triangle */
   position: absolute;
@@ -398,7 +413,7 @@ body {
   border-bottom: 13px solid #d7d7d7;
 }
 
-/* line 359, ../sass/schedule-page.scss */
+/* line 374, ../sass/schedule-page.scss */
 .trip-events-add-after {
   /* triangle */
   position: absolute;
@@ -412,28 +427,28 @@ body {
   border-bottom: 14px solid #373737;
 }
 
-/* line 375, ../sass/schedule-page.scss */
+/* line 390, ../sass/schedule-page.scss */
 .new-form {
   padding: 1.5em 2em 2em 2em;
 }
 
-/* line 378, ../sass/schedule-page.scss */
+/* line 393, ../sass/schedule-page.scss */
 .new-form .fieldset {
   position: relative;
   margin: 0em 0em 0.6em;
 }
 
-/* line 382, ../sass/schedule-page.scss */
+/* line 397, ../sass/schedule-page.scss */
 .new-form .fieldset:first-child {
   margin-top: 0;
 }
 
-/* line 385, ../sass/schedule-page.scss */
+/* line 400, ../sass/schedule-page.scss */
 .new-form .fieldset:last-child {
   margin-bottom: 0;
 }
 
-/* line 389, ../sass/schedule-page.scss */
+/* line 404, ../sass/schedule-page.scss */
 .new-form .input-style {
   margin: 0;
   padding: 0;
@@ -444,22 +459,22 @@ body {
   font-size: 12px;
 }
 
-/* line 399, ../sass/schedule-page.scss */
+/* line 414, ../sass/schedule-page.scss */
 .new-form select {
   height: 36px;
 }
 
-/* line 402, ../sass/schedule-page.scss */
+/* line 417, ../sass/schedule-page.scss */
 .new-form .input-style.full-width {
   width: 100%;
 }
 
-/* line 405, ../sass/schedule-page.scss */
+/* line 420, ../sass/schedule-page.scss */
 .new-form .input-style.has-padding {
   padding: 10px 8px;
 }
 
-/* line 408, ../sass/schedule-page.scss */
+/* line 423, ../sass/schedule-page.scss */
 .new-form .input-style.has-border {
   border: 1px solid #d2d8d8;
   -webkit-appearance: none;
@@ -469,7 +484,7 @@ body {
   appearance: none;
 }
 
-/* line 417, ../sass/schedule-page.scss */
+/* line 432, ../sass/schedule-page.scss */
 .new-form .input-style.half-border {
   border-top: 1px solid #d2d8d8;
   border-bottom: 1px solid #d2d8d8;
@@ -482,38 +497,38 @@ body {
   appearance: none;
 }
 
-/* line 429, ../sass/schedule-page.scss */
+/* line 444, ../sass/schedule-page.scss */
 .new-form .input-style.has-border:focus {
   border-color: #343642;
   box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
   outline: none;
 }
 
-/* line 434, ../sass/schedule-page.scss */
+/* line 449, ../sass/schedule-page.scss */
 .new-form .input-style.half-border:focus {
   border: 1px solid #343642;
   box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
   outline: none;
 }
 
-/* line 440, ../sass/schedule-page.scss */
+/* line 455, ../sass/schedule-page.scss */
 .new-form .half-width {
   float: left;
   width: 50%;
 }
 
-/* line 445, ../sass/schedule-page.scss */
+/* line 460, ../sass/schedule-page.scss */
 .new-form .quater-width {
   float: left;
   width: 25%;
 }
 
-/* line 450, ../sass/schedule-page.scss */
+/* line 465, ../sass/schedule-page.scss */
 .new-form .input-style.has-error {
   border: 1px solid #d76666;
 }
 
-/* line 453, ../sass/schedule-page.scss */
+/* line 468, ../sass/schedule-page.scss */
 .new-form input[type=submit] {
   padding: 12px 0;
   cursor: pointer;
@@ -528,7 +543,7 @@ body {
   appearance: none;
 }
 
-/* line 466, ../sass/schedule-page.scss */
+/* line 481, ../sass/schedule-page.scss */
 .new-form .cd-error-message {
   display: inline-block;
   position: absolute;
@@ -552,7 +567,7 @@ body {
   transition: opacity 0.2s 0, visibility 0 0.2s;
 }
 
-/* line 488, ../sass/schedule-page.scss */
+/* line 503, ../sass/schedule-page.scss */
 .new-form .cd-error-message::after {
   /* triangle */
   content: '';
@@ -566,7 +581,7 @@ body {
   border-bottom: 8px solid rgba(215, 102, 102, 0.9);
 }
 
-/* line 500, ../sass/schedule-page.scss */
+/* line 515, ../sass/schedule-page.scss */
 .new-form .cd-error-message.is-visible {
   opacity: 1;
   visibility: visible;
@@ -575,34 +590,44 @@ body {
   transition: opacity 0.2s 0, visibility 0 0;
 }
 
-/* line 509, ../sass/schedule-page.scss */
+/* line 523, ../sass/schedule-page.scss */
+#cd-change-event-change {
+  background-color: #6dd0f7;
+}
+
+/* line 526, ../sass/schedule-page.scss */
+#cd-change-event-cancel {
+  background-color: #d7d7d7;
+}
+
+/* line 530, ../sass/schedule-page.scss */
 .expandHeight {
   height: 230px !important;
 }
 
-/* line 513, ../sass/schedule-page.scss */
+/* line 534, ../sass/schedule-page.scss */
 .changeOpacity {
   opacity: 1 !important;
 }
 
-/* line 517, ../sass/schedule-page.scss */
+/* line 538, ../sass/schedule-page.scss */
 .noBackground {
   background: none !important;
 }
 
-/* line 522, ../sass/schedule-page.scss */
+/* line 543, ../sass/schedule-page.scss */
 .ui-timepicker-list li {
   font-family: "Raleway", sans-serif;
   color: #d7d7d7;
   font-size: 0.9em;
 }
 
-/* line 529, ../sass/schedule-page.scss */
+/* line 550, ../sass/schedule-page.scss */
 .gray-color-text {
   color: #d7d7d7 !important;
 }
 
-/* line 533, ../sass/schedule-page.scss */
+/* line 554, ../sass/schedule-page.scss */
 .animationAdd {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -611,89 +636,103 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-/* line 538, ../sass/schedule-page.scss */
+/* line 559, ../sass/schedule-page.scss */
 .schedule-modal {
   display: none;
 }
 
-/* line 541, ../sass/schedule-page.scss */
-#delete-trip-form {
+/* line 562, ../sass/schedule-page.scss */
+.text-form {
   height: 140px;
 }
-/* line 544, ../sass/schedule-page.scss */
-#delete-trip-form .explain-text {
+/* line 565, ../sass/schedule-page.scss */
+.text-form .explain-text {
   text-align: center;
   font-family: "Raleway",sans-serif;
   font-size: 0.9em;
   font-weight: 400;
   padding-bottom: 20px;
   position: relative;
+  line-height: 1.5;
 }
-/* line 553, ../sass/schedule-page.scss */
-#delete-trip-form #delete-trip-delete {
+/* line 573, ../sass/schedule-page.scss */
+.text-form .explain-text strong {
+  color: #ff715b;
+}
+/* line 580, ../sass/schedule-page.scss */
+.text-form #delete-trip-delete {
   padding: 10px;
 }
-/* line 557, ../sass/schedule-page.scss */
-#delete-trip-form #delete-trip-cancel {
+/* line 584, ../sass/schedule-page.scss */
+.text-form #delete-trip-cancel {
   padding: 10px;
-  background-color: #4e4e4e;
+  background-color: #d7d7d7;
+}
+/* line 588, ../sass/schedule-page.scss */
+.text-form #save-trip-dashboard {
+  padding: 10px;
+}
+/* line 592, ../sass/schedule-page.scss */
+.text-form #save-trip-stay {
+  padding: 10px;
+  background-color: #6dd0f7;
 }
 
-/* line 563, ../sass/schedule-page.scss */
+/* line 600, ../sass/schedule-page.scss */
 .is-selected {
   display: block !important;
 }
 
 @media screen and (min-width: 769px) {
-  /* line 570, ../sass/schedule-page.scss */
+  /* line 607, ../sass/schedule-page.scss */
   #hamburger-menu {
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 577, ../sass/schedule-page.scss */
+  /* line 614, ../sass/schedule-page.scss */
   #schedule-menu-bar {
     display: none;
   }
 
-  /* line 581, ../sass/schedule-page.scss */
+  /* line 618, ../sass/schedule-page.scss */
   .dashboard-body {
     margin: 0;
   }
 
-  /* line 585, ../sass/schedule-page.scss */
+  /* line 622, ../sass/schedule-page.scss */
   #hamburger-menu {
     height: 80px;
   }
 
-  /* line 589, ../sass/schedule-page.scss */
+  /* line 626, ../sass/schedule-page.scss */
   .trip-days-body {
     border-top-right-radius: 5px;
   }
 
-  /* line 593, ../sass/schedule-page.scss */
+  /* line 630, ../sass/schedule-page.scss */
   .trip-days-container {
     width: 60%;
     padding: 5px;
   }
 
-  /* line 598, ../sass/schedule-page.scss */
+  /* line 635, ../sass/schedule-page.scss */
   .schedule-body {
     padding-top: 0;
   }
 }
 @media screen and (max-width: 420px) {
-  /* line 610, ../sass/schedule-page.scss */
+  /* line 644, ../sass/schedule-page.scss */
   .trip-days-container {
     width: 100%;
   }
 
-  /* line 584, ../sass/schedule-page.scss */
+  /* line 648, ../sass/schedule-page.scss */
   .event-spot {
     height: 30vw;
   }
 
-  /* line 588, ../sass/schedule-page.scss */
+  /* line 652, ../sass/schedule-page.scss */
   .slick-next {
     left: 93%;
   }

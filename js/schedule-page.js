@@ -6,6 +6,7 @@
     var tripID;
     var eventType;
     var openBox = false;
+    var autocomplete;
 
 	var defaults = {
 		eventsStyle: "event-style",
@@ -27,14 +28,14 @@
 
 	function schedule_init(){
 		getIDfromURL();				//Know which trip this is
+		// console.log(LOCALDATA[tripID].events);
 		calcArriveToDepartDates(LOCALDATA[tripID].arrive,LOCALDATA[tripID].depart);  //culculate a list of dates
 		// codes();
 		tripTableInit();			//for each trip day create a column
 		expandFunc();        		//make the form expandable
 		eventsInit();				//Init all the exist events
-		slickInit();				//Init slick slider
-		// modalListener();			//listen to open modal
-		// modalEvent();				//action to close modal
+		slickInit();				//Init slick slide
+		modalEvent();				//action to close modal
 		schedule_mobile_init();
 	}
 
@@ -303,6 +304,8 @@
 			'class' : "cd-error-message",
 			'text' : "Time Conflict!"
 		}).appendTo(fieldset);
+
+		locationAutocomplete("cd-event-location");
 	}
 
 	var timePickerInit = function() {
@@ -334,11 +337,11 @@
 			$('#new-event-submit').removeClass('has-error').next('span').removeClass('is-visible');
 		});
 		$('#new-event-submit').on('click', function(event){
-			console.log(eventType);
+			// console.log(eventType);
 			event.preventDefault();
 			var $parentForm = $(this).closest('.new-form');
 			var parentFormInput = $parentForm.find(':input');
-			console.log(parentFormInput.length);
+			// console.log(parentFormInput.length);
 			// var parentFormSelect = parentForm.find(':select');
 			// var errorTitle = "Title can not be empty",
 			// errorDate = "Date can not be empty",
@@ -368,7 +371,7 @@
             id = startTimeCode + parentFormInput[2].value * defaults.dayIndexGap;  //day 2 2:30 -> 50 + 5 = 55;
 
             title = parentFormInput[0].value;
-            location = parentFormInput[1].value;
+            location = parentFormInput[1].value.split(",")[0];
             date = parentFormInput[2].value;
             if (!title && !date && !startTime && !endTime)
             {
@@ -400,7 +403,7 @@
         		duration: endTimeCode - startTimeCode,
         		image: imageSrc,
         		title: parentFormInput[0].value,  
-        		location: parentFormInput[1].value,
+        		location: location,
         		startTime: parentFormInput[3].value,
         		endTime: parentFormInput[4].value,
         	};
@@ -409,7 +412,7 @@
         	lastElementFlag = true;
 
 			var allEvents = LOCALDATA[tripID].events;
-			console.log(allEvents);
+			// console.log(allEvents);
 
 			if (allEvents.length == 0)
 			{
@@ -468,6 +471,7 @@
         for (var i = 0; i < LOCALDATA[tripID].events.length; i++) {
         	generateElement(LOCALDATA[tripID].events[i]);
         };
+        modalListener();			//listen to open modal
     }
 
     var eventsRefresh = function() {
@@ -557,7 +561,7 @@
     		"class" : defaults.eventsTextHolder
     	}).appendTo(sectionWrapper);
 
-    	$("<p />", {
+    	$("<h4 />", {
     		"text": params.title
     	}).appendTo(textWrapper);
 
@@ -566,6 +570,7 @@
     	}).appendTo(textWrapper);
 
     	$("<p />", {
+    		"class" : "timeP",
     		"text": params.startTime + " - " + params.endTime
     	}).appendTo(textWrapper);
 
@@ -604,130 +609,361 @@
     }
 
     var modalListener = function(){
+    	$("#share-trip").on('click',function() {
+    		$('.pop-modal').addClass('is-visible'); 
+    		$('#share-trip-modal').addClass('is-selected');
+    	});
+    	$("#save-trip").on('click',function() {
+    		$('.pop-modal').addClass('is-visible'); 
+    		$('#save-trip-modal').addClass('is-selected');
+    		saveTripListener();
+    	});
     	$("#delete-trip").on('click',function() {
     		$('.pop-modal').addClass('is-visible'); 
     		$('#delete-trip-modal').addClass('is-selected');
+    		deleteTripListener();
     	});
     	$(".event-style-image").on('click',function() {
-    		
-           	editEventForm($('#edit-event-modal'),$(this));
+    		console.log("here!");
+    		var thisID = $(this).parent().attr("id");
+    		var thisIDSplit = thisID.split("-");
+    		var IDNumber = thisIDSplit[1];
+    		var allEvents = LOCALDATA[tripID].events;
+    		for (var i = 0; i < allEvents.length; i++) {
+    			if (allEvents[i].id == IDNumber) {
+    				var theEvent = allEvents[i];
+    				editEventForm($('#edit-event-modal'),theEvent,i);
+    			}
+    		}
     		$('.pop-modal').addClass('is-visible'); 
     		$('#edit-event-modal').addClass('is-selected');
     	});
     }
- //    var editEventForm = function($parent,$data) {
-	// 	var sectionWrapper, 
-	// 	//<form action="" class="new-form" id="new-event-form">
-	// 	fieldset, 
-	// 	// <p class="fieldset">
-	// 	selectWrapper, 
-	// 	//<select class="input-style full-width has-padding has-border date start" type="text"  placeholder="Date">
-	// 	timePicker; 
-	// 	// <span class="timePicker"
 
-	// 	//form div
-	// 	sectionWrapper = $('<form />', {
-	// 		'class' : "new-form",
-	// 		'id' : "new-event-form"
-	// 	}).appendTo($parent);
+    var deleteTripListener = function(){
+    	$('#delete-trip-delete').on('click',function(event){
+    		event.preventDefault();
+    		LOCALDATA.splice(tripID,1);
+    		localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
+    		window.location = "./dashboard";
+    	});
+    	$('#delete-trip-cancel').on('click',function(event){
+    		event.preventDefault();
+    		$('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+    	});
+    }
 
-	// 	// input -> Title
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset"
-	// 	}).appendTo(sectionWrapper);
-	// 	$('<input />', {
-	// 		'class' : "input-style full-width has-padding has-border",
-	// 		'type' : "text",
-	// 		'id' : "cd-event-title",
- // 			'placeholder' : "Title",
- // 			'vale':
-	// 	}).appendTo(fieldset);
-	// 	$('<span />', {
-	// 		'class' : "cd-error-message",
-	// 		'text' : "Maybe a title?"
-	// 	}).appendTo(fieldset);
+    var saveTripListener = function(){
+    	$('#save-trip-dashboard').on('click',function(event){
+    		event.preventDefault();
+    		window.location = "./dashboard";
+    	});
+    	$('#save-trip-stay').on('click',function(event){
+    		event.preventDefault();
+    		$('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+    	});
+    }
 
-	// 	// input -> Location
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset"
-	// 	}).appendTo(sectionWrapper);
-	// 	$('<input />', {
-	// 		'class' : "input-style full-width has-padding has-border",
-	// 		'type' : "text",
-	// 		'id' : "cd-event-location",
-	// 		'placeholder' : "Location"
-	// 	}).appendTo(fieldset);
-	// 	$('<span />', {
-	// 		'class' : "cd-error-message",
-	// 		'text' : "Where are you going?"
-	// 	}).appendTo(fieldset);
+    var editEventForm = function($parent,theEvent,index) {
+		var sectionWrapper, 
+		//<form action="" class="new-form" id="new-event-form">
+		fieldset, 
+		// <p class="fieldset">
+		selectWrapper, 
+		//<select class="input-style full-width has-padding has-border date start" type="text"  placeholder="Date">
+		timePicker; 
+		// <span class="timePicker"
 
-	// 	// input -> Date Select
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset half-width"
-	// 	}).appendTo(sectionWrapper);
-	// 	selectWrapper = $('<select />', {
-	// 		'class' : "input-style full-width has-padding has-border",
-	// 		'type' : "text",
-	// 		'id' : "cd-event-date",
-	// 		'placeholder' : "Date"
-	// 	}).appendTo(fieldset);
-	// 	for (var i = 0; i < dateRange.length; i++) {
-	// 		$('<option />', {
-	// 			'value' : i,
-	// 			'text' : dateRange[i]
-	// 		}).appendTo(selectWrapper);
-	// 	}
-	// 	$('<span />', {
-	// 		'class' : "cd-error-message",
-	// 		'text' : "What Date?"
-	// 	}).appendTo(fieldset);
+		//form div
+		sectionWrapper = $('<form />', {
+			'class' : "new-form",
+			'id' : "new-event-form"
+		}).appendTo($parent);
 
-	// 	//input -> time
-	// 	timePicker = $('<span />', {
-	// 		'class' : "timePicker"
-	// 	}).appendTo(sectionWrapper);
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset quater-width"
-	// 	}).appendTo(timePicker);
-	// 	$('<input />', {
-	// 		'class' : "input-style half-border full-width has-padding time start",
-	// 		'type' : "text",
-	// 		'id' : "cd-event-start",
-	// 		'placeholder' : "From"
-	// 	}).appendTo(fieldset);
-	// 	$('<span />', {
-	// 		'class' : "cd-error-message",
-	// 		'text' : "What Time?"
-	// 	}).appendTo(fieldset);
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset quater-width"
-	// 	}).appendTo(timePicker);
-	// 	$('<input />', {
-	// 		'class' : "input-style has-border full-width has-padding time end",
-	// 		'type' : "text",
-	// 		'id' : "cd-event-end",
-	// 		'placeholder' : "To"
-	// 	}).appendTo(fieldset);
-	// 	$("<div />", {
-	// 		"class": "clear"
- //    	}).appendTo(sectionWrapper);   		
-	// 	// input -> submit
+		// input -> Title
+		fieldset = $('<p />', {
+			'class' : "fieldset"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'id' : "cd-change-event-title",
+ 			'placeholder' : "Title",
+ 			'value' : theEvent.title
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Maybe a title?"
+		}).appendTo(fieldset);
 
-	// 	fieldset = $('<p />', {
-	// 		'class' : "fieldset"
-	// 	}).appendTo(sectionWrapper);
-	// 	$('<input />', {
-	// 		'class' : "input-style full-width",
-	// 		'id' : "new-event-submit",
-	// 		'type' : "submit",
-	// 		'value' : "Create New Event"
-	// 	}).appendTo(fieldset);
-	// 	$('<span />', {
-	// 		'class' : "cd-error-message",
-	// 		'text' : "Time Conflict!"
-	// 	}).appendTo(fieldset);
-	// }
+		// input -> Location
+		fieldset = $('<p />', {
+			'class' : "fieldset"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'id' : "cd-change-event-location",
+			'placeholder' : "Location",
+			'value' : theEvent.location
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Where are you going?"
+		}).appendTo(fieldset);
+
+		// input -> Date Select
+		fieldset = $('<p />', {
+			'class' : "fieldset half-width"
+		}).appendTo(sectionWrapper);
+		selectWrapper = $('<select />', {
+			'class' : "input-style full-width has-padding has-border",
+			'type' : "text",
+			'id' : "cd-event-date",
+			'placeholder' : "Date"
+		}).appendTo(fieldset);
+		for (var i = 0; i < dateRange.length; i++) {
+			if (i == theEvent.day){
+				$('<option />', {
+				'value' : i,
+				'text' : dateRange[i],
+				'selected' : "selected"
+				}).appendTo(selectWrapper);
+			}
+			else {
+				$('<option />', {
+				'value' : i,
+				'text' : dateRange[i]
+				}).appendTo(selectWrapper);
+			}
+		}
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "What Date?"
+		}).appendTo(fieldset);
+
+		//input -> time
+		timePicker = $('<span />', {
+			'class' : "timePicker"
+		}).appendTo(sectionWrapper);
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(timePicker);
+		$('<input />', {
+			'class' : "input-style half-border full-width has-padding time start",
+			'type' : "text",
+			'id' : "cd-change-event-start",
+			'placeholder' : "From",
+			'value' : theEvent.startTime
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "What Time?"
+		}).appendTo(fieldset);
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(timePicker);
+		$('<input />', {
+			'class' : "input-style has-border full-width has-padding time end",
+			'type' : "text",
+			'id' : "cd-change-event-end",
+			'placeholder' : "To",
+			'value' : theEvent.endTime
+		}).appendTo(fieldset);
+		$("<div />", {
+			"class": "clear"
+    	}).appendTo(sectionWrapper);   	
+
+		// button -> change
+		fieldset = $('<p />', {
+			'class' : "fieldset half-width"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width",
+			'id' : "cd-change-event-change",
+			'type' : "submit",
+			'value' : "Change"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Time Conflict!"
+		}).appendTo(fieldset);
+
+		// button -> delete
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width",
+			'id' : "cd-change-event-cancel",
+			'type' : "submit",
+			'value' : "Cancel"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Time Conflict!"
+		}).appendTo(fieldset);
+
+		// button -> delete
+		fieldset = $('<p />', {
+			'class' : "fieldset quater-width"
+		}).appendTo(sectionWrapper);
+		$('<input />', {
+			'class' : "input-style full-width",
+			'id' : "cd-change-event-delete",
+			'type' : "submit",
+			'value' : "Delete"
+		}).appendTo(fieldset);
+		$('<span />', {
+			'class' : "cd-error-message",
+			'text' : "Time Conflict!"
+		}).appendTo(fieldset);
+
+		$("<div />", {
+			"class": "clear"
+    	}).appendTo(sectionWrapper);
+
+    	timePickerInit();
+    	locationAutocomplete("cd-change-event-location");
+
+    	$('#cd-change-event-delete').on('click',function(event){
+    		event.preventDefault();
+    		LOCALDATA[tripID].events.splice(index,1);
+    		eventsRefresh();
+    		$('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+            $('#edit-event-modal').empty();
+    	});
+
+    	$('#cd-change-event-cancel').on('click',function(event){
+    		event.preventDefault();
+    		$('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
+            $('#edit-event-modal').empty();
+    	});
+
+    	$('#cd-change-event-change').on('click',function(event){
+    		event.preventDefault();
+			var $parentForm = $(this).closest('.new-form');
+			var parentFormInput = $parentForm.find(':input');
+			console.log(parentFormInput.length);
+			// var parentFormSelect = parentForm.find(':select');
+			// var errorTitle = "Title can not be empty",
+			// errorDate = "Date can not be empty",
+			// errorTitle = "Title can not be empty",
+			// errorTime = "Time can not be empty",
+			var errorConflict = "Time conflict!",
+            id, imageSrc, title, date, location,
+            startTime, startTimeSplit, startTimeCode,
+            endTime, endTimeSplit, endTimeCode,
+            tempData,
+            tempI,smallClosestData,bigClosestData,
+            lastEndCode, lastElementFlag;
+ 
+            startTime = parentFormInput[3].value;   //2:30
+            endTime = parentFormInput[4].value;		//4:30
+
+            startTimeSplit = startTime.split(':');  //2:30 -> [2,30]
+            endTimeSplit = endTime.split(':');   	//4:30 -> [4,30]
+
+            startTimeCode = startTimeSplit[0] * 2 + startTimeSplit[1]/30; 	// 2:30 -> 5
+            endTimeCode = endTimeSplit[0] * 2 + endTimeSplit[1]/30; 		// 4:30 -> 9
+
+            id = startTimeCode + parentFormInput[2].value * defaults.dayIndexGap;  //day 2 2:30 -> 50 + 5 = 55;
+
+            title = parentFormInput[0].value;
+            location = parentFormInput[1].value;
+            date = parentFormInput[2].value;
+            if (!title && !date && !startTime && !endTime)
+            {
+            	return;
+            }
+            if (!title) {
+            	$('#cd-change-event-title').addClass('has-error').next('span').addClass('is-visible');
+            	return;
+        	}
+        	if (!location) {
+            	$('#cd-change-event-location').addClass('has-error').next('span').addClass('is-visible'); 
+            	return;
+        	}
+        	if (!date) {
+            	$('#cd-change-event-date').addClass('has-error').next('span').addClass('is-visible'); 
+            	return;
+        	}
+        	if (!startTime || !endTime) {
+            	$('#cd-change-event-start').addClass('has-error').next('span').addClass('is-visible'); 
+            	return;
+        	}
+        	tempData = {
+        		id : id, //55
+        		day: parentFormInput[2].value, //1
+        		duration: endTimeCode - startTimeCode,
+        		image: theEvent.image,
+        		title: parentFormInput[0].value,  
+        		location: parentFormInput[1].value.split(",")[0],
+        		startTime: parentFormInput[3].value,
+        		endTime: parentFormInput[4].value,
+        	};
+
+        	lastEndCode = 0;
+        	lastElementFlag = true;
+
+			var allEvents = LOCALDATA[tripID].events;
+			// console.log(allEvents);
+			var tempSplice = LOCALDATA[tripID].events[index];
+			LOCALDATA[tripID].events.splice(index,1);
+			if (allEvents.length == 0)
+			{
+				allEvents.push(tempData);
+        		eventsRefresh();
+        		closeExpandForm();
+			}
+			else
+			{
+				for (var i = 0; i < allEvents.length - 1; i++) {
+					if (tempData.id > allEvents[i].id && tempData.id < allEvents[i+1].id) {
+						if (tempData.id >= allEvents[i].id + allEvents[i].duration && tempData.id + tempData.duration <= allEvents[i+1].id) 
+						{
+							allEvents.splice(i+1,0,tempData);
+							eventsRefresh();
+							$('.pop-modal').removeClass('is-visible');
+            				$('.schedule-modal').removeClass('is-selected');
+            				$('#edit-event-modal').empty();
+							return ;
+						}
+						else {
+							$('#cd-change-event-change').addClass('has-error').next('span').addClass('is-visible'); 
+							LOCALDATA[tripID].events.splice(index,0,theEvent);
+							return;
+						}
+
+					}
+				};
+				var allEvents
+				if (tempData.id >= allEvents[allEvents.length - 1].id + allEvents[allEvents.length - 1].duration)
+				{
+					allEvents.push(tempData);
+					eventsRefresh();
+					$('.pop-modal').removeClass('is-visible');
+            		$('.schedule-modal').removeClass('is-selected');
+            		$('#edit-event-modal').empty();
+				}
+				else if (tempData.id + tempData.duration < allEvents[0].id){
+					allEvents.splice(0,0,tempData);
+					eventsRefresh();
+					$('.pop-modal').removeClass('is-visible');
+            		$('.schedule-modal').removeClass('is-selected');
+            		$('#edit-event-modal').empty();
+				}
+				else {
+					$('#cd-change-event-change').addClass('has-error').next('span').addClass('is-visible'); 
+				}
+			}
+		});
+		// modalListener();
+	}
 
 var modalEvent = function(){
     
@@ -780,11 +1016,22 @@ var schedule_mobile_init = function()
     });
 
 }
+
+var locationAutocomplete = function(IDtag) {
+  autocomplete = new google.maps.places.Autocomplete(
+    (document.getElementById(IDtag)),
+      {
+        types: []
+    });
+  // places = new google.maps.places.PlacesService(map);
+
+  google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+}
   
     $(window).resize(function() {  	//change slick if resizes 
     // WINDOW_HEIGTH = $(window).height();
     WINDOW_WIDTH  = $(window).width();
-    console.log(WINDOW_WIDTH);
+    // console.log(WINDOW_WIDTH);
 
     slickInit();
 
