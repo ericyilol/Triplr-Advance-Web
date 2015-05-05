@@ -1,4 +1,5 @@
 // $(function() {
+	var allEvents = ["test"]; ///only for eric 
 	var events = events || {};
 	var LOCALDATA = JSON.parse(localStorage.getItem("tripData"));
 	// var LOCALDATA[tripID].events;
@@ -404,6 +405,11 @@
         		startTime: parentFormInput[3].value,
         		endTime: parentFormInput[4].value,
         	};
+
+        	var jsonString = JSON.stringify(tempData);/////////// only for eric
+        	// allEvents.push(jsonString);
+        	console.log(jsonString+ ",");
+        	// console.log(allEvents);
 
         	lastEndCode = 0;
         	lastElementFlag = true;
