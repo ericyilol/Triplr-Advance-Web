@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Triplr Dashboard</title>
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="./js/init.js" type="text/javascript"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 </head>
 <body>
 	<div class="pop-modal">
@@ -37,7 +36,6 @@
 						<input class="full-width" id="new-trip-submit"type="submit" value="Create New Trip">
 					</p>
 				</form>
-
 			</div>
 		</div>
 	</div>
@@ -50,12 +48,12 @@
 			<p>My Trips</p>
 		</div> -->
 		<div class="menu-explore">
-			<button type="button" class="btn menu-explore-button">
+			<button type="button" class="btn menu-explore-button" onclick="parent.location='./index.html?page=explore'">
 			Explore New Locations
 			</button>
-			<button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
+<!-- 			<button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
 			Reset data
-			</button>
+			</button> -->
 		</div>	
 		<div class="menu-account">
 				<div class="dropdown" id="menu-dropdown">
@@ -65,14 +63,14 @@
 					    <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu " role="menu">
+					  	<li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
 					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
 					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
 					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
 					    <li role="presentation" class="divider"></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
 					  </ul>
-						</div>
-
+				</div>
 		</div>
 		<div class="menu-welcome-back-text">
 			<!-- <p>Eric</p> -->
@@ -90,16 +88,15 @@
 			</div>
 			<div class= "col-xs-4 col-md-4">	
 			
-			<button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile">
-				Explore
-			</button>
+<!-- 			<button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile" onclick="clearLocalStorage()">
+				Reset data
+			</button> -->
 			</div>
 		</div>
 			<ul class="hamburger-list" >
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
 			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
 			</ul>
 		</div>
 	<section class="dashboard-body">

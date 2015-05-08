@@ -44,6 +44,7 @@ body {
 .schedule-body {
     background-color: $primary-dark-gray-color;
     padding: 60px 0px 10px 0px;
+    overflow:hidden;
 }
 
 .trip-days-container {
@@ -56,24 +57,27 @@ body {
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width: 100%;
-        padding: 20px 2vw;
+        padding: 10px 2vw 20px;
     }
 }
 
 .trip-days-header {
     border-bottom: 1px solid $line-color;
-    padding: 0 0 10px 0;
+    padding: 0 0 15px 0;
     .trip-days-header-title {
         float: left;
         h2 {
+            padding-top: 15px;
+            padding-left: 1.6vw;
           font-family: "Raleway", sans-serif;
-          font-size: 1.8em;
+          font-size: 1.6em;
           font-weight: 600;  
-          color: $text-light-gray-color;
+          color: $text-dark-gray-color;
       }
     }
     .trip-days-header-buttons {
         float: right;
+        // margin-bottom: 10px;
         button {
             // @include vertical-align;
             padding: 5px 10px;
@@ -145,16 +149,17 @@ body {
         }
     }
     .place-holder-text {
-        width: 50%;
-        height: 100%;
+        width: 60%;
         float: left;
+        @include vertical-align;
         p {
-            text-align: right;
+            padding: 0px 0px 5px 15px;;
+            text-align: left;
             font-weight: 500;
             font-size: 0.7em;
             font-family: "Raleway", sans-serif;
             color: $text-light-gray-color;
-            @include vertical-align;
+            text-rendering: optimizeLegibility;
         }
     }
 }
@@ -593,14 +598,48 @@ body {
         padding: 10px;
         background-color: $primary-color;
     }
-    
+}
 
+#mobile-title {
+    display: none;
+    p {
+        text-align: center;
+        font-family: "Raleway",sans-serif;
+        font-size: 0.8em;
+        font-weight: 500;  
+        color: $text-light-gray-color;
+        padding: 20px;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
 }
 
 .is-selected {
     display: block !important;
 }
 
+
+@media screen and (max-width: 956px){
+    .trip-days-container {
+        width: 64%;
+    }
+    .trip-events-container {
+        width: 36%;
+    }
+    .slick-next {
+        display: none !important;
+    }
+    .slick-prev {
+        display: none !important;
+    }
+    .event-spot {
+        height: 10.2vw;
+    }
+    .event-style {
+        height: 10.2vw;
+    }
+
+}
 
 @media screen and (min-width: 769px){
 
@@ -620,38 +659,80 @@ body {
   }
 
   #hamburger-menu{
-    height: 80px;
+    height: 60px;
   }
 
   .trip-days-body{
     border-top-right-radius: 5px;
   }
-
-  .trip-days-container{
-    width: 60%;
-    padding: 5px;
-
-  }
   .schedule-body{
     padding-top: 0;
   }
-
+    #mode-switch {
+        span{
+            font-size: 0.3em;
+            padding: 2px 0px 0px 0px;
+            margin-left: 3.1em;
+        }
+    }
 }
 
 
 
-@media screen and (max-width: 420px){
-.trip-days-container{
-    width: 100%;
-}
-
-.event-spot {
-  height:30vw;
- } 
-
-.slick-next {
-left: 93%;
-}
-
-
+@media screen and (max-width: 500px){
+    .trip-days-container {
+        width: 100%;
+        padding-right: 2%;
+        border-radius: 5px;
+    }
+    .trip-days-body {
+        @include transition(all, 0.4s, ease-in-out);
+    }
+    .trip-days {
+        padding: 0px 5% !important;
+        h3 {
+            text-align: center;
+        }
+    }
+    .trip-events-container {
+        width: 100%;
+        position:absolute;
+        z-index: 7;
+        background-color: $primary-dark-gray-color;
+        top: 1000px;
+        @include transition(all, 0.4s, ease-in-out);
+    }
+    .event-spot {
+        height: 21.4vw;
+    }
+    .event-style {
+        height: 21.4vw;
+    }
+    #mobile-title {
+        display: block;
+    }
+    .trip-days-header-title h2 {
+        font-size: 1.2em !important;
+    }
+    .trip-days-header {
+        padding: 0px !important; 
+    }
+    .trip-days-publish {
+        color: $primary-color !important;
+        background-color: #fff !important;
+    }
+    .trip-events-footer {
+        margin-bottom: 10px !important;
+    }
+    .trip-events-container .trip-events-footer #mode-switch {
+        margin-top: 20px !important;
+    }
+    .trip-events-container .trip-events-footer #delete-trip {
+        margin-top: 15px !important;
+    }
+    #mode-switch {
+        span{
+            font-size: 0.4em;
+        }
+    }
 }

@@ -2,6 +2,13 @@ var WINDOW_HEIGTH = $(window).height();
 var WINDOW_WIDTH  = $(window).width();
 var LOCALDATA = JSON.parse(localStorage.getItem("tripData"));
 var autocomplete;
+var tripObject = {};
+var testImage;
+
+var apiKey = 'f099f199aedf91c2cfaf8cf0e3135729';
+var tags = "beijing, landmark, tourism"
+var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + apiKey + "&tags=" + tags + "&per_page=20&sort=interestingness-desc&tag_mode=ALL&content_type=1";
+var src;
 
 // var tripInput = [];
 
@@ -22,7 +29,7 @@ function dashboard_init() {
     createNewTripFunc();        //Setup the create new trip button
     //arriveToDepartdates();      //Calcu
     datePickInit();             //Init the date picker 
-    locationAutocomplete();     //Google autocomplete city API
+    cityAutocomplete();     //Google autocomplete city API
     dashboard_mobile_init();    //
     // jsonFlickrApi();
 }
@@ -34,34 +41,44 @@ var jsonFlickrApi = function() {
     // $('<img alt="" />').attr('id', 'loader').attr('src', 'ajax-loader.gif').appendTo('#image-container');
     
     //assign your api key equal to a variable
-    var apiKey = 'f099f199aedf91c2cfaf8cf0e3135729';
     // console.log("here1");
     var userID = "132046702@N03";
     
     //the initial json request to flickr
     //to get your latest public photos, use this request: http://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=' + apiKey + '&amp;user_id=29096781@N02&amp;per_page=15&amp;page=2&amp;format=json&amp;jsoncallback=?
     // var flickerAPI = "https://api.flickr.com/services/rest/?&amp;method=flickr.people.getPublicPhotos&amp;api_key=" + apiKey + "&amp;user_id=" + userID + "&amp;tags=paris&amp;per_page=12&amp;format=JSON$amp;&amp;jsoncallback=?";
-    var flickerAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + apiKey + '?jsoncallback=?';
+    // var flickerAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + apiKey + '$user_id=' + userID + '?jsoncallback=?';
     // var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     // $.getJSON( flickerAPI, function(data) {
         // console.log("here!");
     // });
-  $.getJSON( flickerAPI, {
-    tags: "london landmark",
-    // tagmode: "any",
-    format: "json",
-    per_page: 10,
-    page: 1
-  })
-    .done(function( data ) {
-        // console.log("here");
-      $.each( data.items, function( i, item ) {
-        $( "<img>" ).attr( "src", item.media.m ).appendTo( "body" );
-        if ( i === 10 ) {
-          return false;
-        }
-      });
+var apiKey = 'f099f199aedf91c2cfaf8cf0e3135729';
+var tags = "beijing, landmark, tourism"
+var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=" + apiKey + "&tags=" + tags + "&per_page=20&sort=interestingness-desc&tag_mode=ALL&content_type=1";
+var src;
+$.getJSON(url + "&format=json&jsoncallback=?", function(data){
+    $.each(data.photos.photo, function(i,item){
+        src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
+        $("<img/>").attr("src", src).appendTo("body");
+        if ( i == 5 ) return false;
     });
+});
+
+  // $.getJSON( flickerAPI, {
+  //   tags: "london landmark",
+  //   // tagmode: "any",
+  //   format: "json",
+  //   per_page: 10,
+  //   page: 1
+  // })
+  //   .done(function( data ) {
+  //       // console.log("here");
+  //     $.each(data.photos.photo, function(i,item){
+  //       src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
+  //       $("<img/>").attr("src", src).appendTo("body");
+  //       if ( i == 3 ) return false;
+  //   });
+  //   });
 }
 
 var datePickInit = function(){
@@ -74,8 +91,11 @@ var datePickInit = function(){
     $('#datePicker').datepair();
 }
 
-var locationAutocomplete = function() {
-  autocomplete = new google.maps.places.Autocomplete(
+var cityAutocomplete = function() {
+    $('#cd-location').keypress(function(e){
+        if ( e.which == 13 ) e.preventDefault();
+    });
+    autocomplete = new google.maps.places.Autocomplete(
     (document.getElementById('cd-location')),
       {
         types: ['(cities)']
@@ -88,9 +108,6 @@ var locationAutocomplete = function() {
 var onPlaceChanged = function() {
   var place = autocomplete.getPlace();
   if (place.geometry) {
-    // map.panTo(place.geometry.location);
-    // map.setZoom(15);
-    // search();
     console.log("here!");
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
@@ -172,16 +189,17 @@ var tripsInit = function() {
         }
 
         imageWapper  = $("<div />", {
-            "class" : cityImage
+            "class" : cityImage,
+            "id" : "image-" + i
             }).appendTo(tripWapper);
         // var imagesrc;
-var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+// var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     // $.getJSON( flickerAPI, function(data) {
         // console.log("here!");
     // });
         $("<img />", {
             "src" : LOCALDATA[i].image
-            // "src" : imagesrc
+            // "src" : src
             }).appendTo(imageWapper);
         textWapper  = $("<div />", {
             "class" : travelInfo
@@ -195,6 +213,21 @@ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncal
             "text" : LOCALDATA[i].location
             }).appendTo(textWapper);
     };
+    // for (var i = LOCALDATA.length - 1; i >= 0; i--) {
+    //     testImage = "#image-" + i;
+    //     console.log(testImage);
+    //     $.getJSON(url + "&format=json&jsoncallback=?", function(data){
+    //         $.each(data.photos.photo, function(j,item){
+    //             src = "http://farm"+ item.farm +".static.flickr.com/"+ item.server +"/"+ item.id +"_"+ item.secret +"_m.jpg";
+    //             $("<img/>").attr("src", src).appendTo(testImage);
+    //             // alert(src);
+    //             if ( j == 1 ) {
+    //                 // tripObject.image = src;
+    //                 return false;
+    //             }
+    //         });
+    // });
+    // }
     $('.year').each(function(){
         if ($(this).is(':empty')){
             $(this).remove();
@@ -248,8 +281,15 @@ var tripClickInit = function(){
 var newTripButtonInit = function(){
     var $parent = $('body'),
         sectionWapper, //<button id="new-trip">
-        newTripButtonLeft = WINDOW_WIDTH - 120,
-        newTripButtonTop = WINDOW_HEIGTH - 120;
+        newTripButtonLeft, newTripButtonTop;
+        if (WINDOW_WIDTH < 500) {
+            newTripButtonLeft = WINDOW_WIDTH - 75;
+            newTripButtonTop = WINDOW_HEIGTH - 75;
+        }
+        else {
+            newTripButtonLeft = WINDOW_WIDTH - 120;
+            newTripButtonTop = WINDOW_HEIGTH - 120;
+        }
 
     sectionWapper = $('<button />', {
         "id" : "new-trip",
@@ -325,15 +365,16 @@ var createNewTripFunc = function(){
 var addNewTrip = function() {
     var $parentForm = $('body').find('#new-trip-form'),
         parentFormInput = $parentForm.find(':input'),
-        tripObject = {},
         tempDate;
     var tripLocationSplit = parentFormInput[0].value.split(",");
 
     tripObject.location = tripLocationSplit[0];
-    tripObject.image = "photo/greece.jpg";
+    // alert(src);
     tempDate = parentFormInput[1].value.split("  ");
     tripObject.arrive = tempDate[0];
     tripObject.year = tempDate[1];
+    // tripObject. = tempDate[1];
+    tripObject.image = "photo/nyc.jpg";
     tempDate = parentFormInput[2].value.split("  ");
     tripObject.depart = tempDate[0];
     tripObject.events = [];
@@ -391,9 +432,16 @@ var dashboard_mobile_init = function()
 $(window).resize(function() {
     var WINDOW_HEIGTH = $(window).height();
     var WINDOW_WIDTH  = $(window).width();
-    var newTripButtonLeft = WINDOW_WIDTH - 120;
-    var newTripButtonTop = WINDOW_HEIGTH - 120;
-
+    var newTripButtonLeft;
+    var newTripButtonTop;
+    if (WINDOW_WIDTH < 500) {
+        newTripButtonLeft = WINDOW_WIDTH - 75;
+        newTripButtonTop = WINDOW_HEIGTH - 75;
+    }
+    else {
+        newTripButtonLeft = WINDOW_WIDTH - 120,
+        newTripButtonTop = WINDOW_HEIGTH - 120;
+    }
     $("#new-trip").animate({'top':newTripButtonTop});
     $("#new-trip").animate({'left':newTripButtonLeft});
 });

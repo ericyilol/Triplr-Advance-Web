@@ -8,6 +8,8 @@
     var eventType;
     var openBox = false;
     var autocomplete;
+    var WINDOW_WIDTH  = $(window).width();
+    var WINDOW_HEIGHT  = $(window).height();
 
 	var defaults = {
 		eventsStyle: "event-style",
@@ -38,6 +40,77 @@
 		slickInit();				//Init slick slide
 		modalEvent();				//action to close modal
 		schedule_mobile_init();
+		viewportInit();
+	}
+
+	var viewportInit = function(){
+		if (WINDOW_WIDTH > 500) {
+			$('.trip-events-section').css({
+				"height": WINDOW_HEIGHT - 140 +'px'
+			});
+			$('.trip-days-body').css({
+				"height": WINDOW_HEIGHT - 100 +'px'
+			});
+			$('.trip-days-content').css({
+				"height": WINDOW_HEIGHT - 180 +'px'
+			})
+		}
+    	else {
+    		$('.trip-events-section').css({
+				"height": 300 +'px',
+				"display": "none"
+			});
+			$('.trip-events-footer').css({
+				"display": "none"
+			});
+			$('.trip-days-body').css({
+				"height": WINDOW_HEIGHT - 140 +'px'
+			});
+			$('.trip-days-content').css({
+				"height": WINDOW_HEIGHT - 200 +'px'
+			})
+			$('.trip-events-container').css({
+				"top": WINDOW_HEIGHT - 60 +'px'
+			});
+			mobileListener();
+    	}
+	}
+
+	var mobileListener = function() {
+		var showFlag = false;
+		$('#mobile-title').on('click',function(){
+			if (!showFlag) {
+				$('.trip-events-section').css({
+					"display" : "block"
+				})
+				$('.trip-events-footer').css({
+					"display" : "block"
+				})
+				$('.trip-events-container').css({
+					"top": WINDOW_HEIGHT - 300 +'px'
+				});
+				$('.trip-days-body').css({
+					"opacity": 0.2
+				});
+				$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+				showFlag = !showFlag;
+			}
+			else {
+				$('.trip-events-section').css({
+					"display" : "none"
+				});
+				$('.trip-events-footer').css({
+					"display" : "none"
+				});
+				$('.trip-events-container').css({
+					"top": WINDOW_HEIGHT - 60 +'px'
+				});
+				$('.trip-days-body').css({
+					"opacity": 1
+				});
+				showFlag = !showFlag;
+			}	
+		})
 	}
 
 	var getIDfromURL = function(){
@@ -85,7 +158,7 @@
     		circleWrapper, //<div class="place-holder-circle">
     		textWrapper; //<div class="place-holder-text">
 
-    	$tripHeaderText.text("My trip to " + LOCALDATA[tripID].location);
+    	$tripHeaderText.text(LOCALDATA[tripID].location);
 
     	for (var i = 0; i < dateRange.length; i++) {
     		// console.log("fun");
@@ -113,7 +186,13 @@
     				'class' : textStyle
     			}).appendTo(eventWrapper);
     			$('<p />', {
-    				'text' : "Title/Location/Time"
+    				'text' : "Title"
+    			}).appendTo(textWrapper);
+    			$('<p />', {
+    				'text' : "Location"
+    			}).appendTo(textWrapper);
+    			$('<p />', {
+    				'text' : "Time"
     			}).appendTo(textWrapper);
 
     			$('<div />', {
@@ -587,7 +666,7 @@
 
     var slickInit = function() {
     	// console.log(WINDOW_WIDTH);
-    	if (WINDOW_WIDTH < 420){
+    	if (WINDOW_WIDTH < 500){
     			$('.trip-days-content').slick({
 
     		        slidesToShow: 1,
@@ -595,7 +674,7 @@
     		        infinite: false
     		    }); 	
     	}
-    	if (WINDOW_WIDTH < 768){
+    	if (WINDOW_WIDTH < 956){
     			$('.trip-days-content').slick({
 
     		        slidesToShow: 2,
@@ -651,7 +730,7 @@
     		event.preventDefault();
     		LOCALDATA.splice(tripID,1);
     		localStorage.setItem("tripData", JSON.stringify(LOCALDATA));
-    		window.location = "./dashboard";
+    		window.location = "./dashboard.html";
     	});
     	$('#delete-trip-cancel').on('click',function(event){
     		event.preventDefault();
@@ -663,7 +742,7 @@
     var saveTripListener = function(){
     	$('#save-trip-dashboard').on('click',function(event){
     		event.preventDefault();
-    		window.location = "./dashboard";
+    		window.location = "./dashboard.html";
     	});
     	$('#save-trip-stay').on('click',function(event){
     		event.preventDefault();
@@ -1007,7 +1086,7 @@ var schedule_mobile_init = function()
         toggle =false;
         }
         else{
-        $("#hamburger-menu").animate({height:'220px'});
+        $("#hamburger-menu").animate({height:'190px'});
         $(".hamburger-list").css({'display':'block'});
         $(".hamburger-list").css({'background-color':'white'});
         $("#hamburger-menu").css({'background-color':'white'});
@@ -1024,6 +1103,9 @@ var schedule_mobile_init = function()
 }
 
 var locationAutocomplete = function(IDtag) {
+	$('#' + IDtag).keypress(function(e){
+        if ( e.which == 13 ) e.preventDefault();
+    });
   autocomplete = new google.maps.places.Autocomplete(
     (document.getElementById(IDtag)),
       {
@@ -1033,14 +1115,5 @@ var locationAutocomplete = function(IDtag) {
 
   google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
 }
-  
-    $(window).resize(function() {  	//change slick if resizes 
-    // WINDOW_HEIGTH = $(window).height();
-    WINDOW_WIDTH  = $(window).width();
-    // console.log(WINDOW_WIDTH);
-
-    slickInit();
-
-    });
-
+ 
 

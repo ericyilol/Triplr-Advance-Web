@@ -8,7 +8,7 @@
 .trips-year {
   position: absolute;
   top: 0;
-  z-index: 10;
+  z-index: 5;
 }
 /* line 48, ../sass/dashboard-page.scss */
 .trips-year p {
@@ -86,8 +86,10 @@
   text-align: center;
   vertical-align: middle;
 }
-/* line 107, ../sass/dashboard-page.scss */
+/* line 108, ../sass/dashboard-page.scss */
 .my-events .home-icon img {
+  -webkit-filter: grayscale(0) brightness(0.9) !important;
+  filter: grayscale(0) brightness(0.9) !important;
   position: absolute;
   left: 50%;
   top: 45%;
@@ -99,7 +101,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 117, ../sass/dashboard-page.scss */
+/* line 120, ../sass/dashboard-page.scss */
 .my-events .home-info {
   position: absolute;
   left: 50%;
@@ -110,7 +112,7 @@
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 123, ../sass/dashboard-page.scss */
+/* line 126, ../sass/dashboard-page.scss */
 .my-events .home-info p {
   text-align: center;
   color: #fff;
@@ -119,7 +121,7 @@
   white-space: nowrap;
   font-size: 1em;
 }
-/* line 131, ../sass/dashboard-page.scss */
+/* line 134, ../sass/dashboard-page.scss */
 .my-events .home-info h4 {
   text-align: center;
   padding-top: 8px;
@@ -129,7 +131,7 @@
   white-space: nowrap;
 }
 
-/* line 144, ../sass/dashboard-page.scss */
+/* line 147, ../sass/dashboard-page.scss */
 #menu-dropdown button {
   color: #fff;
   border: none;
@@ -138,7 +140,7 @@
   font-size: 16px;
   font-weight: 300;
 }
-/* line 153, ../sass/dashboard-page.scss */
+/* line 156, ../sass/dashboard-page.scss */
 #menu-dropdown ul {
   margin-top: 10px;
   border: none;
@@ -150,7 +152,28 @@
   border-radius: 2px;
 }
 
-/* line 168, ../sass/dashboard-page.scss */
+/* line 169, ../sass/dashboard-page.scss */
+#menu-dropdown1 button {
+  color: #fff;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 178, ../sass/dashboard-page.scss */
+#menu-dropdown1 ul {
+  margin-top: 10px;
+  border: none;
+  background-color: #6dd0f7;
+  color: #4e4e4e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 2px;
+}
+
+/* line 191, ../sass/dashboard-page.scss */
 .black-white img {
   -webkit-filter: grayscale(1) brightness(0.7);
   filter: grayscale(1) brightness(0.7);
@@ -161,13 +184,13 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 176, ../sass/dashboard-page.scss */
+/* line 199, ../sass/dashboard-page.scss */
 .black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.8);
   filter: grayscale(0) brightness(0.8);
 }
 
-/* line 183, ../sass/dashboard-page.scss */
+/* line 206, ../sass/dashboard-page.scss */
 .half-black-white img {
   -webkit-filter: grayscale(0.4) brightness(0.8);
   filter: grayscale(0.4) brightness(0.8);
@@ -178,25 +201,25 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* line 191, ../sass/dashboard-page.scss */
+/* line 214, ../sass/dashboard-page.scss */
 .half-black-white:hover img {
   -webkit-filter: grayscale(0) brightness(0.9);
   filter: grayscale(0) brightness(0.9);
 }
 
 @media screen and (max-width: 768px) {
-  /* line 200, ../sass/dashboard-page.scss */
+  /* line 223, ../sass/dashboard-page.scss */
   #dashboard-menu-bar {
     display: none;
   }
 
-  /* line 204, ../sass/dashboard-page.scss */
+  /* line 227, ../sass/dashboard-page.scss */
   .dashboard-body {
     margin: 0;
   }
 
-  /* line 208, ../sass/dashboard-page.scss */
+  /* line 231, ../sass/dashboard-page.scss */
   #hamburger-menu {
-    height: 80px;
+    height: 60px;
   }
 }

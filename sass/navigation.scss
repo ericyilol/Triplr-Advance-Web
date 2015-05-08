@@ -40,7 +40,7 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
   	top: 0;
   	left: 0;
 	width: 100%;
-	z-index: 99;
+	z-index: 8;
 	height: 60px;
 	background-color: $primary-color;
 }
@@ -137,8 +137,8 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 	}
 
 #new-trip{
-	height: 90px; 
-	width: 90px; 
+	height: 85px; 
+	width: 85px; 
 	position: fixed;
 	display:block;
 	border-radius: 50%;
@@ -161,12 +161,16 @@ $text-dark-gray-color: #4e4e4e;// for menu text;
 		@include center-align;
 	}
 }
-#new-trip:hover{
-	background-color: $secondary-color-fade;
-	img{
-               //add animation to the add icon?
+// #new-trip:hover{
+// 	background-color: $secondary-color-fade;
+// 	img{
+//                //add animation to the add icon?
 
-	}
+// 	}
+// }
+
+#menu-bar {
+	background-color: transparent;
 }
 
 .hvr-icon-forward:before {

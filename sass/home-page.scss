@@ -197,19 +197,51 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 		margin-right: auto;
 		margin-top: 60px;
 		input{
-			border-radius: 2px;
+			// border-radius: 2px;
+			border-radius: 0;
+			border: 1px solid #d2d8d8;
+			box-shadow: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			height: 40px;
+		}
+		input:focus{
+			border-color: #343642;
+			box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+			outline: none;
 		}
 
 		select{
-			border-radius: 2px;
-			
+			border-radius: 0px;
+			border-radius: 0;
+			border: 1px solid #d2d8d8 !important;
+			box-shadow: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			height: 40px;
+		}
+		option {
+			line-height: 18px;
+		}
+
+		select:focus {
+			border-color: #343642;
+  			box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  			outline: none;
 		}
 
 		button{
 			background-color: $secondary-color;
 			color: #fff;
 			border: none;
-			border-radius: 2px;
+			border-radius: 0px;
+			height: 40px;
 			@include transition(all, 0.2s, ease-in-out);
 		}
 		button:hover{
@@ -230,9 +262,9 @@ $secondary-color-fade: #e74c39; //darker orange, hover-state
 
 @media screen and (max-width: 1000px){
 	.my-events{
-		width:33.33%;
+		width:25%;
 		// float:left;
-		height: 33.33vw !important;
+		height: 25vw !important;
 	}
 
 	#search-location{

@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 8;
   height: 60px;
   background-color: #6dd0f7;
 }
@@ -154,8 +154,8 @@
 
 /* line 139, ../sass/navigation.scss */
 #new-trip {
-  height: 90px;
-  width: 90px;
+  height: 85px;
+  width: 85px;
   position: fixed;
   display: block;
   border-radius: 50%;
@@ -196,12 +196,12 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 164, ../sass/navigation.scss */
-#new-trip:hover {
-  background-color: #e74c39;
+/* line 172, ../sass/navigation.scss */
+#menu-bar {
+  background-color: transparent;
 }
 
-/* line 172, ../sass/navigation.scss */
+/* line 176, ../sass/navigation.scss */
 .hvr-icon-forward:before {
   content: "\f067";
   position: absolute;
@@ -220,7 +220,7 @@
 }
 
 @media screen and (max-width: 420px) {
-  /* line 184, ../sass/navigation.scss */
+  /* line 188, ../sass/navigation.scss */
   #new-trip {
     height: 60px;
     width: 60px;
