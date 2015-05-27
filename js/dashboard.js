@@ -32,6 +32,8 @@ function dashboard_init() {
     cityAutocomplete();     //Google autocomplete city API
     dashboard_mobile_init();    //
     // jsonFlickrApi();
+    $('.pop-modal').addClass('is-visible'); 
+    $('#welcome-modal').addClass('is-selected');
 }
 
 var jsonFlickrApi = function() {
@@ -323,12 +325,16 @@ var createNewTripFunc = function(){
     $('.pop-modal').on('click', function(event){
         if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
             $form_modal.removeClass('is-visible');
+            $('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
         }   
     });
     //close modal when clicking the esc keyboard button
     $(document).keyup(function(event){
         if(event.which=='27'){
             $form_modal.removeClass('is-visible');
+            $('.pop-modal').removeClass('is-visible');
+            $('.schedule-modal').removeClass('is-selected');
         }
     });
     $('#cd-location').on('input', function() {

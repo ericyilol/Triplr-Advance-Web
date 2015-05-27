@@ -160,7 +160,7 @@
   display: block;
   border-radius: 50%;
   border: 0;
-  z-index: 99;
+  z-index: 5;
   background-color: #ff715b;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;

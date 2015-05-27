@@ -207,18 +207,23 @@
   filter: grayscale(0) brightness(0.9);
 }
 
+/* line 221, ../sass/dashboard-page.scss */
+#welcome-modal {
+  height: 250px;
+}
+
 @media screen and (max-width: 768px) {
-  /* line 223, ../sass/dashboard-page.scss */
+  /* line 227, ../sass/dashboard-page.scss */
   #dashboard-menu-bar {
     display: none;
   }
 
-  /* line 227, ../sass/dashboard-page.scss */
+  /* line 231, ../sass/dashboard-page.scss */
   .dashboard-body {
     margin: 0;
   }
 
-  /* line 231, ../sass/dashboard-page.scss */
+  /* line 235, ../sass/dashboard-page.scss */
   #hamburger-menu {
     height: 60px;
   }
