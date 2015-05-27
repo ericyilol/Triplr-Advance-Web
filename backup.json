@@ -1,0 +1,117 @@
+[
+    {
+        "location":"New York",
+        "arrive":"Aug. 10",
+        "depart":"Aug. 19",
+        "year": 2015,
+        "image":"photo/nyc2.jpg",
+        "events" : [
+            {
+                "id" : 6,
+                "day": 0,
+                "duration": 1,
+                "image": "icon/events/hotel-add.png",
+                "title": "Wake up",  
+                "location": "Hotel",
+                "startTime": "3:00",
+                "endTime": "3:30"
+            }
+        ]
+    },
+    {
+        "location":"London",
+        "arrive":"Sep. 10",
+        "depart":"Sep. 19",
+        "year": 2015,
+        "image":"photo/london.jpg",
+        "events" : []
+    },
+    {
+        "location":"Beijing",
+        "arrive":"Mar. 11",
+        "depart":"Mar. 24",
+        "year": 2015,
+        "image":"photo/beijing2.jpg",
+        "events" : []
+    },
+    {
+        "location":"Lisbon",
+        "arrive":"Feb. 9",
+        "depart":"Feb. 14",
+        "year": 2015,
+        "image":"photo/lisbon.jpg",
+        "events" : []
+    },
+    {
+        "location":"Venice",
+        "arrive":"Feb. 7",
+        "depart":"Feb. 9",
+        "year": 2015,
+        "image":"photo/venice.jpg",
+        "events" : []
+    },
+    {
+        "location":"Taipei",
+        "arrive":"Dec. 1",
+        "depart":"Dec. 12",
+        "year": 2014,
+        "image":"photo/taipei.jpg",
+        "events" : []
+    },
+    {
+        "location":"Tokyo",
+        "arrive":"Mar. 23",
+        "depart":"Mar. 30",
+        "year": 2014,
+        "image":"photo/java.jpg",
+        "events" : []
+    },
+    {
+        "location":"Seoul",
+        "arrive":"Jun. 6",
+        "depart":"Jun. 13",
+        "year": 2014,
+        "image":"photo/seoul.jpg",
+        "events" : []
+    },
+    {
+        "location":"Egypt",
+        "arrive":"Apr. 2",
+        "depart":"Apr. 8",
+        "year": 2014,
+        "image":"photo/egypt.jpg",
+        "events" : []
+    },
+    {
+        "location":"Monterosso",
+        "arrive":"Jul. 6",
+        "depart":"Jul. 10",
+        "year": 2014,
+        "image":"photo/greece.jpg",
+        "events" : []
+    },
+    {
+        "location":"San Francisco",
+        "arrive":"Jun. 6",
+        "depart":"Jun. 13",
+        "year": 2013,
+        "image":"photo/sanfran.jpg",
+        "events" : []
+    },
+    {
+        "location":"Agra",
+        "arrive":"Jun. 1",
+        "depart":"Jun. 4",
+        "year": 2013,
+        "image":"photo/agra.jpg",
+        "events" : []
+    },
+    {
+        "location":"Los Angeles",
+        "arrive":"May. 13",
+        "depart":"May. 15",
+        "year": 2013,
+        "image":"photo/la.jpg",
+        "events" : []
+    }
+]

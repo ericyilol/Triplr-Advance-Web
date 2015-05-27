@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Triplr Dashboard</title>
+    <link rel="stylesheet" href="stylesheets/screen.css">
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="./js/init.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css" />
+    <!-- <script src="dist/jquery.datepair.js"></script> -->
+</head>
+    <body>
+        <div class="pop-modal">
+            <div class="pop-modal-container">
+                <div id="delete-trip-modal" class="schedule-modal">
+                    <form action="" class="cd-form text-form" id="delete-trip-form">
+                        <p class="explain-text">Are you sure you want to delete this trip?</p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="delete-trip-delete"type="submit" value="Delete">
+                        </p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="delete-trip-cancel"type="submit" value="Cancel">
+                        </p>
+                    </form>
+                </div>
+                <div id="save-trip-modal" class="schedule-modal">
+                    <form action="" class="cd-form text-form" id="save-trip-form">
+                        <p class="explain-text">Trip Saved!</p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="save-trip-dashboard"type="submit" value="Go to Dashboard">
+                        </p>
+                        <p class="fieldset half-width">
+                            <input class="full-width" id="save-trip-stay"type="submit" value="Stay here">
+                        </p>
+                    </form>
+                </div>
+                <div id="share-trip-modal" class="schedule-modal">
+                    <form action="" class="cd-form text-form" id="share-trip-form">
+                        <p class="explain-text">Share function will allows you to share this trip with friends through Facebook or Email. it will come soon:)</p>
+                        <p class="explain-text">This website is made by <strong>Mirae Kim, Eric Yi, Mingrui Zhang</strong>.</p>
+                    </form>
+                </div>
+                <div id="edit-event-modal" class="schedule-modal">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="loader"></div>   -->
+    <nav class="nav-bar" id = "dashboard-menu-bar">
+        <div class="menu-logo">
+            <a href="index.html"> <img src="img/logo_white.png" alt=""></a>
+        </div>
+        <!-- <div class="menu-center-text">
+            <p>My Trips</p>
+        </div> -->
+        <div class="menu-explore">
+            <button type="button" class="btn menu-explore-button" onclick="parent.location='./index.html?page=explore'">
+            Explore New Locations
+            </button>
+        </div>  
+        <div class="menu-account">
+                <div class="dropdown" id="menu-dropdown">
+                      <button class="btn btn-default dropdown-toggle"  type="button"  data-toggle="dropdown" aria-expanded="true">
+                        <img src="img/user-eric.png">
+                        <p> Eric Yi </p>
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu " role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
+                      </ul>
+                </div>
+        </div>
+        <div class="menu-welcome-back-text">
+            <!-- <p>Eric</p> -->
+        </div>
+    </nav>
+            <div id= "hamburger-menu">
+            <div class= "row hamburger-menu-bar">
+            <div class= "col-xs-4 col-md-4 col-sm-4">    
+                <img class=" hamburger-icon" src="img/hamburger.png" alt="">
+            </div>
+            <div class= "col-xs-4 col-md-4 col-sm-4">    
+            <div class="hamburger-logo-container">
+                <a href="index.html"> <img class="hamburger-logo" src="img/logo_white.png" alt=""></a>
+            </div>
+            </div>
+            <div class= "col-xs-4 col-md-4 col-sm-4">    
+            
+<!--             <button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile">
+                Explore
+            </button> -->
+            </div>
+        </div>
+            <ul class="hamburger-list" >
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
+            </ul>
+        </div>
+        <div class="schedule-body">
+            <section class="trip-days-container">
+                <div class="trip-days-body">
+                    <header class="trip-days-header">
+                        <div class="trip-days-header-title">
+                            <h2 id="trip-title-h2"></h2>
+                        </div>
+                        <div class="trip-days-header-buttons">
+                            <button class="trip-days-publish" id="share-trip">Share</button>
+                        </div>
+                        <div class="trip-days-header-buttons">
+                            <button class="trip-days-save" id="save-trip">Save</button>
+                        </div>
+                        <div class="clear"></div>
+                    </header>
+                    <section class="trip-days-content">
+                    </section>
+                </div>
+            </section>
+            <aside class="trip-events-container">
+                <div id="mobile-title">
+                    <p>click to show/hide section</p>
+                </div>
+                <div class="trip-events-section">
+                    <div class="trip-events-category">
+                        <h2>transportation</h2>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-airplane" >
+                                <img src="icon/events/airplane.png" alt="">
+                                <p>airplane</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-bus">
+                                <img src="icon/events/bus.png" alt="">
+                                <p>bus</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-car">
+                                <img src="icon/events/car.png" alt="">
+                                <p>car</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-boat">
+                                <img src="icon/events/boat.png" alt="">
+                                <p>boat</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-train">
+                                <img src="icon/events/train.png" alt="">
+                                <p>train</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <h2>ACCOMMODATION</h2>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-hotel">
+                                <img src="icon/events/hotel.png" alt="">
+                                <p>hotel</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-inn">
+                                <img src="icon/events/inn.png" alt="">
+                                <p>inn</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-b&b">
+                                <img src="icon/events/b&b.png" alt="">
+                                <p>b&b</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <h2>food</h2>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-restaurant">
+                                <img src="icon/events/restaurant.png" alt="">
+                                <p>restaurant</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-cafe">
+                                <img src="icon/events/cafe.png" alt="">
+                                <p>cafe</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-bar">
+                                <img src="icon/events/bar.png" alt="">
+                                <p>bar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <h2>event</h2>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-landmark">
+                                <img src="icon/events/landmark.png" alt="">
+                                <p>landmark</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-sightsee">
+                                <img src="icon/events/sightsee.png" alt="">
+                                <p>sightsee</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-park">
+                                <img src="icon/events/park.png" alt="">
+                                <p>park</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-museum">
+                                <img src="icon/events/museum.png" alt="">
+                                <p>museum</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-music">
+                                <img src="icon/events/music.png" alt="">
+                                <p>music</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-theatre">
+                                <img src="icon/events/theatre.png" alt="">
+                                <p>theatre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                    <div class="trip-events-category">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-sports">
+                                <img src="icon/events/sports.png" alt="">
+                                <p>sports</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-shopping">
+                                <img src="icon/events/shopping.png" alt="">
+                                <p>shopping</p>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 trip-events-detail" id="event-hiking">
+                                <img src="icon/events/hiking.png" alt="">
+                                <p>hiking</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-events-add-container"> 
+                        <div class="trip-events-add">    
+                        </div>
+                    </div>
+                </div>
+                <footer class="trip-events-footer">
+                    <div id="mode-switch">
+                        <label class="switch-light switch-android" onclick="">
+              <input type="checkbox">
+              <span>
+                <span>PRIVATE</span>
+                <span>PUBLIC</span>
+              </span>
+              <a></a>
+            </label>
+                </div>
+                    <div id="delete-trip">
+                        <img src="icon/delete.png" alt="">
+                    </div>
+                    <div class="clear"></div>
+                </footer>
+            </aside>
+            <div class="clear"></div>
+        </div>
+    </body>
+<script>
+    $(function() {
+        schedule_init();
+    });
+</script>
+</html>

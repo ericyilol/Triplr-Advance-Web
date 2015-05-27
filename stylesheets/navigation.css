@@ -1,0 +1,228 @@
+/* line 38, ../sass/navigation.scss */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+  height: 60px;
+  background-color: #6dd0f7;
+}
+
+/* line 47, ../sass/navigation.scss */
+.menu-logo {
+  padding: 0 0 0 30px;
+  height: 50px;
+  float: left;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 52, ../sass/navigation.scss */
+.menu-logo img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 57, ../sass/navigation.scss */
+.menu-center-text {
+  padding: 15px 30px 0 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  float: left;
+  left: 30%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20%;
+  font-size: 1.5em;
+  color: #4e4e4e;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 70, ../sass/navigation.scss */
+.menu-welcome-back-text {
+  padding: 5px 10px 0 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  float: right;
+  font-size: 0.9em;
+  color: #4e4e4e;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 79, ../sass/navigation.scss */
+.menu-account {
+  padding: 0 30px 0 0;
+  float: right;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 84, ../sass/navigation.scss */
+.menu-account img {
+  height: 100%;
+  width: auto;
+  float: left;
+  padding-right: 10px;
+}
+/* line 90, ../sass/navigation.scss */
+.menu-account p {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* line 95, ../sass/navigation.scss */
+.menu-explore {
+  padding: 0 30px 0 0;
+  float: right;
+  height: 25px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 101, ../sass/navigation.scss */
+.menu-explore-button {
+  background-color: #ff715b;
+  border: none;
+  color: #fff;
+  border-radius: 0px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 112, ../sass/navigation.scss */
+.menu-explore-button:hover {
+  color: #fff;
+  background-color: #e74c39;
+}
+
+/* line 119, ../sass/navigation.scss */
+.menu-login {
+  float: right;
+  height: 25px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #fff;
+  float: right;
+  padding: 0 20px 0 0;
+  font-family: 'Raleway', sans-serif;
+}
+/* line 128, ../sass/navigation.scss */
+.menu-login button {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 134, ../sass/navigation.scss */
+.menu-login button:hover {
+  color: #ff715b;
+}
+
+/* line 139, ../sass/navigation.scss */
+#new-trip {
+  height: 85px;
+  width: 85px;
+  position: fixed;
+  display: block;
+  border-radius: 50%;
+  border: 0;
+  z-index: 5;
+  background-color: #ff715b;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 150, ../sass/navigation.scss */
+#new-trip img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  max-height: 50%;
+}
+/* line 157, ../sass/navigation.scss */
+#new-trip .new-trip-icon {
+  color: #fff;
+  font-weight: 100;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* line 172, ../sass/navigation.scss */
+#menu-bar {
+  background-color: transparent;
+}
+
+/* line 176, ../sass/navigation.scss */
+.hvr-icon-forward:before {
+  content: "\f067";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: FontAwesome;
+  transform: scale(3);
+  transition-duration: 0.1s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+
+@media screen and (max-width: 420px) {
+  /* line 188, ../sass/navigation.scss */
+  #new-trip {
+    height: 60px;
+    width: 60px;
+  }
+}

@@ -1,0 +1,738 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin transform($transform-property) {
+    -webkit-transform: $transform-property;
+    -moz-transform: $transform-property;
+    -ms-transform: $transform-property;
+    -o-transform: $transform-property;
+    transform: $transform-property;
+}
+
+@mixin center-align {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #e74c39; //faded orange, hover-state
+$primary-dark-gray-color: #373737; //dark gray, for backgroud
+$text-dark-gray-color: #4e4e4e;// for menu text;
+$text-light-gray-color: #d7d7d7;
+$line-color: #959595;
+
+body {
+    background-color: $primary-dark-gray-color !important;
+}
+
+.schedule-body {
+    background-color: $primary-dark-gray-color;
+    padding: 60px 0px 10px 0px;
+    overflow:hidden;
+}
+
+.trip-days-container {
+    padding: 20px 0 0 2%;
+    width: 76%;
+    float: left;
+    .trip-days-body {
+        background-color: #fff;
+        height: 680px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 100%;
+        padding: 10px 2vw 20px;
+    }
+}
+
+.trip-days-header {
+    border-bottom: 1px solid $line-color;
+    padding: 0 0 15px 0;
+    .trip-days-header-title {
+        float: left;
+        h2 {
+            padding-top: 15px;
+            padding-left: 1.6vw;
+          font-family: "Raleway", sans-serif;
+          font-size: 1.6em;
+          font-weight: 600;  
+          color: $text-dark-gray-color;
+      }
+    }
+    .trip-days-header-buttons {
+        float: right;
+        // margin-bottom: 10px;
+        button {
+            // @include vertical-align;
+            padding: 5px 10px;
+            margin: 15px 5px 0px 5px;   
+            border: none;
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            @include transition(all, 0.2s, ease-in-out);
+        }
+    }
+    .trip-days-publish {
+        background-color: $primary-color;
+        color:#fff;
+    }
+    .trip-days-save {
+        background-color: transparent;
+        color: #363636;
+    }
+}
+
+.trip-days-content{
+    padding: 20px 0px 0px 0px;
+    overflow-y: scroll;
+    height: 580px;
+    width: 100%;
+    .slick-test {
+        height: 500px;
+    }
+    .trip-days {
+        padding: 0px 1.6vw;
+        border-left: 1px solid $line-color;
+        h3 {
+            padding-bottom: 20px;
+            font-family: "primary-font";
+            font-size: 2em;
+            // position: fixed;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            z-index: 99999; 
+        }
+    }
+    .trip-days:first-child {
+        border-left: 1px solid #fff;
+    }
+}
+
+.trip-days-content::-webkit-scrollbar { 
+  display: none;
+}
+.event-spot {
+    height: 8vw;
+    margin-bottom: 30px;
+    @include transition(all, 0.6s, ease-in-out);
+    .place-holder-circle {
+        width: 40%;
+        height: 100%;
+        float: left;
+        border-radius: 50%;
+        border: 1px dotted $text-light-gray-color; 
+        p {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            @include vertical-align;
+        }
+    }
+    .place-holder-text {
+        width: 60%;
+        float: left;
+        @include vertical-align;
+        p {
+            padding: 0px 0px 5px 15px;;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            color: $text-light-gray-color;
+            text-rendering: optimizeLegibility;
+        }
+    }
+}
+.event-spot:after{
+    content:"";
+    position: relative;
+    display: block;
+    height: 31px;
+    // width: 100px;
+    z-index: 1;
+    top: 0;
+    // bottom: 18px    ;
+    left: 20%;
+    border-left: 1px dotted $text-light-gray-color;
+}
+
+.event-style {
+    height: 8vw;
+    margin-bottom: 30px;
+    @include transition(all, 0.6s, ease-in-out);
+    .event-style-image{
+        width: 40%;
+        float: left;
+        img {
+            @include transition(all, 0.3s, ease-in-out);
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+        }
+        p {
+            @include vertical-align;
+            text-align: center;
+            opacity: 0;
+            color: $primary-dark-gray-color;
+            font-size: 0.6em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+        }
+    }
+    .event-style-text{
+        width: 60%;
+        padding-left: 15px;
+        float: left;
+        @include vertical-align;
+        p {
+            text-align: left;
+            color: $primary-dark-gray-color;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+        }
+        .timeP {
+            font-style: italic
+        }
+        h4 {
+            text-align: left;
+            color: $primary-dark-gray-color;
+            font-size: 0.7em;
+            font-family: "Raleway", sans-serif;
+            // white-space: nowrap;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            // text-transform:uppercase;
+        }
+    }
+}
+.event-style:after{
+    content:"";
+    position: relative;
+    display: block;
+    height: 33px;
+    // width: 100px;
+    z-index: 1;
+    top: 0;
+    // bottom: 18px    ;
+    left: 20%;
+    border-left: 1px dotted $text-light-gray-color;
+}
+.event-style-image:hover {
+    img {
+        -webkit-filter: grayscale(0) brightness(0.4);
+        filter: grayscale(0) brightness(0.5);
+    }
+    p {
+        opacity: 1
+    }
+}
+
+.trip-events-container {
+    width: 24%;
+    float: left;
+    overflow: hidden;
+    .trip-events-section {
+        height: 630px;
+        width: 100%;
+        margin-right: 20px;
+        padding: 20px 0px 0px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        .trip-events-category {
+            padding: 0 2vw;
+            h2 {
+                padding: 5px 20px;
+                font-family: "Raleway", sans-serif;
+                font-size: 0.9em;
+                font-weight: 600;
+                text-transform: uppercase;
+                text-decoration: underline;
+                color:$text-light-gray-color;
+            }
+            .trip-events-detail {
+                opacity: 0.4;
+                padding: 10px 20px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                p {
+                    font-family: "Raleway", sans-serif;
+                    font-size: 0.9em;
+                    font-weight: 300;
+                    color:#fff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .trip-events-section::-webkit-scrollbar { 
+        display: none; 
+    }
+    .trip-events-footer {
+        border-top: 1px solid $text-light-gray-color;
+        margin: 0px 50px;
+        height: 50px;
+        #delete-trip {
+          float: right;
+          margin: 25px 10px 0px 0px;
+          width: 25px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        #mode-switch {
+          margin: 30px 0px 0px 0px;
+          float: left;
+          width: 50%;
+          font-family: "Raleway", sans-serif;
+          font-weight: 400;
+          font-size: 0.8em;
+          span {
+            color: $primary-dark-gray-color !important;
+          }
+        }
+    }
+}
+
+.trip-events-add-container {
+    position: relative;
+}
+
+.trip-events-add {
+    position: relative;
+    @include transition(all, 0.4s, ease-in-out);
+    margin: 10px 0;
+    background-color: $text-light-gray-color;
+    height: 0px;
+    overflow: hidden;
+    width: 100%;
+    .triangle_1 {
+        z-index: 20;
+        position:absolute;
+        height: 20px;
+        width: 30px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .triangle_2 {
+        z-index: 21;
+        position:absolute;
+        height: 20px;
+        width: 30px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.trip-events-add-before {
+  /* triangle */
+  // content: '';
+  // display: inline-block;
+  position: absolute;
+  left: 30px;
+  top: -13px;
+  height: 0;
+  width: 0;
+  z-index: 99;
+  // display: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 13px solid $text-light-gray-color;
+}
+
+.trip-events-add-after {
+  /* triangle */
+  // content: '';
+  // @include transition(all, 0.4s, ease-in-out);
+  position: absolute;
+  left: 30px;
+  bottom: 0px;
+  height: 0;
+  width: 0;
+  z-index: 99;
+  // display: none;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 14px solid $primary-dark-gray-color;
+}
+
+.new-form {
+  padding: 1.5em 2em 2em 2em;
+}
+.new-form .fieldset {
+  position: relative;
+  margin: 0em 0em 0.6em;
+}
+.new-form .fieldset:first-child {
+  margin-top: 0;
+}
+.new-form .fieldset:last-child {
+  margin-bottom: 0;
+}
+
+.new-form .input-style  {
+  margin: 0;
+  padding: 0;
+  border-radius: 0px;
+  background-color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.new-form select {
+    height: 36px;
+}
+.new-form .input-style.full-width {
+  width: 100%;
+}
+.new-form .input-style.has-padding {
+  padding: 10px 8px;
+}
+.new-form .input-style.has-border {
+  border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.new-form .input-style.half-border {
+    border-top : 1px solid #d2d8d8;
+    border-bottom : 1px solid #d2d8d8;
+    border-right : 0;
+    border-left : 0;
+    // border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.new-form .input-style.has-border:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+.new-form .input-style.half-border:focus {
+  border: 1px solid #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+
+.new-form .half-width {
+    float: left;
+    width: 50%;
+}
+
+.new-form .quater-width {
+    float: left;
+    width: 25%;
+}
+
+.new-form .input-style.has-error {
+  border: 1px solid #d76666;
+}
+.new-form input[type=submit] {
+  padding: 12px 0;
+  cursor: pointer;
+  background: $secondary-color;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.new-form .cd-error-message {
+  display: inline-block;
+  position: absolute;
+  border-radius: 0.25em !important;
+  left: -5px;
+  bottom: -35px;
+  background: rgba(215, 102, 102, 0.9);
+  padding: .8em;
+  z-index: 400;
+  color: #FFF;
+  font-family: "Raleway",sans-serif;
+  font-size: 12px;
+  font-size: 0.8125rem;
+  border-radius: 0em;
+  /* prevent click and touch events */
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0, visibility 0 0.2s;
+  -moz-transition: opacity 0.2s 0, visibility 0 0.2s;
+  transition: opacity 0.2s 0, visibility 0 0.2s;
+}
+.new-form .cd-error-message::after {
+  /* triangle */
+  content: '';
+  position: absolute;
+  left: 22px;
+  bottom: 100%;
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(215, 102, 102, 0.9);
+}
+.new-form .cd-error-message.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.2s 0, visibility 0 0;
+  -moz-transition: opacity 0.2s 0, visibility 0 0;
+  transition: opacity 0.2s 0, visibility 0 0;
+}
+
+#cd-change-event-change {
+    background-color: $primary-color;
+}
+#cd-change-event-cancel {
+    background-color: $text-light-gray-color;
+}
+
+.expandHeight {
+    height: 230px !important;
+}
+
+.changeOpacity {
+    opacity: 1 !important;
+}
+
+.noBackground {
+    background: none !important;
+}
+
+.ui-timepicker-list {
+    li {
+        font-family: "Raleway", sans-serif;
+        color:    $text-light-gray-color;
+        font-size: 0.9em;
+    }
+}
+
+.gray-color-text {
+    color: $text-light-gray-color !important;
+}
+
+.animationAdd {
+    @include transition(all, 0.4s, ease-in-out);
+}
+
+//modal
+.schedule-modal{
+    display: none;
+}
+.text-form{
+    // display: none;
+    height: 140px;
+    .explain-text {
+        text-align: center;
+        font-family: "Raleway",sans-serif;
+        font-size: 0.9em;
+        font-weight: 400;
+        padding-bottom: 20px;
+        position:relative;
+        line-height: 1.5;
+        strong {
+            // color: 
+            // font-weight: 700;
+            color: $secondary-color;
+        }
+        // margin: 20px;
+    }
+    #delete-trip-delete {
+        padding: 10px;
+        // margin-right: 10px;
+    }
+    #delete-trip-cancel {
+        padding: 10px;
+        background-color: $text-light-gray-color;
+    }
+    #save-trip-dashboard {
+        padding: 10px;
+        // margin-right: 10px;
+    }
+    #save-trip-stay {
+        padding: 10px;
+        background-color: $primary-color;
+    }
+}
+
+#mobile-title {
+    display: none;
+    p {
+        text-align: center;
+        font-family: "Raleway",sans-serif;
+        font-size: 0.8em;
+        font-weight: 500;  
+        color: $text-light-gray-color;
+        padding: 20px;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+}
+
+.is-selected {
+    display: block !important;
+}
+
+
+@media screen and (max-width: 956px){
+    .trip-days-container {
+        width: 64%;
+    }
+    .trip-events-container {
+        width: 36%;
+    }
+    .slick-next {
+        display: none !important;
+    }
+    .slick-prev {
+        display: none !important;
+    }
+    .event-spot {
+        height: 10.2vw;
+    }
+    .event-style {
+        height: 10.2vw;
+    }
+
+}
+
+@media screen and (min-width: 769px){
+
+  #hamburger-menu{
+    display:none;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  #schedule-menu-bar{
+    display: none;
+  }
+
+  .dashboard-body{
+    margin:0;
+  }
+
+  #hamburger-menu{
+    height: 60px;
+  }
+
+  .trip-days-body{
+    border-top-right-radius: 5px;
+  }
+  .schedule-body{
+    padding-top: 0;
+  }
+    #mode-switch {
+        span{
+            font-size: 0.3em;
+            padding: 2px 0px 0px 0px;
+            margin-left: 3.1em;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px){
+    .trip-days-container {
+        width: 100%;
+        padding-right: 2%;
+        border-radius: 5px;
+    }
+    .trip-days-body {
+        @include transition(all, 0.4s, ease-in-out);
+    }
+    .trip-days {
+        padding: 0px 5% !important;
+        h3 {
+            text-align: center;
+        }
+    }
+    .trip-events-container {
+        width: 100%;
+        position:absolute;
+        z-index: 7;
+        background-color: $primary-dark-gray-color;
+        top: 1000px;
+        @include transition(all, 0.4s, ease-in-out);
+    }
+    .event-spot {
+        height: 21.4vw;
+    }
+    .event-style {
+        height: 21.4vw;
+    }
+    #mobile-title {
+        display: block;
+    }
+    .trip-days-header-title h2 {
+        font-size: 1.2em !important;
+    }
+    .trip-days-header {
+        padding: 0px !important; 
+    }
+    .trip-days-publish {
+        color: $primary-color !important;
+        background-color: #fff !important;
+    }
+    .trip-events-footer {
+        margin-bottom: 10px !important;
+    }
+    .trip-events-container .trip-events-footer #mode-switch {
+        margin-top: 20px !important;
+    }
+    .trip-events-container .trip-events-footer #delete-trip {
+        margin-top: 15px !important;
+    }
+    #mode-switch {
+        span{
+            font-size: 0.4em;
+        }
+    }
+}

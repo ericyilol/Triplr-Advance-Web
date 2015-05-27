@@ -1,87 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Triplr</title>
-	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="stylesheets/screen.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 <body>
-	<div class="modal fade" id="Log-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Log In</h4>
-				</div>
-				<div class="modal-body">
-					<form action="">
-						username:<input type="text" name="firstname"> <br>
-						password:<input type="password" name="firstname">
-						
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" onclick="location.href='dashboard.html'">Log In</button>
-				</div>
+	<div class="pop-modal">
+		<div class="pop-modal-container">
+			<div id="explore-trip-modal" class="schedule-modal">
+				<form action="" class="cd-form text-form" id="explore-trip-form">
+					<p class="explain-text">Explore function will show you other people's trips to give you inspiration. The function will come soon:)<br/>Use <strong>log in</strong>, <strong>sign up</strong> or <strong>plan new trip</strong> to go to dashboard.</p>
+					<p class="explain-text">This website is made by <strong>Mirae Kim, Eric Yi, Mingrui Zhang</strong>.</p>
+				</form>
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="Sign-up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-				</div>
-				<div class="modal-body">
-					<form action="">
-						email:<input type="text" name="firstname"> <br>
-						password:<input type="password" name="firstname"> <br>
-						confirm password:<input type="password" name="firstname">
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Sign Up</button>
-				</div>
-			</div>
+	<nav class="nav-bar" id="menu-bar">
+		<div class="menu-logo">
+			<a href="index.html"> <img src="img/logo_white.png" alt=""></a>
 		</div>
-	</div>
-	<header class="home-page-header">
-		<div class="home-page-header-text">
-			<button type="button" class="btn" data-toggle="modal" data-target="#Log-in">
+		<div class="menu-explore">
+			<button type="button" class="btn btn-primary menu-explore-button" id="explore-button" onclick="explore_init()">
+			Explore New Locations
+			</button>
+		</div>	
+		<div class="menu-login">
+			<button type="button" class="btn" onclick="parent.location='dashboard.html'">
 			Log In
 			</button>
 		</div>
-		<div class="home-page-header-text">
-			<button type="button" class="btn" data-toggle="modal" data-target="#Sign-up">
+		<div class="menu-login">
+			<button type="button" class="btn" onclick="parent.location='dashboard.html'">
 			Sign Up
 			</button>
 		</div>
-		<div class="clear"></div>
-		<div class="home-page-header-title">
-			<h2>Triplr - When planning is 3 times easier</h2>
-			<button class="btn btn-primary create-schedule-button btn-lg" type="button">CRAETE NEW TRIP</button>
+		<div class="menu-login">
+				<div class="dropdown" id="menu-dropdown" style="display:none">
+					  <img src="img/user-eric.png">
+					  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+					    Eric Yi
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu " role="menu" >
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dashboard</a></li>
+							    <li role="presentation" class="divider"></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+					  </ul>
+			</div>
 		</div>
+
+	</nav>
+
+	<div id= "hamburger-menu">
+		<div class= "row hamburger-menu-bar">
+		<div class= "col-xs-4 col-md-4">	
+			<img class=" hamburger-icon" src="img/hamburger.png" alt="">
+		</div>
+		<div class= "col-xs-4 col-md-4">	
+		<div class="hamburger-logo-container">
+			<a href="index.html"> <img class="hamburger-logo" src="img/logo_white.png" alt=""></a>
+		</div>
+		</div>
+		<div class= "col-xs-4 col-md-4">
+<!-- 		<button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile" >
+			Explore
+		</button> -->
+		</div>
+	</div>
+		<ul class="hamburger-list" >
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Sign Up</a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Login</a></li>
+		    <li role="presentation" class="divider"></li>
+		</ul>
+	</div>
+
+	<header class="home-page-header">
+		
+		<div class="clear"></div>
+			<div id = "homepage-upper-content">
+				<div class="home-page-header-bird"></div>
+				<div id ="home-page-header-title">Adventure with friends</div>
+				<div id="home-page-header-subtitle"> Plan, Explore, and Inspire your Story </div>	
+				<button class="btn btn-primary create-schedule-button btn-lg" type="button" onclick="location.href='dashboard.html'">Plan your trip</button>
+			</div>
+				<form role="form" id="search-form" style="display:none">
+        			<div class="input-group" id="search-location">
+         				<input type="text" id="go-input"class="form-control" placeholder="Where do you want to go?">
+         				<span class="input-group-btn" style="width:0px;"></span>
+	         					<select class="form-control">
+	         						<option> 1 Day </option>
+	         						<option> 2 Days </option>
+	         						<option> 3 Days </option>
+	         						<option> 4 Days </option>
+	         						<option> 5 Days </option>
+	         						<option> 6 Days </option>
+	         						<option> 7+ Days </option>
+	         					</select>
+		         				<span class="input-group-btn">
+		        					<button class="btn btn-default btn-lg" id="explore-button" type="button" onclick="indexModalListener()">Search</button>
+		      					</span>
+       				</div>
+       			</form>
 	</header>
 	<section class="home-page-events">
-		<div class="row">
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-		</div>
-		<div class="row">
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-			<div class="col-md-3 events"></div>
-		</div>
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/egypt.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/car.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Drive to Pyramids</p>
+					</div>
+				</div> 
+
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/paris.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/b&b.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Live in Parisian Cottage</p>
+					</div>
+				</div> 
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/agra.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/sightsee.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>See the Taj Mahal</p>
+					</div>
+				</div> 
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/beijing2.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/music.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Music in the Forbidden Palace</p>
+					</div>
+				</div> 
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/istanbul.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/bar.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Wine Bar in Istanbul</p>
+					</div>
+				</div> 
+
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/greece2.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/theatre.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>See 'Madam Butterfly' in Italy</p>
+					</div>
+				</div> 
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/seoul.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/restaurant.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Have Korean BBQ in Seoul</p>
+					</div>
+				</div> 
+				<div class="col-md-3 col-sm-6 col-xs-12 my-events black-white" onclick="indexModalListener()">
+					<div class="city-image">
+						<img src="photo/java.jpg" alt="">
+					</div>
+					<div class="home-icon">
+						<img src="icon/events/hiking.png" alt="">
+					</div>
+					<div class="home-info">
+						<p>Hiking in Java</p>
+					</div>
+				</div> 
 	</section>
 </body>
 <script src="./js/init.js" type="text/javascript"></script>
+<script>
+		home_page_init();
+		// navigation_init();
+	</script>
 </html>
+

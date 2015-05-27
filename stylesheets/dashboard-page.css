@@ -1,83 +1,230 @@
-/* line 22, ../sass/dashboard-page.scss */
+/* line 38, ../sass/dashboard-page.scss */
 .dashboard-body {
-  background-color: #363636;
-  padding: 20px 0 50px 0;
+  background-color: #373737;
+  margin: 60px 0px 0px 0px;
 }
 
-/* line 26, ../sass/dashboard-page.scss */
-.create-event {
-  padding: 30px 0;
+/* line 43, ../sass/dashboard-page.scss */
+.trips-year {
+  position: absolute;
+  top: 0;
+  z-index: 5;
 }
-/* line 28, ../sass/dashboard-page.scss */
-.create-event div {
-  background-color: #fff;
-  height: 50px;
-  width: 30%;
-  position: relative;
-  left: 35%;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+/* line 48, ../sass/dashboard-page.scss */
+.trips-year p {
+  color: #6dd0f7;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 0 0 15px 0;
 }
-/* line 35, ../sass/dashboard-page.scss */
-.create-event div p {
+/* line 55, ../sass/dashboard-page.scss */
+.trips-year .trips-year-timeline {
+  background-color: #6dd0f7;
+  width: 1px;
+  height: 1px;
+}
+
+/* line 65, ../sass/dashboard-page.scss */
+.my-events {
+  padding: 0px !important;
+  height: 25vw;
+  cursor: pointer;
+}
+/* line 69, ../sass/dashboard-page.scss */
+.my-events .city-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   position: relative;
+}
+/* line 74, ../sass/dashboard-page.scss */
+.my-events .city-image img {
+  position: absolute;
+  left: 50%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: center;
-  font-size: 1.6em;
-  color: #a1001e;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-/* line 42, ../sass/dashboard-page.scss */
-.create-event div:hover {
-  background-color: #a1001e;
-}
-/* line 44, ../sass/dashboard-page.scss */
-.create-event div:hover p {
-  color: #fff;
-}
-
-/* line 51, ../sass/dashboard-page.scss */
-.my-events > div {
-  margin: 10px;
-}
-/* line 54, ../sass/dashboard-page.scss */
-.my-events .my-event-picture {
-  height: 17vw;
-  background-color: black;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-/* line 59, ../sass/dashboard-page.scss */
-.my-events .my-event-text {
-  height: 3vw;
-  background-color: #000;
-}
-/* line 62, ../sass/dashboard-page.scss */
-.my-events .my-event-text p {
-  color: #fff;
-  font-size: 1.1em;
-  text-align: center;
-  position: relative;
+/* line 83, ../sass/dashboard-page.scss */
+.my-events .travel-info {
+  position: absolute;
+  left: 50%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 85, ../sass/dashboard-page.scss */
+.my-events .travel-info p {
+  text-align: center;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  font-size: 1em;
+}
+/* line 93, ../sass/dashboard-page.scss */
+.my-events .travel-info h4 {
+  text-align: center;
+  padding-top: 8px;
+  color: #fff;
+  font-family: "primary-font", sans-serif;
+  font-size: 2em;
+  white-space: nowrap;
+}
+/* line 102, ../sass/dashboard-page.scss */
+.my-events .home-icon {
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 108, ../sass/dashboard-page.scss */
+.my-events .home-icon img {
+  -webkit-filter: grayscale(0) brightness(0.9) !important;
+  filter: grayscale(0) brightness(0.9) !important;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  max-width: 28%;
+  max-height: 28%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 120, ../sass/dashboard-page.scss */
+.my-events .home-info {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* line 126, ../sass/dashboard-page.scss */
+.my-events .home-info p {
+  text-align: center;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  font-size: 1em;
+}
+/* line 134, ../sass/dashboard-page.scss */
+.my-events .home-info h4 {
+  text-align: center;
+  padding-top: 8px;
+  color: #fff;
+  font-family: "primary-font", sans-serif;
+  font-size: 2em;
+  white-space: nowrap;
 }
 
-/* line 70, ../sass/dashboard-page.scss */
-.my-event-picture:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  z-index: 999;
+/* line 147, ../sass/dashboard-page.scss */
+#menu-dropdown button {
+  color: #fff;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 156, ../sass/dashboard-page.scss */
+#menu-dropdown ul {
+  margin-top: 10px;
+  border: none;
+  background-color: #6dd0f7;
+  color: #4e4e4e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 2px;
+}
+
+/* line 169, ../sass/dashboard-page.scss */
+#menu-dropdown1 button {
+  color: #fff;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 178, ../sass/dashboard-page.scss */
+#menu-dropdown1 ul {
+  margin-top: 10px;
+  border: none;
+  background-color: #6dd0f7;
+  color: #4e4e4e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 2px;
+}
+
+/* line 191, ../sass/dashboard-page.scss */
+.black-white img {
+  -webkit-filter: grayscale(1) brightness(0.7);
+  filter: grayscale(1) brightness(0.7);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 199, ../sass/dashboard-page.scss */
+.black-white:hover img {
+  -webkit-filter: grayscale(0) brightness(0.8);
+  filter: grayscale(0) brightness(0.8);
+}
+
+/* line 206, ../sass/dashboard-page.scss */
+.half-black-white img {
+  -webkit-filter: grayscale(0.4) brightness(0.8);
+  filter: grayscale(0.4) brightness(0.8);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* line 214, ../sass/dashboard-page.scss */
+.half-black-white:hover img {
+  -webkit-filter: grayscale(0) brightness(0.9);
+  filter: grayscale(0) brightness(0.9);
+}
+
+/* line 221, ../sass/dashboard-page.scss */
+#welcome-modal {
+  height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 227, ../sass/dashboard-page.scss */
+  #dashboard-menu-bar {
+    display: none;
+  }
+
+  /* line 231, ../sass/dashboard-page.scss */
+  .dashboard-body {
+    margin: 0;
+  }
+
+  /* line 235, ../sass/dashboard-page.scss */
+  #hamburger-menu {
+    height: 60px;
+  }
 }

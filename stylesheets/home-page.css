@@ -1,64 +1,330 @@
-/* line 24, ../sass/home-page.scss */
+/* line 29, ../sass/home-page.scss */
+#hamburger-menu {
+  position: inline-block;
+  background-color: #6dd0f7;
+  height: 150px;
+}
+/* line 33, ../sass/home-page.scss */
+#hamburger-menu ul {
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 10px;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 42, ../sass/home-page.scss */
+#hamburger-menu ul li {
+  padding-bottom: 20px;
+}
+/* line 46, ../sass/home-page.scss */
+#hamburger-menu ul a {
+  color: #6dd0f7;
+}
+
+/* line 52, ../sass/home-page.scss */
+#explore-button-mobile {
+  display: none;
+}
+
+/* line 57, ../sass/home-page.scss */
+.hamburger-icon {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* line 64, ../sass/home-page.scss */
+.hamburger-list {
+  display: none;
+}
+
+/* line 68, ../sass/home-page.scss */
+.hamburger-logo-container {
+  height: 50px;
+  text-align: center;
+  margin-top: 10px;
+}
+/* line 73, ../sass/home-page.scss */
+.hamburger-logo-container img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 80, ../sass/home-page.scss */
+.home-page-header-logo {
+  float: left;
+  font-size: 45px;
+  margin-left: 3%;
+  color: #fff;
+  background-color: transparent;
+  font-family: primary-font;
+}
+
+/* line 90, ../sass/home-page.scss */
 .home-page-header {
-  background: url(../img/homepage_b.jpg);
+  background-color: #6dd0f7;
   background-size: cover;
   background-position: center center;
   width: 100%;
   height: 500px;
   padding: 10px 0 0 0;
+  font-family: 'Raleway', sans-serif;
 }
-/* line 31, ../sass/home-page.scss */
+/* line 101, ../sass/home-page.scss */
 .home-page-header .home-page-header-text {
   color: #fff;
   float: right;
   padding: 0 30px 0 0;
 }
-/* line 35, ../sass/home-page.scss */
+/* line 106, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button {
   background-color: transparent;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 300;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 41, ../sass/home-page.scss */
+/* line 113, ../sass/home-page.scss */
 .home-page-header .home-page-header-text button:hover {
-  color: #aaa;
+  color: #ff715b;
 }
-/* line 45, ../sass/home-page.scss */
-.home-page-header .home-page-header-title {
+/* line 129, ../sass/home-page.scss */
+.home-page-header .home-page-header-bird {
+  width: 150px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  z-index: 99;
+  display: block;
+  background-image: url("../img/triplr-logo.png");
+  background-size: 160px;
+  background-repeat: no-repeat;
+}
+/* line 146, ../sass/home-page.scss */
+.home-page-header #home-page-header-title {
   color: #fff;
   text-align: center;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
 }
-/* line 50, ../sass/home-page.scss */
+/* line 155, ../sass/home-page.scss */
+.home-page-header #home-page-header-subtitle {
+  color: #fff;
+  text-align: center;
+  margin-top: 1%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+/* line 167, ../sass/home-page.scss */
 .home-page-header .create-schedule-button {
-  margin: 20px 0;
+  background-color: #ff715b;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: block;
+}
+/* line 181, ../sass/home-page.scss */
+.home-page-header .create-schedule-button:hover {
+  background-color: #e74c39;
 }
 
-/* line 56, ../sass/home-page.scss */
-.home-page-events .events {
-  height: 20vw;
-  padding: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+/* line 189, ../sass/home-page.scss */
+.not-home-page {
+  display: none;
 }
-/* line 61, ../sass/home-page.scss */
-.home-page-events .events:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  z-index: 999;
+
+/* line 194, ../sass/home-page.scss */
+#search-location {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+/* line 199, ../sass/home-page.scss */
+#search-location input {
+  border-radius: 0;
+  border: 1px solid #d2d8d8;
+  box-shadow: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 40px;
+}
+/* line 211, ../sass/home-page.scss */
+#search-location input:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+/* line 217, ../sass/home-page.scss */
+#search-location select {
+  border-radius: 0px;
+  border-radius: 0;
+  border: 1px solid #d2d8d8 !important;
+  box-shadow: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 40px;
+}
+/* line 229, ../sass/home-page.scss */
+#search-location option {
+  line-height: 18px;
+}
+/* line 233, ../sass/home-page.scss */
+#search-location select:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+/* line 239, ../sass/home-page.scss */
+#search-location button {
+  background-color: #ff715b;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  height: 40px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 247, ../sass/home-page.scss */
+#search-location button:hover {
+  background-color: #e74c39;
+}
+
+/* line 253, ../sass/home-page.scss */
+#explore-trip-form {
+  height: 160px;
+}
+
+@media screen and (min-width: 769px) {
+  /* line 259, ../sass/home-page.scss */
+  #hamburger-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  /* line 267, ../sass/home-page.scss */
+  .my-events {
+    width: 25%;
+    height: 25vw !important;
+  }
+
+  /* line 273, ../sass/home-page.scss */
+  #search-location {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 278, ../sass/home-page.scss */
+  #menu-bar {
+    display: none;
+  }
+
+  /* line 281, ../sass/home-page.scss */
+  .home-page-header {
+    height: 450px;
+  }
+  /* line 284, ../sass/home-page.scss */
+  .home-page-header .home-page-header-bird {
+    margin-right: auto;
+    margin-left: auto;
+    background-size: 120px;
+    background-position: center;
+  }
+  /* line 291, ../sass/home-page.scss */
+  .home-page-header #home-page-header-title {
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
+  /* line 297, ../sass/home-page.scss */
+  .my-events {
+    width: 50%;
+    height: 50vw !important;
+  }
+
+  /* line 301, ../sass/home-page.scss */
+  #explore-button-mobile {
+    display: block;
+    float: right;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 420px) {
+  /* line 310, ../sass/home-page.scss */
+  #menu-bar {
+    display: none;
+  }
+
+  /* line 314, ../sass/home-page.scss */
+  .hamburger-menu-bar {
+    width: 100%;
+  }
+
+  /* line 318, ../sass/home-page.scss */
+  #hamburger-menu {
+    height: 70px;
+  }
+
+  /* line 331, ../sass/home-page.scss */
+  .home-page-header {
+    height: 350px;
+  }
+  /* line 336, ../sass/home-page.scss */
+  .home-page-header .home-page-header-bird {
+    margin-top: 0px;
+  }
+
+  /* line 342, ../sass/home-page.scss */
+  .my-events {
+    width: 100%;
+    height: 100vw !important;
+    float: left;
+  }
+
+  /* line 348, ../sass/home-page.scss */
+  input::-webkit-input-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 352, ../sass/home-page.scss */
+  input::-moz-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 356, ../sass/home-page.scss */
+  input:-moz-placeholder {
+    /* Older versions of Firefox */
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
+
+  /* line 360, ../sass/home-page.scss */
+  input:-ms-input-placeholder {
+    color: rgba(0, 5, 143, 0.5);
+    text-transform: uppercase;
+  }
 }

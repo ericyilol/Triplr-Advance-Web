@@ -2,109 +2,120 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Triplr Dashboard</title>
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="./js/init.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 <body>
-	<div class="modal fade" id="New-Event" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">New Event</h4>
-				</div>
-				<div class="modal-body">
-					<form action="">
-						Place:<input type="text" name="firstname" placeholder="Pittsburgh"> <br>
-						Time:<input type="password" name="firstname" placeholder="2014.8">
-						
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="location.href='dashboard.html'">Create</button>
-				</div>
+	<div class="pop-modal">
+		<div class="pop-modal-container">
+			<div id="new-trip-modal" class="schedule-modal">
+				<form action="" class="cd-form" id="new-trip-form">
+					<p class="fieldset">
+						<label class="image-replace cd-location" for="signin-email">Location</label>
+						<input class="full-width has-padding has-border" id="cd-location" type="text" placeholder="City">
+						<span class="cd-error-message">Where you are going? (e.x. Paris)</span>
+					</p>
+					<span id="datePicker">
+						<p class="fieldset half-width">
+							<label class="image-replace cd-date">Date</label>
+							<input class="first-half full-width has-padding has-border date start" id="cd-arrive-date" type="text"  placeholder="Arrive Date">
+							<span class="cd-error-message">When are you arriving?</span>
+						</p>
+						<p class="fieldset half-width">
+							<label class="image-replace cd-date">Date</label>
+							<input class="full-width has-padding has-border date end" id="cd-depart-date" type="text"  placeholder="Depart Date">
+							<span class="cd-error-message">When are you leaving?</span>
+						</p>
+					</span>
+					<div class="clear"></div>
+					<p class="fieldset">
+						<input class="full-width" id="new-trip-submit"type="submit" value="Create New Trip">
+					</p>
+				</form>
 			</div>
+			<div id="welcome-modal" class="schedule-modal">
+				<form action="" class="cd-form text-form" id="welcome-form">
+					<p class="explain-text">Welcome to Triplr!</p>
+					<p class="explain-text">We are still building MangoDB for our database. Nevertheless, the current website reads all data from a local JSON file and use your browser's local storage for all data interaction. So all functions are in good shape to try!</p>
+					<p class="explain-text">Also if nothings shows up, just refresh the page:)</p>
+					<p class="explain-text">This website is made by <strong>Mirae Kim, Eric Yi, Mingrui Zhang</strong>.</p>
+				</form>
+            </div>
 		</div>
 	</div>
-	<header class="menu-bar">
-		<div class="logo">
-			<img src="img/logo.png" alt="">
+	<!-- <div class="loader"></div>	 -->
+	<nav class="nav-bar" id = "dashboard-menu-bar">
+		<div class="menu-logo">
+			<a href="index.html"> <img src="img/logo_white.png" alt=""></a>
 		</div>
-		<div class="account">
-			<img src="img/account.png" alt="">
+		<!-- <div class="menu-center-text">
+			<p>My Trips</p>
+		</div> -->
+		<div class="menu-explore">
+			<button type="button" class="btn menu-explore-button" onclick="parent.location='./index.html?page=explore'">
+			Explore New Locations
+			</button>
+<!-- 			<button type="button" class="btn menu-explore-button" onclick="clearLocalStorage()">
+			Reset data
+			</button> -->
+		</div>	
+		<div class="menu-account">
+				<div class="dropdown" id="menu-dropdown">
+					  <button class="btn btn-default dropdown-toggle"  type="button"  data-toggle="dropdown" aria-expanded="true">
+						<img src="img/user-eric.png">
+					    <p> Eric Yi </p>
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu " role="menu">
+					  	<li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Profile</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Change Password</a></li>
+					    <li role="presentation" class="divider"></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
+					  </ul>
+				</div>
 		</div>
-		<div class="welcome-back-text">
-			<p>Welcome back, Ming</p>
+		<div class="menu-welcome-back-text">
+			<!-- <p>Eric</p> -->
 		</div>
-	</header>
-	<section class="dashboard-body">
-		<div class="create-event">
-			<div data-toggle="modal" data-target="#New-Event"><p>Create New Trip</p></div>
-		</div>
-		<div class="all-events">
-			<div class="row">
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Paris, 2013.8</p>
-					</div>
-				</div>
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>London, 2014.1</p>
-					</div>
-				</div>			
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Armsterdam, 2014.3</p>
-					</div>
-				</div>			
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Pittsburgh, 2014.5</p>
-					</div>
-				</div>
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Beijing, 2014.8</p>
-					</div>
-				</div>
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Seoul, 2014.9</p>
-					</div>
-				</div>			
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>Taipei, 2014.10</p>
-					</div>
-				</div>			
-				<div class="col-md-3 my-events">
-					<div class="my-event-picture">
-					</div>
-					<div class="my-event-text">
-						<p>New York, 2015.1</p>
-					</div>
-				</div>
+	</nav>
+		<div id= "hamburger-menu">
+			<div class= "row hamburger-menu-bar">
+			<div class= "col-xs-4 col-md-4">	
+				<img class=" hamburger-icon" src="img/hamburger.png" alt="">
+			</div>
+			<div class= "col-xs-4 col-md-4">	
+			<div class="hamburger-logo-container">
+				<a href="index.html"> <img class="hamburger-logo" src="img/logo_white.png" alt=""></a>
+			</div>
+			</div>
+			<div class= "col-xs-4 col-md-4">	
+			
+<!-- 			<button type="button" class="btn btn-primary menu-explore-button " id="explore-button-mobile" onclick="clearLocalStorage()">
+				Reset data
+			</button> -->
 			</div>
 		</div>
+			<ul class="hamburger-list" >
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="./dashboard.html">Dashboard</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Account</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="./index.html">Log out</a></li>
+			</ul>
+		</div>
+	<section class="dashboard-body">
+		<section class="all-events">
+		</section>
 	</section>
 </body>
-<script src="./js/init.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function() {
+			dashboard_init();
+		});
+	</script>
+	<!-- <script src="http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=[f099f199aedf91c2cfaf8cf0e3135729]&tags=puppy&per_page=3&format=json"></script> -->
 </html>

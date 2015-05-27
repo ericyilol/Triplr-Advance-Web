@@ -1,0 +1,196 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin center-align {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+@mixin transform($transform-property) {
+    -webkit-transform: $transform-property;
+    -moz-transform: $transform-property;
+    -ms-transform: $transform-property;
+    -o-transform: $transform-property;
+    transform: $transform-property;
+}
+
+$primary-color: #6dd0f7; //blue, background
+$secondary-color: #ff715b; //orange, pop-up
+$secondary-color-fade: #e74c39; //faded orange, hover-state
+$primary-dark-gray-color: #373737; //dark gray, for backgroud
+$text-dark-gray-color: #4e4e4e;// for menu text;
+
+
+.nav-bar {
+	position: fixed;
+  	top: 0;
+  	left: 0;
+	width: 100%;
+	z-index: 8;
+	height: 60px;
+	background-color: $primary-color;
+}
+	.menu-logo {
+		padding: 0 0 0 30px;
+		height: 50px;
+    	float: left;
+		@include vertical-align;
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	.menu-center-text {
+		padding: 15px 30px 0 0px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 400;
+		float: left;
+		left: 30%;
+		text-align: center;
+		text-transform: uppercase;
+		width: 20%;
+		font-size: 1.5em;
+		color: $text-dark-gray-color;
+		@include vertical-align;
+	}
+	.menu-welcome-back-text {
+		padding: 5px 10px 0 0px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
+		float: right;
+		font-size: 0.9em;
+		color: $text-dark-gray-color;
+		@include vertical-align;
+	}
+	.menu-account {
+		padding: 0 30px 0 0;
+		float: right;
+		// height: 50px;
+		@include vertical-align;
+		img {
+			height: 100%;
+			width: auto;
+			float: left;
+			padding-right: 10px;
+		}
+		p{
+			display: inline-block;
+			margin-top: 5px;
+		}
+	}
+	.menu-explore {
+		padding: 0 30px 0 0;
+		float: right;
+		height: 25px;
+		@include vertical-align;
+	}
+	.menu-explore-button{
+		background-color: $secondary-color;
+		border: none;
+		color: #fff;
+		border-radius: 0px;
+		font-size: 13px;
+		font-weight: 500;
+		font-family: 'Raleway', sans-serif;
+		@include vertical-align;
+		@include transition(all, 0.2s, ease-in-out);
+		}
+	.menu-explore-button:hover{
+		color: #fff;
+		background-color: $secondary-color-fade;
+	}
+
+	
+
+	.menu-login{
+		float: right;
+		height: 25px;
+		@include vertical-align;
+		color: #fff;
+		float: right;
+		padding: 0 20px 0 0;
+		font-family: 'Raleway', sans-serif;
+
+		button {
+			background-color: transparent;
+			font-size: 16px;
+			font-weight: 300;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+		button:hover {
+			color: $secondary-color;
+		}
+	}
+
+#new-trip{
+	height: 85px; 
+	width: 85px; 
+	position: fixed;
+	display:block;
+	border-radius: 50%;
+	border: 0;
+	z-index: 5;
+	background-color: $secondary-color;
+	@include transition(all, 0.2s, ease-in-out);
+	
+	img{
+		@include center-align;
+                max-width: 50%;
+                max-height: 50%;
+	}
+
+
+	.new-trip-icon {
+		color: #fff;
+		font-weight: 100;
+		font-size: 20px;
+		@include center-align;
+	}
+}
+// #new-trip:hover{
+// 	background-color: $secondary-color-fade;
+// 	img{
+//                //add animation to the add icon?
+
+// 	}
+// }
+
+#menu-bar {
+	background-color: transparent;
+}
+
+.hvr-icon-forward:before {
+    content: "\f067";
+    @include center-align;
+    font-family: FontAwesome;
+    transform: scale(3);
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+
+@media screen and (max-width: 420px){
+    #new-trip{
+        height: 60px;
+        width: 60px;
+    }
+
+
+}
+
+

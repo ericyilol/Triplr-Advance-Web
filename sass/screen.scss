@@ -2,14 +2,29 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "lib/hover-min.css";
+@import "lib/bootstrap-datepicker.css";
+@import "lib/animate.css";
+@import "../lib/slick-1.5.0/slick/slick.css";
+@import "../lib/slick-1.5.0/slick/slick-theme.css";
+@import "../lib/jquery-ui-1.11.4/jquery-ui.css";
+@import "../lib/css-toggle/dist/toggle-switch.css";
+// @import "../lib/css-toggle/bower_components/prism/themes/prism.css";
+// @import "../lib/css-toggle/bower_components/prism/themes/prism-okaidia.css";
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 
 @import "compass/reset";
 
-@import "home-page.css";
-
-@import "dashboard-page.css";
-
-@import "menu-bar.css";
+@font-face {
+    font-family: primary-font; //used in logo
+    src: url(../font/journal.ttf);
+}
 
 .clear {
 	clear: both;
@@ -18,3 +33,37 @@
 .row {
 	margin: 0px !important;
 }
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../img/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+.your-class {
+	margin: 0 0 0 400px;
+	padding: 10px;
+	width: 600px;
+	padding: 0;
+	width: 900px !important;
+	div {
+		padding: 10px;
+		margin: 10px;
+		height:500px;
+		color: #fff;
+		background: #fcc;
+	}
+}
+
+.slick-track {
+	// width :1000px !important;
+}
+@import "modal.css";
+@import "home-page.css";
+@import "dashboard-page.css";
+@import "navigation.css";
+@import "schedule-page.css";
